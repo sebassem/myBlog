@@ -86,8 +86,8 @@ Actually , all i had to pay for was the domain name of my blog . Azure Static we
 Azure Static Web Apps went into GA just last month but it's incredibly useful to get from code to cloud in a matter of minutes. 
 
 **References**
-- [Azure Static Web Apps documentation](https://docs.microsoft.com/en-us/azure/static-web-apps/)
-- <figure class="video_container">
+[Azure Static Web Apps documentation](https://docs.microsoft.com/en-us/azure/static-web-apps/)
+  
+<figure class="video_container">
  <iframe width="560" height="315" src="https://www.youtube.com/embed/Ta2QjwcO2p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </figure>
-
