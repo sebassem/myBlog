@@ -13,7 +13,6 @@ googleAnalytics = "" # example : UA-123-45
 # disable language
 disableLanguages = ["fr"] # desable language from here
 
-
 ############################# Outputs ##############################
 [outputs]
 home = ["HTML", "RSS", "JSON"]

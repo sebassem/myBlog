@@ -1,11 +1,12 @@
 ---
 title: "Building and hosting a blog on Azure Static Web Apps"
 images:
-  - ""
+  - "https://i.ytimg.com/vi/gWEYfyLu1ew/maxresdefault.jpg"
 date: 2021-06-27 17:08:42 +0200
 tags: ["Azure Static WebApps","Azure"]
 categories: ["posts"]
 draft: false
+
 ---
 
 <!--more-->
@@ -61,6 +62,22 @@ Actually , all i had to pay for was the domain name of my blog . Azure Static we
 
 
 ## Third Stop - 🚀 Let's deploy it
+
 1. I created a new GitHub repo and pushed my Hugo source code
- 
+
+![github](http://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/1.PNG)
+
+2. Create a new Azure Static Web App and linked it to my GitHub repo
+
+![New Static App](http://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/2.PNG)
+
+3. After few seconds , the application is created and i can see that it automatically started building my Hugo site to generate the static files
+
+![Workflow](http://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/3.PNG)
+
+4. Finally , i needed to add my custom domain and viola!! the blog is up and running
+
+![Workflow](http://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/4.PNG)
+
+
 
