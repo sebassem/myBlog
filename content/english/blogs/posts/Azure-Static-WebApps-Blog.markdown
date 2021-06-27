@@ -12,7 +12,7 @@ draft: false
 <!--more-->
 
 # Overview
-I've been thinking a lot lately about having my own blog where i can write about shiny new technologies , use cases of the cloud and anything interesting i stumble upon and i started since last year using Linkedin articles as a blogging platform which helped me a lot to build the right momentum to keep me blogging on a regular basis. 
+I have been thinking a lot lately about having my own blog where i can write about shiny new technologies , use cases of the cloud and anything interesting i stumble upon and i started since last year using Linkedin articles as a blogging platform which helped me a lot to build the right momentum to keep me blogging on a regular basis. 
 
 Using Linkedin for blogging has some benefits like having a larger audience and it takes away a lot of the hassle and spending you would need to build a blog and keep it running (domain , SSL certificate , hosting platform , themes ,...etc) . There were other options like Wordpress and Wix ,...etc which seem very easy and don't require any code but having a previous experience with Wordpress , i could see some costs assosciated with this option and also the need to keep the site plugins up-to-date and the performance wasn't top notch.
 
@@ -79,5 +79,15 @@ Actually , all i had to pay for was the domain name of my blog . Azure Static we
 
 ![Workflow](http://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/4.PNG)
 
+![Workflow](http://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/5.PNG)
 
+> One cool feature is that when you create a new pull request to your repo , it will automatically create a staging web app for you to test your changes before pushing to production 🤯🤯
+# Summary
+Azure Static Web Apps went into GA just last month but it's incredibly useful to get from code to cloud in a matter of minutes. 
+
+**References**
+- [Azure Static Web Apps documentation](https://docs.microsoft.com/en-us/azure/static-web-apps/)
+- <figure class="video_container">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/Ta2QjwcO2p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
 
