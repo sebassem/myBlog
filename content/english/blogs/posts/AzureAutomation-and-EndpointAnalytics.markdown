@@ -1,7 +1,7 @@
 ---
-title: "How to use Azure, Microsoft Graph and Endpoint Analytics to deliver better Windows 10 experience to your users"
+title: "Azure, Microsoft Graph and Endpoint Analytics for better Windows 10 user experience"
 images:
-  - "https://images.seifbassem.com/images/Posts/AzureAutomation-and-EndpointAnalytics/banner.jpeg"
+  - "https://images.seifbassem.com/images/Posts/AzureAutomation-and-EndpointAnalytics/banner.jpg"
 date: 202-08-13 17:08:42 +0200
 tags: ["Azure","Endpoint Analytics","Microsoft 365","Windows 10"]
 categories: ["posts"]
@@ -33,7 +33,7 @@ Endpoint Analytics has a built-in baseline for All organizations (median), which
 
 ## Our goal:
 
-![Endpoint Analytics](https://images.seifbassem.com/images/Posts/AzureAutomation-and-EndpointAnalytics/1.jpeg)
+![Endpoint Analytics](https://images.seifbassem.com/images/Posts/AzureAutomation-and-EndpointAnalytics/1.jpg)
 
 ## Preparation
 
