@@ -1,7 +1,7 @@
 ---
 title: "Planning a new Windows 10 build with Microsoft Teams"
 images:
-  - "http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/banner.png"
+  - "https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/banner.png"
 date: 2020-11-27 17:08:42 +0200
 tags: ["Microsoft 365","Windows 10","Teams"]
 categories: ["posts"]
@@ -31,11 +31,11 @@ Summary of what we are going to build:
 
 ## Create a Teams template with all the necessary channels that we will need
 First, let's create a template using the admin center and add all the needed channels and applications.
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-1.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-1.png)
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-2.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-2.png)
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-3.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-3.png)
 
 Next, we need to add all the channels we need according to our planning process. As an example, i have added the following channels:
 
@@ -44,36 +44,36 @@ Next, we need to add all the channels we need according to our planning process.
 - Feedback: Connect to forms to get early feedback from early adopters of the new build
 - Application readiness: Connect to Planner to assign testing tasks to application owners
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-4.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-4.png)
 
 ## Leverage Power Automate to trigger the creation of this Team every 6 months
 At the moment, you can only automate the deployment of a team from a template using Graph API, so what we'll do is to create a flow to create this new team twice per year using our newly created template.
 
 First, we need to define a schedule when this new team will be created. As an example, i will have it created every 6 months starting from September.
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-5.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-5.png)
 
 Then, we will use the [create team endpoint ]([https://link](https://docs.microsoft.com/en-us/graph/api/team-post?view=graph-rest-beta&tabs=http)) in the graph api and pass along our new template ID
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-6.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-6.png)
 
 ## Add the "New Features" article in one of the channels
 The template feature gives us a skeleton of the team we need but it doesn't allow us to customize the channels or apps during the provisioning process, so say that we need to add the "What's New in Windows 10 20H2" article to the "What's New" channel, for that we can use Graph API to inject this website into our channel.
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-7.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-7.png)
 
 ## Schedule a Kick-off meeting with all concerned stakeholders
 Finally, we need to send all stakeholders a kick-off meeting to start the planning process using our newly created team. We can use the "Find time" connector to suggest meeting slots to attendees
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-8.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-8.png)
 
 Finally, we get this team created with all the channels we need to start planning the deployment of a new Windows 10 build twice per year automatically
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-9.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-9.png)
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-10.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-10.png)
 
-![Windows10_With_Teams](http://images.seifbassem.com/myblog/images/Posts/Plan-Windows-10-Teams/Windows10-teams-11.png)
+![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-11.png)
 
 ## Summary
 The Teams templates feature is very useful to define a reusable Teams structure, and when combined with Microsoft graph and power automate can allow you to respond to any event that happens in your organization in an automated manner to bring people together to collaborate.

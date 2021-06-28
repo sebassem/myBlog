@@ -1,7 +1,7 @@
 ---
 title: "Project servers to Azure from virtually anywhere!!"
 images:
-  - "http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/banner.png"
+  - "https://images.seifbassem.com/images/Unboxing/Azure-Arc/banner.png"
 date: 2021-05-18 17:08:42 +0200
 tags: ["Azure", "Azure Arc"]
 categories: ["Unboxing"]
@@ -31,7 +31,7 @@ Azure Arc is a service which projects your workloads into Azure resource manager
 - A unified experience viewing your Azure Arc enabled resources whether you are using the Azure portal, the Azure CLI, Azure PowerShell, or Azure REST API.
 
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/architecture.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/architecture.png)
 
 *In this article, i will focus on Azure Arc enabled servers to demonstrate how to use this cool service to manage 3 servers sitting in AWS, GCP and on-premises using the native Azure capabilities.*
 
@@ -39,23 +39,23 @@ Azure Arc is a service which projects your workloads into Azure resource manager
 I have created three virtual machines in AWS, GCP and on local Hyper-V server where we will use Azure Arc to bring them over to Azure. To deliver this experience with your hybrid machines hosted outside of Azure, the Azure Connected Machine agent needs to be installed on each machine that you plan to connect to Azure, so let's start by deploying the agent.
 
 1. We need to create a service principal with the "Azure Connected Machine Onboarding" role to automate the whole on-boarding process. We will use PowerShell to create it for simplicity.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-3.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-3.png)
 2. Next, we add a new Azure Arc configuration
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-4.gif)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-4.gif)
 After downloading the script, we will need to supply the service principal password to be able to run it on our servers
 3. First, we will on-board our server sitting in the google cloud platform
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-5.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-5.png)
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-6.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-6.png)
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-7.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-7.png)
 Our GCP server is now on-boarded to Azure using Azure Arc, one down, three to-go!!
 4. Now i will run the on-boarding script on my two other windows machines hosted in AWS and Hyper-V.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-8.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-8.png)
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-9.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-9.png)
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-10.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-10.png)
 Now we have 3 servers on-boarded to Azure Arc, none of them is hosted on Azure - Cool stuff 👍
 
 # Managing Azure Arc enabled servers using native Azure tools
@@ -63,31 +63,31 @@ Now we have 3 servers on-boarded to Azure Arc, none of them is hosted on Azure -
 Let's first, explore Azure policy where we can enforce controls and configurations across all our workloads and now with Azure Arc, we will be able to extend this capability to outside of Azure.
 
 Let's deploy an Azure Policy initiative to deploy the log analytics monitoring and dependency agents to the resource group having our three virtual machines to be able to monitor them.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-11.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-11.png)
 Before applying the policy initiative, we can see that our Azure Arc enabled servers do not have the log analytics or the dependency agents installed.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-12.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-12.png)
 Once the policy is applied, we can see that our three servers reporting as not compliant.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-13.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-13.png)
 We initiate a remediation task to force policy compliance and the installation of the agents and in a couple of minutes we can see that the log analytics and the dependency agents are getting installed on our arc-enabled servers.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-14.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-14.png)
 
 ## Azure Security Center
 In addition to enforcing controls using Azure policy to your Azure arc-enabled servers, we can leverage the power of Azure Security Center to protect servers residing outside of Azure.
 
 Once we on-boarded our servers to Azure Arc, we can see below that Azure Security Center has recommendations to increase the security posture of those servers as if they are hosted on Azure.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-15.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-15.png)
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-16.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-16.png)
 
 ## Update Management
 We also get update management to our Azure Arc-enabled servers where we can monitor and deploy updates to those servers and have a single-pane of glass to manage our windows and Linux servers update compliance.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-17.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-17.png)
 
 ## VM insights
 Finally, we can leverage the power of VM insights to monitor our servers' performance and see the service map to understand what connections our servers have with other components.
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-18.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-18.png)
 
-![AzureArc](http://images.seifbassem.com/myblog/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-19.png)
+![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-19.png)
 
 # Summary
 Azure Arc enabled servers is a very powerful solution to help ease the burden of unifying the management, security and monitoring of multi-cloud and hybrid deployments using the same consistent set of capabilities available in Azure.
