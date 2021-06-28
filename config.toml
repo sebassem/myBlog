@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 baseURL = "https://www.seifbassem.com"
-title = "Seif Bassem"
+title = "Seif Bassem's cloud blog"
 theme = "editor"
 # post pagination
 paginate = "12"
@@ -12,6 +12,7 @@ googleAnalytics = "G-G81YKTRDZK" # example : UA-123-45
 #disqusShortname = "themefisher-template" # get your shortname form here : https://disqus.com
 # disable language
 disableLanguages = ["fr"] # desable language from here
+enableRobotsTXT = true
 
 ############################# Outputs ##############################
 [outputs]
