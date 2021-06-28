@@ -65,21 +65,21 @@ Actually , all i had to pay for was the domain name of my blog . Azure Static we
 
 1. I created a new GitHub repo and pushed my Hugo source code
 
-![github](https://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/1.PNG)
+![github](https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/1.PNG)
 
 2. Create a new Azure Static Web App and linked it to my GitHub repo
 
-![New Static App](https://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/2.PNG)
+![New Static App](https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/2.PNG)
 
 3. After few seconds , the application is created and i can see that it automatically started building my Hugo site to generate the static files
 
-![Workflow](https://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/3.PNG)
+![Workflow](https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/3.PNG)
 
 4. Finally , i needed to add my custom domain and viola!! the blog is up and running
 
-![Workflow](https://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/4.PNG)
+![Workflow](https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/4.PNG)
 
-![Workflow](https://images.seifbassem.com/myblog/images/Posts/Blog-Azure-Static-Web-Apps/5.PNG)
+![Workflow](https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/5.PNG)
 
 > One cool feature is that when you create a new pull request to your repo , it will automatically create a staging web app for you to test your changes before pushing to production 🤯🤯
 # Summary
