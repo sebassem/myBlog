@@ -1,10 +1,10 @@
 ---
-title: "Building and hosting a blog on Azure Static Web Apps"
+title: "Building and hosting a blog using Azure Static Web Apps"
 images:
-  - "https://i.ytimg.com/vi/gWEYfyLu1ew/maxresdefault.jpg"
+  - "https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/banner.jpg"
 date: 2021-06-27 17:08:42 +0200
 tags: ["Azure Static WebApps","Azure"]
-categories: ["posts"]
+categories: ["Unboxing"]
 draft: false
 
 ---
