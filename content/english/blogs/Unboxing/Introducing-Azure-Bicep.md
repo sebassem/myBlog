@@ -1,7 +1,7 @@
 ---
 title: "Azure Bicep - next gen Infrastructure as code"
 images:
-  - "https://images.seifbassem.com/images/Unboxing/Azure-Bicep/banner.png"
+  - "https://images.seifbassem.com/images/Unboxing/Azure-Bicep/banner.jpg"
 date: 2021-02-21 17:08:42 +0200
 tags: ["Bicep","Azure","IaaC"]
 categories: ["Azure Unboxing"]

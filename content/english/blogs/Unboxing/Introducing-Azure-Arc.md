@@ -1,7 +1,7 @@
 ---
 title: "Project servers to Azure from virtually anywhere!!"
 images:
-  - "https://images.seifbassem.com/images/Unboxing/Azure-Arc/banner.png"
+  - "https://images.seifbassem.com/images/Unboxing/Azure-Arc/banner.jpg"
 date: 2021-05-18 17:08:42 +0200
 tags: ["Azure", "Azure Arc"]
 categories: ["Azure Unboxing"]
