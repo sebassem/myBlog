@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Unboxing/Azure-Bicep/banner.png"
 date: 2021-02-21 17:08:42 +0200
 tags: ["Bicep","Azure","IaaC"]
-categories: ["Unboxing"]
+categories: ["Azure Unboxing"]
 draft: false
 ---
 

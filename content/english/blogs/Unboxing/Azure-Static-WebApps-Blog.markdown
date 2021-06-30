@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/banner.jpg"
 date: 2021-06-27 17:08:42 +0200
 tags: ["Azure Static WebApps","Azure"]
-categories: ["Unboxing"]
+categories: ["Azure Unboxing"]
 draft: false
 
 ---

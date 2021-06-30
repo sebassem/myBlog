@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Unboxing/Azure-Arc/banner.png"
 date: 2021-05-18 17:08:42 +0200
 tags: ["Azure", "Azure Arc"]
-categories: ["Unboxing"]
+categories: ["Azure Unboxing"]
 draft: false
 ---
 

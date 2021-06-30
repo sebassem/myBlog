@@ -95,8 +95,10 @@ h6 = "16px"
 # font variable
 # Give your font name from google font. add font weight using ":wght@" and separate by ";"
 # example: "Work Sans:wght@400;600;700"
+
 primary_font = "Lora:wght@500;600"
 secondary_font = "Work Sans:wght@400;500;600"
+
 icon_font = "Font Awesome 5 Free"
 
 # Preloader

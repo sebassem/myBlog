@@ -8,7 +8,7 @@ layout: "about"
 name: "Seif Bassem"
 email: "seif.bassem@outlook.com"
 image: "images/author.jpeg"
-summary: "A blog about the Cloud ☁️, and some other random thoughts"
+summary: "This is a blog about the ☁️Cloud , and some other random thoughts 📚💻📰"
 
 partners:
   enable: false
