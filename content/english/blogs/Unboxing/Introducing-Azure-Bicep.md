@@ -8,7 +8,7 @@ categories: ["Azure Unboxing"]
 draft: false
 ---
 
-# Overview
+# Why consider Infrastructure-as-code?
 I have always been a huge fan of Infrastructure-as-code (Iaac), it allows you to describe your infrastructure in a declarative way, store it in version control and modify in a controlled manner. This approach tries to eliminate human error, increases your efficiency in deploying and maintaining your resources, you can deploy complete datacenters in a matter of minutes be deploying a template file instead of spending hours/days clicking through the portal.
 
 The real power of Iaac is that it uses a declarative syntax to define resources instead of using an imperative one. To explain the difference between them, i like to use a pizza analogy.

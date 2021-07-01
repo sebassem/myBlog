@@ -11,7 +11,7 @@ draft: false
 
 <!--more-->
 
-# Overview
+# Starting a blog 📖
 I have been thinking a lot lately about having my own blog where i can write about shiny new technologies , use cases of the cloud and anything interesting i stumble upon and i started since last year using Linkedin articles as a blogging platform which helped me a lot to build the right momentum to keep me blogging on a regular basis. 
 
 Using Linkedin for blogging has some benefits like having a larger audience and it takes away a lot of the hassle and spending you would need to build a blog and keep it running (domain , SSL certificate , hosting platform , themes ,...etc) . There were other options like Wordpress and Wix ,...etc which seem very easy and don't require any code but having a previous experience with Wordpress , i could see some costs assosciated with this option and also the need to keep the site plugins up-to-date and the performance wasn't top notch.

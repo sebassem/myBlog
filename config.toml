@@ -97,7 +97,8 @@ h6 = "16px"
 # example: "Work Sans:wght@400;600;700"
 
 primary_font = "Lora:wght@500;600"
-secondary_font = "Work Sans:wght@400;500;600"
+#secondary_font = "Work Sans:wght@400;500;600"
+secondary_font = "open sans:wght@400;500;600"
 
 icon_font = "Font Awesome 5 Free"
 

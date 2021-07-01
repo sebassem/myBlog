@@ -84,7 +84,7 @@ a.text-underline:hover {
 body {
   color: #66676d;
   background-color: #ffffff;
-  font-family: "Work Sans", sans-serif;
+  font-family: "open sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.65; }
@@ -243,7 +243,7 @@ a.post-title:hover,
     text-transform: uppercase; }
 
 .content {
-  font-family: "Work Sans", sans-serif;
+  font-family: "open sans", sans-serif;
   font-size: 17px; }
   .content p {
     margin-bottom: 25px; }
@@ -251,7 +251,7 @@ a.post-title:hover,
     margin-bottom: 30px;
     width: 100%; }
   .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-    font-family: "Work Sans", sans-serif;
+    font-family: "open sans", sans-serif;
     color: #2B2C2E;
     font-weight: 600;
     margin-bottom: 20px;
@@ -438,7 +438,7 @@ button.input-group-text:hover {
   font-family: "Lora", sans-serif; }
 
 .font-secondary {
-  font-family: "Work Sans", sans-serif; }
+  font-family: "open sans", sans-serif; }
 
 .font-weight-500 {
   font-weight: 500; }
