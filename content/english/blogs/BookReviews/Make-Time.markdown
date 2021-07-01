@@ -1,14 +1,15 @@
 ---
-title: "Book Review : Make Time"
+title: "Make Time"
 images:
-  - "https://images.seifbassem.com/images/Posts/AzureAutomation-and-EndpointAnalytics/banner.jpg"
+  - "https://images.seifbassem.com/images/Books/Book-Make-time.jpg"
 date: 2020-07-01 17:08:42 +0200
 tags: ["Book Review","Productivity"]
 categories: ["Book reviews"]
-draft: true
+draft: false
 
 ---
 
+**Authors:** Jake Knapp and John Zeratsky
 # 🚀 The Book in 3 Sentences
 
 1. Start everyday with a high priority achievable goal , this creates clarity and motivation. Ask yourself when you finish your day how do you want to response to the questions "What have you achieved today?"
@@ -127,8 +128,10 @@ When your energy is depleted , that's when you turn to infinity pools . Having g
 
 
 ## Summary : 
-**Rating:**⭐⭐⭐⭐⭐
-[Get the book](https://www.amazon.com/Make-Time-Focus-Matters-Every-ebook/dp/B078QSCM3V)
+**Rating:** ⭐⭐⭐⭐⭐
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"  src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=seifbassem0f-20&marketplace=amazon&amp;region=US&placement=B078QSCM3V&asins=B078QSCM3V&linkId=7254c7196ee53b5ba9a43bc95e46b601&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
 
 The book introduces very simple , yet effective techniques to take hold of your time . There is no size fits all so you would have to find the ones that match your lifestyle and schedule but indeed i can see great improvements to how i manage my time after applying a couple of them.
 

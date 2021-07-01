@@ -1,5 +1,5 @@
 ---
-title: "Building and hosting a blog using Azure Static Web Apps"
+title: "Building and hosting this blog using Azure Static Web Apps"
 images:
   - "https://images.seifbassem.com/images/Posts/Blog-Azure-Static-Web-Apps/banner.jpg"
 date: 2021-06-27 17:08:42 +0200

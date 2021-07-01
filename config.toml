@@ -165,9 +165,28 @@ url = "about/"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Posts"
+name = "Categories"
 url = "blogs/"
 weight = 3
+hasChildren = true
+
+  [[Languages.en.menu.main]]
+  parent = "Categories"
+  weight = 1
+  url = "categories/azure-unboxing/"
+  name = "Azure Unboxing"
+
+  [[Languages.en.menu.main]]
+  parent = "Categories"
+  weight = 1
+  url = "categories/posts/"
+  name = "Posts"
+
+  [[Languages.en.menu.main]]
+  parent = "Categories"
+  weight = 1
+  url = "categories/book-reviews/"
+  name = "Book reviews"
 
 #[[Languages.en.menu.main]]
 #weight = 4
