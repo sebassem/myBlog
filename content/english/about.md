@@ -29,3 +29,4 @@ Prior to joining Microsoft , i have been working as a system administrator in th
 In this blog , i plan to share articles and thoughts on different Azure solutions and services , interesting use cases of the cloud also reviews of useful books i’ve been reading.
 
 **Disclaimer**: The blog posts or other publications are my own personal opinions and are by no means associated with my employer.
+
