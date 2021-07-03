@@ -5,7 +5,7 @@ images:
 date: 2021-07-02 17:08:42 +0200
 tags: ["Azure","Azure Monitor"]
 categories: ["posts"]
-draft: false
+draft: true
 
 ---
 
@@ -77,11 +77,17 @@ As for the request body we will need to do some tweaking to query only disks and
 `
 Now let's try to run this query , it returns all the disks we have (attached and unattached) and shows their cost for last month as well.
 
-![alt](4.jpg)
+![alt](5.jpg)
+
+I will hide this query as it will be a supporting query that we don't want to show in our workbook by making this query conditionally visible using a variable.
+
+![alt](6)
 
 Now the last step would be to merge both queries we created to only list the costs of unattached disks. 
 
-4. Merge query to get the cost of only unattached disks
+1. Merge query to get the cost of only unattached disks
+I will add a third query , this time of type **Merge** and select the disk ID column to merge the queries we created to only show cost information for unattached disks.
+
 
 
 
