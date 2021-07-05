@@ -56,6 +56,7 @@ logo_rotate = false
 # Meta data
 description = "This is a blog about the cloud , focusing on Microsoft Azure services and features"
 author = "Seif Bassem"
+og_image = "images/logo.jpeg"
 images = ["images/logo.jpeg"]
 # contact info
 #address = "9567 Turner Trace Apt. BC C3G8A4"
