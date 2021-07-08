@@ -85,8 +85,14 @@ I will hide this query as it will be a supporting query that we don't want to sh
 
 Now the last step would be to merge both queries we created to only list the costs of unattached disks. 
 
-1. Merge query to get the cost of only unattached disks
+4. Merge query to get the cost of only unattached disks
 I will add a third query , this time of type **Merge** and select the disk ID column to merge the queries we created to only show cost information for unattached disks.
+
+![alt](7)
+
+And finally , this is how our workbook will look like. We can see the unattached disks in the first visualization and in the second one we can see a colum of the cost of this unattached disk to date which is really helpful to understand how much we can save by deleting them if not needed.
+
+![alt](8)
 
 
 
