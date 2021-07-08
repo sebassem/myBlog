@@ -95,5 +95,6 @@ Let's go back to our Bicep file and add a couple of changes to the storage accou
 # Recap
 You can see that the storage account was created in the first scenario and changed in the second scenario without having to do anything on the portal , all deployments where done through code which gives us very good flexibility and tracking of changes in the environment . This is a very basic demonstration of what you can do with GitHub actions and Bicep , in production envrionments you would have a more complex set up with testing and validation but you get the point of how simple , yet powerful this can be.
 
+Official documentation can be found [here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-github-actions).
 
    
