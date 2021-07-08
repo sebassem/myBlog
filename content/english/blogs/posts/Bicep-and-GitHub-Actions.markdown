@@ -82,7 +82,7 @@ Now let's see how all of this works 🥁🥁🥁🥁🥁
 
 ![alt](https://images.seifbassem.com/images/Posts/Bicep-and-GitHub-Actions/8.gif)
 
-Now let's imagine , Infosec examined our storage account configuration and found that it's a little bit unsecure so we got some recommendations add to our storage account to increase it's security posture.
+🛑🛑 Now let's imagine , Infosec examined our storage account configuration and found that it's a little bit unsecure so we got some recommendations add to our storage account to increase it's security posture.
 
 ![alt](https://images.seifbassem.com/images/Posts/Bicep-and-GitHub-Actions/9.jpg)
 
