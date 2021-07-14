@@ -1,10 +1,10 @@
 ---
-title: "Unboxing Azure Monitor workbooks"
+title: "Azure Monitor workbooks - Your interactive monitoring canvas"
 images:
   - "https://images.seifbassem.com/images/Unboxing/Azure-Workbooks/banner.jpg"
 date: 2021-07-14 17:08:42 +0200
 tags: ["Azure","Azure Monitor","Azure Workbooks"]
-categories: ["Unboxing"]
+categories: ["Azure Unboxing"]
 draft: false
 
 ---
