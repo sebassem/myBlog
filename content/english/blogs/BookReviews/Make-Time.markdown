@@ -10,7 +10,7 @@ draft: false
 ---
 
 **Authors:** Jake Knapp and John Zeratsky
-# 🚀 The Book in 3 Sentences
+# 🚀 The Book in 4 Sentences
 
 1. Start everyday with a high priority achievable goal , this creates clarity and motivation. Ask yourself when you finish your day how do you want to response to the questions "What have you achieved today?"
 2. Ban/regulate devices to avoid distractions of never ending notifications and stay laser focused on your highlight
