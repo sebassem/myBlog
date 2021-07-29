@@ -1,5 +1,5 @@
 ---
-title: "Azure Migrate : Modernize your applications during migration"
+title: "Azure Migrate - Modernize your applications during migration"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Migrate-Modernize/banner.jpg"
 date: 2021-07-29 17:08:42 +0200
@@ -11,6 +11,7 @@ draft: false
 
 <!--more-->
 
+# Overview
 It was [recently announced](https://azure.microsoft.com/en-us/blog/accelerate-your-azure-migration-and-modernization-journey-with-expended-programs-and-offers/) that the Azure Migrate program has been rebranded to **Azure Migration and Modernization Program** where additional capabilities are being added to help customers not only lift-and-shift their servers and applications to Azure but also to modernize them during migration. 
 
 When customers plan to move to Azure , it's always advised to evaluate their applications and determine the right way to move them to the cloud. The cloud adoption framework provides [great guidance](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/digital-estate/5-rs-of-rationalization) on this rationalization process where you have 5 different methods to think of your application migration : 
