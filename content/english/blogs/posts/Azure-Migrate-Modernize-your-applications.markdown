@@ -2,15 +2,13 @@
 title: "Azure Migrate - Modernize your applications during migration"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Migrate-Modernize/banner.jpg"
-date: 2021-07-29 17:08:42 +0200
+date: 2021-07-28 17:08:42 +0200
 tags: ["Azure","Azure Migrate","AKS","Azure App services"]
 categories: ["posts"]
 draft: false
-
 ---
 
 <!--more-->
-
 # Overview
 It was [recently announced](https://azure.microsoft.com/en-us/blog/accelerate-your-azure-migration-and-modernization-journey-with-expended-programs-and-offers/) that the Azure Migrate program has been rebranded to **Azure Migration and Modernization Program** where additional capabilities are being added to help customers not only lift-and-shift their servers and applications to Azure but also to modernize them during migration. 
 
@@ -33,7 +31,6 @@ Since the Application Containerization tool is still in preview , there are some
 - The machine running the tool needs to have connectivity to the application servers
 - PowerShell remoting needs to be enabled on the application servers
 - Microsoft Web Deploy tool needs to be installed on the machine running the tool
-- 
 ## Application Containerization tool test drive
 
 In this demo , i will deploy an ASP.NET application on Windows server 2012 and will try to leverage this tool to containerize and deploy to Azure Web Apps.

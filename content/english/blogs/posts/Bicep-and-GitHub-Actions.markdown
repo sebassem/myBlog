@@ -9,7 +9,6 @@ draft: false
 ---
 
 <!--more-->
-
 # Infrastructure-as-code with Bicep and GitHub actions
 Bicep has been a real game changer in terms of the infrastructure-as-code game when working with Azure , taking out all of the complexity that comes with ARM templates - If it's the first time you've heard about Bicep , see [my previous post](https://www.seifbassem.com/blogs/unboxing/introducing-azure-bicep/).
 

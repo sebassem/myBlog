@@ -2,7 +2,7 @@
 title: "Azure, Microsoft Graph and Endpoint Analytics for better Windows 10 user experience"
 images:
   - "https://images.seifbassem.com/images/Posts/AzureAutomation-and-EndpointAnalytics/banner.jpg"
-date: 202-08-13 17:08:42 +0200
+date: 2020-08-13 17:08:42 +0200
 tags: ["Azure","Endpoint Analytics","Microsoft 365","Windows 10"]
 categories: ["posts"]
 draft: false
