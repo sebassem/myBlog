@@ -9,7 +9,16 @@ draft: false
 
 ---
 
-**Authors:** B.J. Fogg
+**Author:** B.J. Fogg
+
+**Rating:** ⭐⭐⭐⭐⭐
+
+The book introduces a very structure approach to designing your behavior to adopt or stop a habit . It debunks some myths about not being able to build a new habit and outlines simple steps and examples on how to start tiny and naturally grow those tiny steps into an automatic habit.
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=seifbassem0f-20&marketplace=amazon&amp;region=US&placement=B07LC9KDP5&asins=B07LC9KDP5&linkId=39cfecdd6ef9560be5a377b292074678&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
+</iframe>
+
+
 # 🚀 The Book in 3 Sentences
 
 1. Not being able to keep a habit doesn't mean there is something wrong with you , it's  behavior design flaw not a personal one.
@@ -145,13 +154,5 @@ No behavior happens without a prompt , you get a notification , you check you mo
 On the same note , if there is no prompt , we don't act. For example , You want to sue the new meditation app on your mobile , but it doesn't send any notifications (no prompt) so by time you forget about it and never use it again.
 
 It's all about finding where the new habit fits into your day.
-
-## Summary : 
-**Rating:** ⭐⭐⭐⭐⭐
-
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=seifbassem0f-20&marketplace=amazon&amp;region=US&placement=B07LC9KDP5&asins=B07LC9KDP5&linkId=39cfecdd6ef9560be5a377b292074678&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
-</iframe>
-
-The book introduces a very structure approach to designing your behavior to adopt or stop a habit . It debunks some myths about not being able to build a new habit and outlines simple steps and examples on how to start tiny and naturally grow those tiny steps into an automatic habit.
 
 
