@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-At the date of this post, Azure has [60+ regions](https://infrastructuremap.microsoft.com/explore) around the world where you can deploy applications and services close to your users and comply with your regulatory needs. For some organizations there might be still a need to deploy on-premises where they would miss out on cloud innovation, elasticity and scalability or they would have a requirement to deploy to multiple cloud providers to avoid vendor lock-in where they would face unified management and operation challenges.
+At the date of this post, Azure has [60+ regions](https://infrastructuremap.microsoft.com/explore) around the world where you can deploy applications and services close to your users and comply with your regulatory needs. For some organizations there might be still a need to deploy on-premises where they would miss out on cloud innovation, elasticity and scalability or they would have a requirement to deploy to multiple cloud providers to avoid vendor lock-in where they would face challenges with multiple tools and platforms.
 
 # Deploy anywhere with Azure Arc
 
