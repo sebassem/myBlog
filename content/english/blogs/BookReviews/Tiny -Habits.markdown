@@ -19,13 +19,13 @@ The book introduces a very structure approach to designing your behavior to adop
 </iframe>
 
 
-# 🚀 The Book in 3 Sentences
+## 🚀 The Book in 3 Sentences
 
 1. Not being able to keep a habit doesn't mean there is something wrong with you , it's  behavior design flaw not a personal one.
 2. To have a new habit you need to have motivation , ability and a prompt.
 3. Break the habit into tiny , specific and easy to do behaviors that can fit in your daily routine.
 
-# 🎨 Impressions
+## 🎨 Impressions
 
 The book provides a break down of behavioral design behind adopting a habit and designing your routine to accommodate it with the least possible friction.
 
@@ -37,17 +37,17 @@ While searching for books similar to Atomic habits , I found a lot of good revie
 
 Anyone struggling to adopt or even stop a habit.
 
-# ☘️ How the Book Changed Me
+## ☘️ How the Book Changed Me
 
 I think more of designing my behavior to adopt or stop a habit , my approach became more structured and I know the tools I need to have to incorporate a new habit into my daily routine. This book in addition to "Atomic habits" helped me to build a reading habit everyday .
 
-# ✍️ My Top 3 Quotes
+## ✍️ My Top 3 Quotes
 
 - It's important in the change process to feel good not feel bad and not to rely on willpower or set up accountability measures.
 - No behavior happens without a prompt
 - Go big or go home is a recipe for self-criticism and disappointment.
 
-# 📒 Summary + Notes
+## 📒 Summary + Notes
 
 There is a huge disconnect between the "Want" and the "do" , where people mostly blame themselves (You don't workout more , you don't eat healthy enough ,...etc.) .It's not your fault , the problem is with the approach itself not you. It's a design flaw not a personal flaw.
 

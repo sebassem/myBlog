@@ -19,14 +19,14 @@ The book introduces very simple , yet effective techniques to take hold of your 
 </iframe>
 
 
-# 🚀 The Book in 4 Sentences
+## 🚀 The Book in 4 Sentences
 
 1. Start everyday with a high priority achievable goal , this creates clarity and motivation. Ask yourself when you finish your day how do you want to response to the questions "What have you achieved today?"
 2. Ban/regulate devices to avoid distractions of never ending notifications and stay laser focused on your highlight
 3. Maintain your energy : constant breaks , short walks , sleep , a healthy diet and face-to-face interactions.
 4. Experiment to try different approaches and techniques and reflect on what worked and what didn't
 
-# 🎨 Impressions
+## 🎨 Impressions
 
 The book has many great techniques revolving around having a highlight per day and focusing on getting it done . A lot of the techniques are very good to increase productivity and time management taking into consideration your wellbeing.
 
@@ -38,7 +38,7 @@ The book has many great techniques revolving around having a highlight per day a
 
 Busy people who need to take control of their time "so practically .... everyone 😄"
 
-# ✍️ My Top Quotes
+## ✍️ My Top Quotes
 
 - Focus on spending time on what matters the most to you and not reacting to other people's priorities.
 - Perfection is a distraction , it's the shinny object that takes your attention away from your priorities.
@@ -46,7 +46,7 @@ Busy people who need to take control of their time "so practically .... everyone
 - Doing what matters is not doing more things
 - What you do everyday matters more than what you do once in a while.
 
-# 📒 Summary + Notes
+## 📒 Summary + Notes
 The book main idea is to not save time but to make time, by choosing what you want/need to focus on , build the energy to do it and break the default cycle to become more intentional on how you live your life even if you don't fully control your schedule.
 
 ✌️**The 2 main forces fighting for your time :**
