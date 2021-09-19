@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://www.seifbassem.com"
+baseURL = "https://www.seifbassem.com/"
 title = "Seif Bassem's cloud blog"
 theme = "editor"
 # post pagination
@@ -193,7 +193,7 @@ hasChildren = true
 #[[Languages.en.menu.main]]
 #weight = 4
 #name = "Tags"
-#url = "tags/"
+#url = "/tags/"
 
 #[[Languages.en.menu.main]]
 #weight = 4
