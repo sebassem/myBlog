@@ -1,5 +1,5 @@
 ---
-title: "Automatic start/stop of virtual machines to save cost V2"
+title: "Automatic start/stop of virtual machines to save cost - V2"
 images:
   - "https://images.seifbassem.com/images/Posts/Start-Stop-V2/banner.png"
 date: 2021-09-24 17:08:42 +0200
@@ -11,10 +11,10 @@ draft: false
 <!--more-->
 
 The cloud gives you infinite scale and scalability, and with this great amount of scale, comes the responsibility and the need for better cost management. Running virtual machines 24/7 if not needed can incur unnecessary costs on your bill, examples would be testing/development machines or services that need to be run on-demand or seasonally for specific tasks.
-In Azure, you can use different methods to solve this issue but today i will examine a redefined built-in solution that can help automate the starting and stopping of virtual machines across your environment based on different criteria.
+In Azure, you can use different methods to solve this issue but today I will examine a redefined built-in solution that can help automate the starting and stopping of virtual machines across your environment based on different criteria.
 
 ## Start/stop V1
-When V1 of this solution was first introduced, it relied on Azure Automation and Log Analytics. The new version now uses Azure Functions and Logic Apps instead, it still provieds the same capabilities but using newer technologies in Azure.
+When V1 of this solution was first introduced, it relied on Azure Automation and Log Analytics. The new version now uses Azure Functions and Logic Apps instead, it still provides the same capabilities but using newer technologies in Azure.
 
 ![V1](https://images.seifbassem.com/images/Posts/Start-Stop-V2/19.jpg)
 
@@ -39,13 +39,13 @@ We get 5 logic apps that have all the orchestrate the functionality of this solu
 4. **ststv2_vms_Sequenced_stop:** auto-stop of VMs based on a schedule and order defined by tags
 5. **ststv2_vms_AutoStop:** auto-stop of VMs if processor utilization is less than a specified percentage
 
-Also contributor permissions for this managed identity is automatically granted on the subscription level.
+Also, contributor permissions for this managed identity are automatically granted on the subscription level.
 
 ![RBAC permissions](https://images.seifbassem.com/images/Posts/Start-Stop-V2/14.jpg)
 
 > 💡 To [control virtual machines in other subscriptions](https://docs.microsoft.com/en-us/azure/azure-functions/start-stop-vms/deploy#enable-multiple-subscriptions), you would need to grant contributor permission to the managed identity on those subscriptions.
 
-I have created 3 virtual machines to test those different logic apps.
+I have created three virtual machines to test those different logic apps.
 
 ![VMs](https://images.seifbassem.com/images/Posts/Start-Stop-V2/6.jpg)
 
@@ -71,13 +71,13 @@ This is all what is needed to configure the auto-start logic app, then we enable
 ![Start VMs](https://images.seifbassem.com/images/Posts/Start-Stop-V2/16.jpg)
 
 ### Sequenced start/stop
-The above logic app is useful if there is no need for the machines to be started/stopped in a particular order, but what if there was ? We have another logic app pair that allows us to do just that; ststv2_vms_Sequenced_start and ststv2_vms_Sequenced_stop.
+The above logic app is useful if there is no need for the machines to be started/stopped in a particular order, but what if there was? We have another logic app pair that allows us to do just that; ststv2_vms_Sequenced_start and ststv2_vms_Sequenced_stop.
 
-They are basically the exact same configuration but you will notice a new value in the Azure Function step "Sequenced:true"
+They are basically the exact same configuration, but you will notice a new value in the Azure Function step "Sequenced:true"
 
 ![Sequenced](https://images.seifbassem.com/images/Posts/Start-Stop-V2/11.jpg)
 
-To set the order, we would need to add specific tags to the machines within our scope to help the Azure Function to understand which machines to start first. In this example i will set the order as follows:
+To set the order, we would need to add specific tags to the machines within our scope to help the Azure Function to understand which machines to start first. In this example I will set the order as follows:
 1. VM001
 2. VM003
 3. VM002
@@ -96,7 +96,7 @@ We can see that the VMs start in the order we have specified.
 ![sequenced stop](https://images.seifbassem.com/images/Posts/Start-Stop-V2/18.jpg)
 
 ### Idle VM shutdown
-Finally, this solution allows also to stop virtual machines that have CPU utilization below a specific threshhold. It creates a metric alert based on our inputs to turn off those machines.
+Finally, this solution allows also to stop virtual machines that have CPU utilization below a specific threshold. It creates a metric alert based on our inputs to turn off those machines.
 
 We can see that the logic app is a little bit different with more parameters to be set for the Azure Function to create a metric alert
 
@@ -105,21 +105,21 @@ We can see that the logic app is a little bit different with more parameters to 
 **-The parameters we need to configure:**
 - **AutoStop_Frequency:** The evaluation frequency for this metric rule
 - **AutoStop_MetricName:** the metric we want to evaluate, in our scenario "CPU"
-- **AutoStop_Threshold:** the threshhold for the metric value; shutdown if CPU is less than this threshhold
+- **AutoStop_Threshold:** the threshold for the metric value; shutdown if CPU is less than this threshold
 - **AutoStop_TimeAggregationOperator:** aggregation for this metric; average, maximum, minimum,...etc
 - **AutoStop_TimeWindow:** The window size over which Azure will analyze selected metric for triggering an alert; the time window looking back for this metric
 
-Once this is enabled and the trigger is executed, a metric alert will be created which checks the virtual machine(s) based on the above parameters and will shutdown the machines if they are below this CPU threshhold.
+Once this is enabled and the trigger is executed, a metric alert will be created which checks the virtual machine(s) based on the above parameters and will shut down the machines if they are below this CPU threshold.
 
 > 💡 Most probably you would need to target different sets of virtual machines in your environment and a single logic app wouldn't be convenient, you can simply duplicate the logic apps that you need and configure different schedules/parameters as needed.
 
 ### Monitoring
-As part of this solution deployment, a dashboard is created to allow for monitoring the start/stop of virtual machines and the failure/success attempts for troubleshooting. Also emails are configured to be sent to notify admins on start/stop activities.
+As part of this solution deployment, a dashboard is created to allow for monitoring the start/stop of virtual machines and the failure/success attempts for troubleshooting. Also, emails are configured to be sent to notify admins on start/stop activities.
 
 ![Dashboard](https://images.seifbassem.com/images/Posts/Start-Stop-V2/23.jpg)
 
 ### Recap
-This is a very useful solution to automate starting/stopping virutal machines based on schedules or CPU utilization, i find this solution much easier than the previous one based on Azure Automation even if it provides the same functionality.
+This is a very useful solution to automate starting/stopping virtual machines based on schedules or CPU utilization, I find this solution much easier than the previous one based on Azure Automation even if it provides the same functionality.
 
 **V1 solution:** https://docs.microsoft.com/en-us/azure/automation/automation-solution-vm-management
 
