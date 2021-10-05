@@ -9,13 +9,13 @@ draft: false
 ---
 
 
-# Going multi-cloud or hybrid 🚀, missing anything?!
+## Going multi-cloud or hybrid 🚀, missing anything?!
 
 The rapid increase in cloud computing adoption, various cloud providers, new services and features being introduced almost every day, the need to deliver value faster to customers and the recent trend in bringing cloud power to the edge has caused a sprawl of applications and services being deployed all over the place whether on-premises or in different cloud providers or even at the edge. This diversity in the location where applications sit can help organizations be more agile when deploying their services to their customers but on the other hand can introduce an imbalance in the security/governance arm of the scale.
 
 Every cloud provider (if you are deploying in the cloud) or IT administrators (if you are deploying on-premises) have their own set of management and security tools, capabilities and processes which can impose a new challenge for your IT to stretch their skillset across clouds and technologies , learn how to apply your organizational controls and regulations to different platforms and reduce the velocity needed to level the scale of security/governance and velocity.
 
-# Azure arc, leveling the scale⚖️
+## Azure arc, leveling the scale⚖️
 Organizations might be deploying some of their workloads to AWS or GCP or even on-premises and loving it, they are not looking to bring those workloads to Azure at the moment, but they would like to extend Azure's management capabilities to those workloads to have a single-pane of glass and control-plane to manage and secure all of their estate using the same tools and same expertise.
 
 Azure Arc is a service which projects your workloads into Azure resource manager whether they are sitting on-premises or any other cloud, allowing you to manage virtual machines, Kubernetes clusters, and databases as if they are running in Azure. Regardless of where they live, you can use familiar Azure services and management capabilities.
@@ -35,7 +35,7 @@ Azure Arc is a service which projects your workloads into Azure resource manager
 
 *In this article, i will focus on Azure Arc enabled servers to demonstrate how to use this cool service to manage 3 servers sitting in AWS, GCP and on-premises using the native Azure capabilities.*
 
-# Environment setup
+## Environment setup
 I have created three virtual machines in AWS, GCP and on local Hyper-V server where we will use Azure Arc to bring them over to Azure. To deliver this experience with your hybrid machines hosted outside of Azure, the Azure Connected Machine agent needs to be installed on each machine that you plan to connect to Azure, so let's start by deploying the agent.
 
 1. We need to create a service principal with the "Azure Connected Machine Onboarding" role to automate the whole on-boarding process. We will use PowerShell to create it for simplicity.
@@ -58,8 +58,8 @@ Our GCP server is now on-boarded to Azure using Azure Arc, one down, three to-go
 ![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-10.png)
 Now we have 3 servers on-boarded to Azure Arc, none of them is hosted on Azure - Cool stuff 👍
 
-# Managing Azure Arc enabled servers using native Azure tools
-## Azure Policy
+## Managing Azure Arc enabled servers using native Azure tools
+### Azure Policy
 Let's first, explore Azure policy where we can enforce controls and configurations across all our workloads and now with Azure Arc, we will be able to extend this capability to outside of Azure.
 
 Let's deploy an Azure Policy initiative to deploy the log analytics monitoring and dependency agents to the resource group having our three virtual machines to be able to monitor them.
@@ -71,7 +71,7 @@ Once the policy is applied, we can see that our three servers reporting as not c
 We initiate a remediation task to force policy compliance and the installation of the agents and in a couple of minutes we can see that the log analytics and the dependency agents are getting installed on our arc-enabled servers.
 ![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-14.png)
 
-## Azure Security Center
+### Azure Security Center
 In addition to enforcing controls using Azure policy to your Azure arc-enabled servers, we can leverage the power of Azure Security Center to protect servers residing outside of Azure.
 
 Once we on-boarded our servers to Azure Arc, we can see below that Azure Security Center has recommendations to increase the security posture of those servers as if they are hosted on Azure.
@@ -79,15 +79,15 @@ Once we on-boarded our servers to Azure Arc, we can see below that Azure Securit
 
 ![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-16.png)
 
-## Update Management
+### Update Management
 We also get update management to our Azure Arc-enabled servers where we can monitor and deploy updates to those servers and have a single-pane of glass to manage our windows and Linux servers update compliance.
 ![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-17.png)
 
-## VM insights
+### VM insights
 Finally, we can leverage the power of VM insights to monitor our servers' performance and see the service map to understand what connections our servers have with other components.
 ![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-18.png)
 
 ![AzureArc](https://images.seifbassem.com/images/Unboxing/Azure-Arc/Unboxing-Azure-Arc-19.png)
 
-# Summary
+## Summary
 Azure Arc enabled servers is a very powerful solution to help ease the burden of unifying the management, security and monitoring of multi-cloud and hybrid deployments using the same consistent set of capabilities available in Azure.
