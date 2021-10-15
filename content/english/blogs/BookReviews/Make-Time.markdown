@@ -18,6 +18,7 @@ The book introduces very simple , yet effective techniques to take hold of your 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"  src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=seifbassem0f-20&marketplace=amazon&amp;region=US&placement=B078QSCM3V&asins=B078QSCM3V&linkId=7254c7196ee53b5ba9a43bc95e46b601&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
 </iframe>
 
+💡 I'm use Amazon referral links, those links help keep this blog running :rescue_worker_helmet:
 
 ## 🚀 The Book in 4 Sentences
 

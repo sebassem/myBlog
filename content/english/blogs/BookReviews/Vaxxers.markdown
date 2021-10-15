@@ -18,6 +18,7 @@ A book about the story of the Oxford AstraZeneca vaccine , the heroes behind it 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref=tf_til&ad_type=product_link&tracking_id=seifbassem0f-20&marketplace=amazon&amp;region=US&placement=B08W1Y4TM8&asins=B08W1Y4TM8&linkId=e30a11f7244213d4b56c4810adab42e8&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff">
     </iframe>
 
+💡 I'm use Amazon referral links, those links help keep this blog running :rescue_worker_helmet:
 
 ## 🚀 The Book in 4 Sentences
 
