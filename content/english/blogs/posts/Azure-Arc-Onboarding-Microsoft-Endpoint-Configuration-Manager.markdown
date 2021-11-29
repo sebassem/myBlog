@@ -16,6 +16,7 @@ Azure Arc-enabled servers allows you to project your hybrid servers (on-premises
 Most organizations rely on Microsoft Endpoint Configuration Manager to manage their Windows servers; to deploy applications, updates and do various tasks. In this post, I will go through a couple of methods you can use Configuration Manager to onboard your servers to Azure Arc.
 
 The onboarding process to Azure Arc mainly consists of two steps:
+
 1. Installing the Azure Connected Machine agent
 2. Connecting to Azure Arc to onboard the server
 
