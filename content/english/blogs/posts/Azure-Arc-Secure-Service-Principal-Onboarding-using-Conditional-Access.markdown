@@ -5,7 +5,7 @@ images:
 date: 2022-01-04 17:08:42 +0200
 tags: ["Azure","Azure Arc"]
 categories: ["posts"]
-draft: true
+draft: false
 ---
 
 <!--more-->
