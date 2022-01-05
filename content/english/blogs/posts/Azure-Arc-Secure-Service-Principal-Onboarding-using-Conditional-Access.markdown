@@ -2,7 +2,7 @@
 title: "Secure Azure Arc servers onboarding using Conditional Access"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Arc-servers-Conditional-Access/Banner.png"
-date: 2022-01-01 17:08:42 +0200
+date: 2022-01-04 17:08:42 +0200
 tags: ["Azure","Azure Arc"]
 categories: ["posts"]
 draft: true
