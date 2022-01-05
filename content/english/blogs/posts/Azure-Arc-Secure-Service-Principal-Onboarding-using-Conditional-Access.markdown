@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-One of the most common methods of onboarding servers to Azure Arc is using a short-lived service principal with least privilege, yet there are some concerns around having this service principal's identity compromised specially if it's not recycled frequently, where an attacker can use it to onboard other servers outside of your organization.
+One of the most common methods of onboarding servers to Azure Arc is using a short-lived service principal with least privilege (using the **Azure Connected Machine Onboarding** role), yet there are some concerns around having this service principal's identity compromised specially if it's not recycled frequently, where an attacker can use it to onboard other servers outside of your organization.
 
 Recently it was announced in Ignite 2021, that Conditional Access policies (In Preview) can be now applied to not only users but also [workload identities](https://docs.microsoft.com/azure/active-directory/conditional-access/workload-identity#sign-in-logs). This allows applying Conditional Access policies to service principals which adds great flexibility to better secure your identities. In this post, I will test this new capability to only allow Azure Arc onboarding from within one location and block any other attempts to onboard originating from outside of this trusted location.
 
