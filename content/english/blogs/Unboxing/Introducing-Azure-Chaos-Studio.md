@@ -108,7 +108,7 @@ Our main and only node pool has been indeed shutdown and all pods are not runnin
 
 ### Learning from the experiment
 
-This experiment has shown us that our system us not resilient and more work needs to be done to have it production-ready. In this next attempt, I will add an additional node pool and enabled the horizontal pod scaler and re-run the experiment again.
+This experiment has shown us that our system is not resilient and more work needs to be done to have it production-ready. In this next attempt, I will add an additional node pool and enabled the horizontal pod scaler and re-run the experiment again.
 
 Adding an additional node pool.
 
