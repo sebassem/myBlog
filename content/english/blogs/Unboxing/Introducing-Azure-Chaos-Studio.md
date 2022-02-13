@@ -2,7 +2,7 @@
 title: "Azure Chaos Studio - Wreak Chaos in your Azure environment"
 images:
   - "https://images.seifbassem.com/images/Unboxing/Azure-Chaos-Studio/banner.png"
-date: 2022-02-09 17:08:42 +0200
+date: 2022-02-12 17:08:42 +0200
 tags: ["Azure", "Azure Chaos Studio"]
 categories: ["Azure Unboxing"]
 draft: false
