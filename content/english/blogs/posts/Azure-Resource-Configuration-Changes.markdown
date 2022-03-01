@@ -94,6 +94,8 @@ By drilling into this change we can see that the **allowBlobPublicAccess** prope
 
    ![Screenshot showing the allowPublicAccess property change](https://images.seifbassem.com/images/Posts/Azure-Resource-Configuration-changes/14.jpg)
 
+Going into the storage account properties, we can indeed the setting changed to block public access.
+
    ![Screenshot showing the allowPublicAccess property change](https://images.seifbassem.com/images/Posts/Azure-Resource-Configuration-changes/15.jpg)
 
 ## Resources
