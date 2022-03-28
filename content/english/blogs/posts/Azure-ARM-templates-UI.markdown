@@ -10,8 +10,7 @@ draft: false
 
 <!--more-->
 
-Have you ever deployed a complex ARM template with multiple parameters through the portal and thought that the user experience is not that friendly ? Did you have lots of conditional logic in your ARM template and wished there could be a wizard-like experience ? Have you wondered how to replica
-te the native Azure portal resource creation experience? . In this post, I will go through how to create a guided experience to your ARM templates to make it more user-friendly 🚀
+Have you ever deployed a complex ARM template with multiple parameters through the portal and thought that the user experience is not that friendly ? Did you have lots of conditional logic in your ARM template and wished there could be a wizard-like experience ? Have you wondered how to replicate the native Azure portal resource creation experience? . In this post, I will go through how to create a guided experience to your ARM templates to make it more user-friendly 🚀
 
 > TIP
 > You should always look to automate your Infrastructure-as-code process through platforms like GitHub, Azure DevOps ,...etc
