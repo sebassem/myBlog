@@ -298,6 +298,6 @@ In the button code, I need to add my ARM template and reference the UI file I cr
 
 ## References
 
-- Documentation for crating UI interfaces can be found [here](https://docs.mirosoft.com/azure/azure-resource-managermanaged-applications/create-uidefinition-ovrview#outputs)
-- Sandbox for testing nd creating your UI interfaces can be accessed from [here](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade)
+- Documentation for creating UI interfaces can be found [here](https://docs.mirosoft.com/azure/azure-resource-managermanaged-applications/create-uidefinition-ovrview#outputs)
+- Sandbox for testing and creating your UI interfaces can be accessed from [here](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade)
 - You can find all the code for this article in my [GitHub repo](https://github.com/sebassem/Azure-ARM-UI).
