@@ -3,7 +3,7 @@ title: "Adding a user interface to your ARM templates"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-ARM-UI/banner.png"
 date: 2022-03-27 17:08:42 +0200
-tags: ["Azure ARM","Azure"]
+tags: ["Azure ARM","Azure","infrastructure as code"]
 categories: ["posts"]
 draft: false
 ---
