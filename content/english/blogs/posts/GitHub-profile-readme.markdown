@@ -16,7 +16,7 @@ If you work in technology whether you are a developer, an IT pro a DBA, a data s
 >
 > **Yes, please 😄**
 
-Let's take a look at my GitHub account as an example (it should resemble most of the GitHub accounts ).
+Let's take a look at [my GitHub account](https://github.com/sebassem) as an example (it should resemble most of the GitHub accounts ).
 
   ![Screenshot showing seif bassem's github account](https://images.seifbassem.com/images/Posts/GitHub-Profile-Readme/1.jpg)
 
