@@ -2,7 +2,7 @@
 title: "Make your GitHub profile stand-out!"
 images:
   - "https://images.seifbassem.com/images/Posts/GitHub-Profile-Readme/banner.png"
-date: 2022-05-28 17:08:42 +0200
+date: 2022-05-30 17:08:42 +0200
 tags: ["GitHub"]
 categories: ["posts"]
 draft: false
