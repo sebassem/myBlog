@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-If you work in technology whether you are a developer, an IT pro a DBA, a data scientist or something else, most probably you have a GitHub account. You could be an active contributor on the platform or just using content from others' repositories. In all cases, your GitHub account is something that tells a lot about who you are and what impact your are having in your area of expertise, lots of recruiters and hiring managers already look at your GitHub account and activity to evaluate your contributions, skills and ability to learn.
+If you work in technology whether you are a developer, an IT pro a DBA, a data scientist or something else, most probably you have a GitHub account. You could be an active contributor on the platform or just using content from others' repositories. In all cases, your GitHub account is something that tells a lot about who you are and what impact you are having in your area of expertise, lots of recruiters and hiring managers already look at your GitHub account and activity to evaluate your contributions, skills and ability to learn.
 
 > I'm already very active on GitHub and submit daily PRs and issues, should i keep reading ?
 >
