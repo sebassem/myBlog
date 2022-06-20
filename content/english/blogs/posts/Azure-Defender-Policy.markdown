@@ -3,7 +3,7 @@ title: "A better way to enable Azure Defender"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Defender-Policy/banner.png"
 date: 2021-09-10 17:08:42 +0200
-tags: ["Azure","Azure Security Center","Security"]
+tags: ["Azure","Microsoft Defender for Cloud","Security"]
 categories: ["posts"]
 draft: false
 ---
