@@ -190,6 +190,12 @@ hasChildren = true
   url = "categories/book-reviews/"
   name = "Book reviews"
 
+  [[Languages.en.menu.main]]
+  parent = "Categories"
+  weight = 1
+  url = "categories/contributions/"
+  name = "Contributions"
+
 #[[Languages.en.menu.main]]
 #weight = 4
 #name = "Tags"
