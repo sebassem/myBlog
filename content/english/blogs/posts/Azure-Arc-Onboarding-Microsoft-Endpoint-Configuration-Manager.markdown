@@ -3,7 +3,7 @@ title: "Azure Arc Onboarding using Endpoint Configuration Manager"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Arc-MECM/banner.png"
 date: 2021-11-27 17:08:42 +0200
-tags: ["Azure","Azure Arc"]
+tags: ["Azure","Azure Arc","Microsoft Endpoint Manager"]
 categories: ["posts"]
 draft: false
 ---
