@@ -3,7 +3,7 @@ title: "Mastering Microsoft Endpoint Manager - Technical review"
 images:
   - "https://w365community.azurewebsites.net/wp-content/uploads/2021/09/Mastering-MEM.jpg"
 date: 2021-10-10 17:08:42 +0200
-tags: ["Microsoft Endpoint Manager"]
+tags: ["Microsoft Endpoint Manager","Book"]
 categories: ["Contributions"]
 draft: false
 

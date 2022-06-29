@@ -3,7 +3,7 @@ title: "Azure Arc Jumpstart episode - Onboarding using SCCM"
 images:
   - "https://i3.ytimg.com/vi/bj7_phzzMS0/maxresdefault.jpg"
 date: 2022-03-30 17:08:42 +0200
-tags: ["Azure Arc"]
+tags: ["Azure Arc","Microsoft Endpoint Manager"]
 categories: ["Contributions"]
 draft: false
 
