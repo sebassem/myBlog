@@ -2,7 +2,7 @@
 title: "Estimate your Infrastructure-as-code costs before deploying"
 images:
   - "https://images.seifbassem.com/images/Posts/Iaac-Cost-Infracost/banner.png"
-date: 2022-07-01 17:08:42 +0200
+date: 2022-07-03 17:08:42 +0200
 tags: ["Azure","infrastructure as code","Terraform"]
 categories: ["posts"]
 draft: false
