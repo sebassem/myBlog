@@ -13,7 +13,7 @@ draft: false
 The Azure Monitor agent (AMA) is the agent replacing all of Azure Monitor's monitoring agents (Log Analytics, Telegraph and Diagnostics extension). The Log Analytics agent will be retired on 31 August, 2024 so customers should start assessing, planning and migrating whenever possible to this new agent.
 
 >TIP
-> If you need a quick crash course on what the Azure Monitor agent is all about, check out this [blog post](./Azure-Monitor-Agent.markdown).
+> If you need a quick crash course on what the Azure Monitor agent is all about, check out this [blog post](https://www.seifbassem.com/blogs/posts/azure-monitor-agent/).
 
 The Azure Monitor agent has multiple benefits over the legacy agents:
 
