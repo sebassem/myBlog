@@ -9,6 +9,6 @@ draft: false
 
 ---
 
-Azure Workbooks is a fantastic tool to help you visualize data from various sources on Azure. It's a canvas that lets you create eye-catching reports that are useful for monitoring and data analysis. I have been working for some time to create a Microsoft Learn module to help you get started with Workbooks and explore its different capabilities. This module has 8 units and a sandbox environment with a sample application to help you learn using a real-life scenario how to create reports that can help you take actionable decisions regarding your applications.
+Azure Workbooks is a fantastic tool to help you visualize data from various sources on Azure. It's a canvas that lets you create eye-catching reports that are useful for monitoring and data analysis. I have been working for some time to create a [Microsoft Learn module to help you get started with Workbooks](https://learn.microsoft.com/training/modules/visualize-data-workbooks/) and explore its different capabilities. This module has 8 units and a sandbox environment with a sample application to help you learn using a real-life scenario how to create reports that can help you take actionable decisions regarding your applications.
 
   ![Screenshot showing the Microsoft Learn module structure](https://images.seifbassem.com/images/Contributions/MS-Learn-Workbooks/01.jpg)
