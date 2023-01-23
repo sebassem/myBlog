@@ -9,6 +9,6 @@ draft: false
 
 ---
 
-Azure Monitor Workbooks are a fantastic tool to help you visualize data from various sources on Azure. It's a canvas that lets you build eye-catching reports that are useful for monitoring and data analysis. I have been working for some time to build a Microsoft Learn module to help you get started with Workbooks and explore its different capabilities. This module has 8 units and a sandox with a sample application to help you learn using a real-life scenario how to build a report that can help you to actionable decisions regarding your applications.
+Azure Monitor Workbooks are a fantastic tool to help you visualize data from various sources on Azure. It's a canvas that lets you create eye-catching reports that are useful for monitoring and data analysis. I have been working for some time to create a Microsoft Learn module to help you get started with Workbooks and explore its different capabilities. This module has 8 units and a sandox with a sample application to help you learn using a real-life scenario how to create reports that can help you to actionable decisions regarding your applications.
 
   ![Screenshot showing the Microsoft Learn module structure](https://images.seifbassem.com/images/Contributions/MS-Learn-Workbooks/01.jpg)
