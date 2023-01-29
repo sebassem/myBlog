@@ -2,7 +2,7 @@
 title: "Azure Policy gradual rollout with resource selectors"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/banner.png"
-date: 2023-01-29 17:08:42 +0200
+date: 2023-01-29 13:00:42 +0200
 tags: ["Azure","Azure Policy","Governance"]
 categories: ["posts"]
 draft: false
