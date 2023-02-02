@@ -5,7 +5,7 @@ images:
 date: 2023-01-29 13:00:42 +0200
 tags: ["Azure","Azure Policy","Governance"]
 categories: ["posts"]
-draft: false
+draft: true
 ---
 
 <!--more-->
@@ -53,6 +53,10 @@ Now after performing all our tests on the AKS cluster in the *West Europe* regio
   ![Screenshot showing the policy being applied to the east us region](https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/10.jpg)
 
   ![Screenshot showing the policy compliance state](https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/11.jpg)
+
+## Video demonstration
+
+<iframe width="547" height="547" src="https://www.youtube.com/embed/OUCIPP-z8os" title="Azure Policy resource selectors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Summary
 
