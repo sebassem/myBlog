@@ -2,10 +2,10 @@
 title: "Azure Policy gradual rollout with resource selectors"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/banner.png"
-date: 2023-01-29 13:00:42 +0200
+date: 2023-02-02 13:00:42 +0200
 tags: ["Azure","Azure Policy","Governance"]
 categories: ["posts"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -15,6 +15,10 @@ Remember in the old days when using group policy on-premises, you had the flexib
   ![Screenshot showing group policy filtering](https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/01.jpg)
 
 This has now changed with Azure Policy resource selectors which is a new capability in Azure Policy that allows you to gradually rollout a policy by filtering the resources that the assignment is applied to. By the time this post was written, you can scope resource according to location, resource type and resources at the subscription level which do not have a location. This is particularly helpful as you now can gradually rollout an Azure policy by just editing the assignment, you no longer have to edit the definition to do that.
+
+## Video demonstration
+
+<iframe width="547" height="547" src="https://www.youtube.com/embed/OUCIPP-z8os" title="Azure Policy resource selectors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Demo
 
@@ -53,10 +57,6 @@ Now after performing all our tests on the AKS cluster in the *West Europe* regio
   ![Screenshot showing the policy being applied to the east us region](https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/10.jpg)
 
   ![Screenshot showing the policy compliance state](https://images.seifbassem.com/images/Posts/Azure-Policy-Resource-Selectors/11.jpg)
-
-## Video demonstration
-
-<iframe width="547" height="547" src="https://www.youtube.com/embed/OUCIPP-z8os" title="Azure Policy resource selectors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Summary
 
