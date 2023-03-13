@@ -129,6 +129,11 @@ sidebar = ["about-me", "recent-post", "categories", "tags"]
 
 ############################# social site ########################
 [[params.social]]
+title = "YouTube"
+icon = "fab fa-youtube" # Fhemify icon : https://themify.me/themify-icons
+link = "https://www.youtube.com/@seifbassemazure/"
+
+[[params.social]]
 title = "Linkedin"
 icon = "fab fa-linkedin" # Fhemify icon : https://themify.me/themify-icons
 link = "https://www.linkedin.com/in/seif-bassem/"
