@@ -2,7 +2,7 @@
 title: "Welsh Azure User Group - March 2023"
 images:
   - "https://images.seifbassem.com/images/Contributions/Welsh-Azure-User-Group-March/banner.png"
-date: 2023-03-21 17:08:42 +0200
+date: 2023-03-22 17:08:42 +0200
 tags: ["Azure Arc"]
 categories: ["Contributions"]
 draft: false
