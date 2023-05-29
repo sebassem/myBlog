@@ -3,7 +3,7 @@ title: "Run GitHub Actions on your Kubernetes cluster"
 images:
   - "https://images.seifbassem.com/images/Posts/GitHub-actions-runner-k8s/banner.png"
 date: 2023-05-28 17:08:42 +0200
-tags: ["Azure","DevOps","GitHub","Kubernetes"]
+tags: ["Azure","DevOps","GitHub","Kubernetes","Unboxing"]
 categories: ["posts"]
 draft: false
 ---
