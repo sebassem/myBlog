@@ -354,3 +354,4 @@ Using templates can save you a significant amount of time and effort, as you don
 </figure>
 
 - _Azd_ [documentation](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview)
+- The PowerShell menus module I used to create multi-select menus can be found [here](https://github.com/bibistroc/powershell-interactive-menu/blob/master/MultiMenuUsage.md)
