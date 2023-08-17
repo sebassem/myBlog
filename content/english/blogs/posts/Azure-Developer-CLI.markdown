@@ -37,7 +37,7 @@ In this demonstration, I will try to use _azd_ to customize an Azure Web Applica
 3. Check and display the current cores usage Vs the cores limit in the selected region
 4. Prompt for a prefix for the web app
 5. Prompt for a budget limit to enforce on the resource group
-6. Deploy the web application and apply the buget
+6. Deploy the web application and apply the budget
 
 Before we start diving into the code, lets first explore the concept of hooks in _azd_
 
