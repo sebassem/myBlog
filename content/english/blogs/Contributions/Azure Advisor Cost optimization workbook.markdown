@@ -2,7 +2,7 @@
 title: "Azure Advisor Cost Optimization workbook"
 images:
   - "https://images.seifbassem.com/images/Contributions/Advisor-Cost-Optimization-Workbook/banner.png"
-date: 2023-08-18 17:08:42 +0200
+date: 2023-08-16 17:08:42 +0200
 tags: ["Azure","Governance","Cost optimization","Azure Advisor"]
 categories: ["Contributions"]
 draft: false
