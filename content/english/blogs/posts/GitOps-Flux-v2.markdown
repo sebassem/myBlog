@@ -2,10 +2,10 @@
 title: "Continuous deployment using GitOps and Flux V2"
 images:
   - "https://images.seifbassem.com/images/Posts/GitOps-Fluxv2/banner.png"
-date: 2023-07-02 17:08:42 +0200
+date: 2023-09-05 17:08:42 +0200
 tags: ["Azure","GitOps","DevOps"]
 categories: ["posts"]
-draft: true
+draft: false
 ---
 
 <!--more-->
