@@ -2,7 +2,7 @@
 title: "Test your GitHub actions locally on your dev machine"
 images:
   - "https://images.seifbassem.com/images/Posts/Test-github-actions-locally/banner.png"
-date: 2023-09-23 17:08:42 +0200
+date: 2023-09-24 17:08:42 +0200
 tags: ["Azure","Github","DevOps","Bicep"]
 categories: ["posts"]
 draft: true
