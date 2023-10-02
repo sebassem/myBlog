@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-As of October 10th, Windows Server 2012 will no longer be supported by Microsoft. This means that organizations still using this operating system will no longer receive security updates, leaving their systems vulnerable to potential threats. There are multiple paths to overcome this, purchase yearly extended security updates licenses(ESUs), retiring those workloads, upgrading to a newer supported version, migrating those workloads to the cloud or more recently leveraging Azure Arc to deploy extended security updates and get monthly billing so you can stop paying for those ESUs once the servers are migrated to the cloud, retired or no longer on 2012.
+As of October 10th, Windows Server 2012 will no longer be supported by Microsoft. This means that organizations still using this operating system will no longer receive security updates, leaving their systems vulnerable to potential threats. There are multiple paths to overcome this, purchase yearly extended security updates licenses(ESUs), retiring those workloads, upgrading to a newer supported version, migrating those workloads to the cloud, modernize to PaaS services or more recently leveraging Azure Arc to deploy extended security updates and get monthly billing so you can stop paying for those ESUs once the servers are migrated to the cloud, retired or no longer on 2012.
 
 ![Screenshot showing 2012 end of life](https://images.seifbassem.com/images/Posts/Azure-Arc-ESUs/01.png)
 
