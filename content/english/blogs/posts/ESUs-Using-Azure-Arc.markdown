@@ -167,6 +167,73 @@ There are two editions of Windows Server 2012; _Standard_ can be applied to up t
 
 ![Screenshot showing assigning the ESU licenses](https://images.seifbassem.com/images/Posts/Azure-Arc-ESUs/07.png)
 
+- At the time of this post, there is no Azure Policy to link the license at scale. The only way to do this programmatically is use the ARM API.
+
+```powershell
+$location = "<Region where the ESU license is deployed>"
+$subscriptionId = "<SubscriptionId for Arc-enabled servers>"
+$esuSubscriptionId = "<SubscriptionId for Arc-enabled servers>"
+$esuLicenceResourceGroup = "<Resource group where the ESU license is deployed>"
+$licenseName = "<Name of the ESU license>"
+$arcServersResourceGroup = "<Resource group where the Arc-enabled machines are deployed>"
+
+################################################################
+# Uncomment the method you will use to provide the servers list
+## 1. Import using CSV
+## 2. Manually create an array of servers
+## 3. Directly query the Arc-enabled machines
+################################################################
+
+
+###############################################################################
+##1. Importing servers list using a CSV file (Column name should be ServerName)
+###############################################################################
+<#
+$serversListFile = "<Path to the CSV file containing the list of servers>"
+$servers = Import-Csv $serversListFile -Header "ServerName"
+#>
+
+################################################################
+## 2. Manually create an array of servers
+################################################################
+<#
+$servers = @(
+    "server1",
+    "server2"
+)
+#>
+
+################################################################
+## 3. Directly query the Arc-enabled machines
+################################################################
+<#
+Install-Module -Name Az.ConnectedMachine -Force
+$servers = Get-AzConnectedMachine -ResourceGroupName $arcServersResourceGroup -SubscriptionId $subscriptionId | Select-Object -ExpandProperty Name
+#>
+
+Connect-AzAccount
+$licenseId = "/subscriptions/$esuSubscriptionId/resourceGroups/$esuLicenceResourceGroup/providers/Microsoft.HybridCompute/licenses/$licenseName"
+$accessToken = (Get-AzAccessToken).Token
+$headers = @{
+    "Authorization" = "Bearer $accessToken"
+    "Content-Type" = "application/json"
+}
+
+foreach($server in $servers){
+    $Url = "https://management.azure.com/subscriptions/$subscriptionId/resourceGroups/$arcServersResourceGroup/providers/Microsoft.HybridCompute/machines/$server/licenseProfiles/default?api-version=2023-06-20-preview "
+    $body = @{
+        location = $location
+        properties = @{
+            esuProfile = @{
+                assignedLicense = $licenseId
+            }
+        }
+    } | ConvertTo-Json
+
+    Invoke-RestMethod -Method Put -Uri $url -Body $body -Headers $headers
+}
+```
+
 - You can then use any update management solution to push the updates once available. You have to have critical and security updates classification selected in your patch management solution.
 
 ![Screenshot showing SCCM console](https://images.seifbassem.com/images/Posts/Azure-Arc-ESUs/08.png)
