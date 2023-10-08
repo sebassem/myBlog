@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-Watch the new live stream with Gregor Suttie [Azure Arc Jumpstart project](https://www.youtube.com/watch?v=Qn1N26XGULc), where I joined Gregor Suttie to talk about the Azure Arc Jumpstart project and how it can help ramp up on the different Azure Arc technologies and how to get cool sandbox environments.
+Watch the new live stream with Gregor Suttie [Azure Arc Jumpstart project](https://www.youtube.com/watch?v=Qn1N26XGULc), where we talked about the Azure Arc Jumpstart project and how it can help you ramp up on the different Azure Arc technologies and how to get cool sandbox environments for your testing and demos.
 
   <figure class="video_container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Qn1N26XGULc?si=bDkpd8b9sb_3_y1h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
