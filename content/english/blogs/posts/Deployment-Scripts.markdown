@@ -2,7 +2,7 @@
 title: "Do more with your Bicep code by using Deployment Scripts"
 images:
   - "https://images.seifbassem.com/images/Posts/Deployment-Scripts/banner.png"
-date: 2023-09-26 17:08:42 +0200
+date: 2023-10-22 17:08:42 +0200
 tags: ["Azure","Bicep","DeploymentScripts","Infrastructure-as-code"]
 categories: ["posts"]
 draft: false
