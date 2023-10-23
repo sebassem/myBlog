@@ -1,11 +1,11 @@
 ---
-title: "Using Deployment Scripts in Bicep to extend your deployments"
+title: "Do more with your Bicep code by using Deployment Scripts"
 images:
   - "https://images.seifbassem.com/images/Posts/Deployment-Scripts/banner.png"
 date: 2023-09-26 17:08:42 +0200
 tags: ["Azure","Bicep","DeploymentScripts","Infrastructure-as-code"]
 categories: ["posts"]
-draft: true
+draft: false
 ---
 
 <!--more-->
@@ -17,7 +17,7 @@ _Deployment scripts_ is a very interesting feature that allows you to extend you
 - Validating inputs or performing other checks before deployment
 - Creating or modifying resources that are not supported by Bicep/ARM
 - Adding users to a directory
-- Createing an object in Azure Active Directory (Entra ID)
+- Creating an object in Azure Active Directory (Entra ID)
 
 Another key benefit is the ability to specify the script language and platform. Currently, deployment scripts support Azure PowerShell and Azure CLI on the Linux environment. This flexibility allows you to leverage your existing knowledge and skills in these scripting languages, enabling a smooth transition to incorporating deployment scripts into your Azure deployments.
 
