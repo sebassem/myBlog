@@ -251,5 +251,3 @@ foreach($server in $servers){
 - If you have SQL 2012 on the same VM , just [Arc-enable the SQL server](https://learn.microsoft.com/sql/sql-server/azure-arc/connect?view=sql-server-ver16&tabs=windows) by installing the _Azure extension for SQL Server_ and [enable ESU](https://learn.microsoft.com/sql/sql-server/azure-arc/extended-security-updates?view=sql-server-ver16) to get extended security updates for this SQL instance.
 
 * You can apply ESUs to  [some dev/test, DR scenarios](https://learn.microsoft.com/azure/azure-arc/servers/deliver-extended-security-updates#additional-scenarios) at no additional cost via Azure Arc by using predefined tags (first you must have provisioned and activated a WS2012 Arc ESU License intended to be linked to regular Azure Arc-enabled servers running in production environments (i.e., normally billed ESU scenarios)).
-
-![Screenshot showing additional scenarios for ESU](https://images.seifbassem.com/images/Posts/Azure-Arc-ESUs/11.png)
