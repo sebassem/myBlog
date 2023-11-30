@@ -3,7 +3,7 @@ title: "Build PowerShell notebooks using VScode and Polyglot"
 images:
   - "https://images.seifbassem.com/images/Posts/VsCode-Polyglot-notebooks/banner.png"
 date: 2023-11-25 17:08:42 +0200
-tags: ["Azure","VS Code"]
+tags: ["Azure","VS Code","PowerShell"]
 categories: ["posts"]
 draft: false
 ---
