@@ -169,6 +169,8 @@ There are two editions of Windows Server 2012; _Standard_ can be applied to up t
 
 - At the time of this post, there is no Azure Policy to link the license at scale. The only way to do this programmatically is use the ARM API.
 
+**[Update]** There are [newly published Azure Policies](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4864134f-d306-4ff5-94d8-ea4553b18c97) that can help with governing and deploying the extended security updates licenses.
+
 ```powershell
 $location = "<Region where the ESU license is deployed>"
 $subscriptionId = "<SubscriptionId for Arc-enabled servers>"
