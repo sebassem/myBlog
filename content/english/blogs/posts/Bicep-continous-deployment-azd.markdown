@@ -5,7 +5,7 @@ images:
 date: 2023-12-25 17:08:42 +0200
 tags: ["Azure","Azure Developer CLI","Bicep"]
 categories: ["posts"]
-draft: false
+draft: true
 ---
 
 <!--more-->
