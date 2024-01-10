@@ -31,4 +31,3 @@ In this blog , i plan to share articles and thoughts on different Azure solution
 Check also my [YouTube channel](https://www.youtube.com/@seifbassemazure/) for Azure Tips & Tricks.
 
 **Disclaimer**: The blog posts or other publications are my own personal opinions and are by no means associated with my employer.
-
