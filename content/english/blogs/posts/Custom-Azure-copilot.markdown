@@ -114,6 +114,8 @@ We will create the following functions:
   - **getResourceDetailsById :** This function will get all resource properties for an azure resource by its Id.
   - **getResourcesByResourceGroup :** This function will get all resource properties for an azure resource by its resource group.
 
+>**NOTE: This is just a sample of what you can do, additional functions can be provided and you can even have functions that can take actions on your azure environment**
+
 ```PowerShell
 $tools = @(
     @{
