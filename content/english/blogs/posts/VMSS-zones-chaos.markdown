@@ -2,7 +2,7 @@
 title: "Crash test the resiliency of your zone-redundant solution!"
 images:
   - "https://images.seifbassem.com/images/Posts/vmss-zones-chaos-studio/banner.png"
-date: 2024-02-04 17:08:42 +0200
+date: 2024-02-06 17:08:42 +0200
 tags: ["Azure","Reliability","Chaos Studio"]
 categories: ["posts"]
 draft: false
