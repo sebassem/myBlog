@@ -2,7 +2,7 @@
 title: "Continuously deploy your infrastructure via Bicep and azd"
 images:
   - "https://images.seifbassem.com/images/Posts/Bicep-continous-deployment-azd/banner.png"
-date: 2023-12-25 17:08:42 +0200
+date: 2024-02-13 17:08:42 +0200
 tags: ["Azure","Azure Developer CLI","Bicep"]
 categories: ["posts"]
 draft: true
