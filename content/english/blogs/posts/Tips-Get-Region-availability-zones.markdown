@@ -41,7 +41,7 @@ Write-Host "AvailabilityZonePeering feature is Successfully registered."
 
 ## Getting the availability zones information
 
-To call this endpoint using PowerShell, we need first to select the region we want to get this information for and get an bearer token for authentication.
+To call this endpoint using PowerShell, we need first to select the region we want to get this information for and get a bearer token for authentication.
 
 > **NOTE: To call the endpoint, you need to have the necessary RBAC permissions on the subscriptions to submit a `POST` request**
 
