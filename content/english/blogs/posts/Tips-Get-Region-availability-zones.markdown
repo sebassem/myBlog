@@ -12,6 +12,8 @@ draft: false
 
 Recently I was working on a Bicep project and I needed to find if a given Azure region supports availability zones or not and if it does, then what are the zones available in that region to ensure that the deployed resources are deployed in a reliable manner. Currently, the only way to find this information is using the ARM API through the `checkZonePeers` endpoint. In this blog post, I will go through how you can call it using PowerShell to get this information and also how to use this endpoint in your Bicep code to get the zones dynamically.
 
+> **NOTE: I recently found a Bicep function that can find the zones supported by a resource in a specific region. Its called [pickZones](https://learn.microsoft.com/azure/azure-resource-manager/bicep/bicep-functions-resource#pickzones)**
+
 ![Screenshot showing the availability zones diagram for a specif azure region](https://images.seifbassem.com/images/Posts/Get-zones-for-region/01.png)
 
 ## Pre-requisites
