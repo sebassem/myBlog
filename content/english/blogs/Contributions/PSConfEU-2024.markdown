@@ -13,13 +13,13 @@ I had the incredible opportunity to participate and deliver two sessions in the 
 
 ## My sessions
 
-- **Azure Arc Unleashed: Engage, Learn, and Master:** Co-presented with my colleague Jan Egil Ring we delivered a 90-minutes follow-along session where we talked about the value of Azure Arc, the Azure Arc Jumpstart project and how to leverage it's content and lots of hands-on demos.
+**Azure Arc Unleashed: Engage, Learn, and Master:** Co-presented with my colleague Jan Egil Ring we delivered a 90-minutes follow-along session where we talked about the value of Azure Arc, the Azure Arc Jumpstart project and how to leverage it's content and lots of hands-on demos.
 
   <figure class="video_container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/OsiOGjujCYw?si=odZ60d1Y6ONNjzr-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </figure>
 
-- **Azure Verified Modules (AVM):** The format of this session was really fun where I needed to deliver a topic using exactly 20 slides with exactly 20 seconds per slide. In this session, I talked about what is AVM, why was it created, what value does it bring and how to start using it whether you are using Bicep or Terraform.
+**Azure Verified Modules (AVM):** The format of this session was really fun where I needed to deliver a topic using exactly 20 slides with exactly 20 seconds per slide. In this session, I talked about what is AVM, why was it created, what value does it bring and how to start using it whether you are using Bicep or Terraform.
 
   <figure class="video_container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/n6KDWwvCqGc?si=fVeap0GoWdSm0zLv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
