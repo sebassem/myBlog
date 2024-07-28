@@ -3,7 +3,7 @@ title: "Azure Greg chats with Seif Bassem about Azure Arc JumpStart"
 images:
   - "https://i3.ytimg.com/vi/Qn1N26XGULc/maxresdefault.jpg"
 date: 2023-10-07 17:08:42 +0200
-tags: ["Azure Arc"]
+tags: ["Azure Arc","Events"]
 categories: ["Contributions"]
 draft: false
 

@@ -3,7 +3,7 @@ title: "Festive Tech Calendar 2022 - Build Azure outside of Azure"
 images:
   - "https://images.seifbassem.com/images/Contributions/Festive-tech-calendar-2022/banner.png"
 date: 2023-01-14 17:08:42 +0200
-tags: ["Azure Arc"]
+tags: ["Azure Arc","Events"]
 categories: ["Contributions"]
 draft: false
 
