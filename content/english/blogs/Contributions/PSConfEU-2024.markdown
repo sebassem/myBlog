@@ -28,3 +28,10 @@ I had the incredible opportunity to participate and deliver two sessions in the 
 ## My experience
 
 The event was incredible with lots of very informative and interesting sessions. The cool thing is that all sessions are recorded and posted on YouTube. I highly recommend watching this year's and previous year's recordings, you will definitely learn a thing or two.
+
+## References
+
+- [Azure Arc Jumpstart project](https://aka.ms/arcjumpstart)
+- [Azure Arc overview](https://learn.microsoft.com/azure/azure-arc/overview)
+- [PSConfEU 2024 sessions recordings](https://www.youtube.com/playlist?list=PLDCEho7foSor3zw2nZVi4AR100bRr6Ehs)
+- [PSConfEU website](https://psconf.eu/)
