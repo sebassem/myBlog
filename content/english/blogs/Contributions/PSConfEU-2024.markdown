@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-I had the incredible opportunity to participate and deliver two sessions in the [PowerShell Conference Europe (PSConfEU) 2024](https://psconf.eu/) during the month of June in the city of Antwerp. This is a community-driven event established back in 2016, and Europe's largest PowerShell conference. With about 300 automation experts from 35 countries meeting 45 world class speakers, and some members of Microsoft's Engineering teams, the annual event is an opportunity for IT Professionals and developers to connect, learn and share on PowerShell and automation topics, bringing home new insights.
+I had an incredible opportunity to participate and deliver two sessions in the [PowerShell Conference Europe (PSConfEU) 2024](https://psconf.eu/) during the month of June in the city of Antwerp. This is a community-driven event established back in 2016, and Europe's largest PowerShell conference. With about 300 automation experts from 35 countries meeting 45 world class speakers, and some members of Microsoft's Engineering teams, the annual event is an opportunity for IT Professionals and developers to connect, learn and share on PowerShell and automation topics, bringing home new insights.
 
 ## My sessions
 
