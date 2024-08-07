@@ -2,7 +2,7 @@
 title: "Bicep - Custom-tagged union data type"
 images:
   - "https://images.seifbassem.com/images/Posts/custom-tagged-union-data-type/banner.png"
-date: 2024-07-28 17:08:42 +0200
+date: 2024-08-06 17:08:42 +0200
 tags: ["Azure","Bicep","Infrastructure-as-code"]
 categories: ["posts"]
 draft: false
