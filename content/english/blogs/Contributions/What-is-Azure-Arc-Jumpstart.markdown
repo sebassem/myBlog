@@ -2,14 +2,14 @@
 title: "The Azure Arc Jumpstart project"
 images:
   - "https://images.seifbassem.com/images/Contributions/Azure-Arc-Jumpstart/banner.png"
-date: 2024-08-14 17:08:42 +0200
+date: 2024-08-31 17:08:42 +0200
 tags: ["Azure","Azure Arc"]
 categories: ["Contributions"]
 draft: false
 
 ---
 
-I have been part of the Azure Arc Jumpstart project since 2022 and I often get asked what is it and how it can help me? In this video John Savill gives a nice overview about the Jumpstart project and talks about the different ways it can help you learn all about Azure Adaptive Cloud and the various assets it has.
+I have been part of the Azure Arc Jumpstart project since 2022 and I often get asked what is it and how it can help me? In this video John Savill gives a nice overview about the Jumpstart project and talks about the different ways it can help you learn about the Azure Adaptive Cloud and it's various technologies.
 
   <figure class="video_container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/VvoZp69NiRk?si=BBeeAFfDOqYENL2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
