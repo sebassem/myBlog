@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/cicd-runners-and-agents/banner.png"
 date: 2024-09-10 17:08:42 +0200
 tags: ["Azure","Bicep","Infrastructure-as-code","Azure-Landing-Zones"]
-categories: ["posts"]
+categories: ["Contributions"]
 draft: false
 ---
 
