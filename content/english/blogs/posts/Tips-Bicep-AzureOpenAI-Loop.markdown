@@ -1,5 +1,5 @@
 ---
-title: "Tips - Deploying multiple Azure OpenAI models"
+title: "Tips - Deploying multiple Azure OpenAI models using Bicep"
 images:
   - "https://images.seifbassem.com/images/Posts/AOAI-Bicep-Multiple-Models/banner.png"
 date: 2024-10-29 17:08:42 +0200
