@@ -10,7 +10,9 @@ draft: false
 
 <!--more-->
 
-I was recently developing some Bicep code to deploy Azure OpenAI and a couple of OpenAI models on Azure. I hit a strange error when I tried to deploy multiple models using loop.
+I was recently developing some Bicep code to deploy Azure OpenAI and a couple of OpenAI models on Azure. I hit a strange error when I tried to deploy multiple models iteratively using loops.
+
+> Another operation is being performed on the parent resource '/subscriptions/xxxxxxxxxxxxxxxx/resourceGroups/rg-openai/providers/Microsoft.CognitiveServices/accounts/sbazoi3434'. Please try again later.
 
 ### Problematic code
 
