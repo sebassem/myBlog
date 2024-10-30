@@ -53,7 +53,7 @@ First, we need to define a schedule when this new team will be created. As an ex
 
 ![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-5.png)
 
-Then, we will use the [create team endpoint ]([https://link](https://docs.microsoft.com/en-us/graph/api/team-post?view=graph-rest-beta&tabs=http)) in the graph api and pass along our new template ID
+Then, we will use the [create team endpoint ](https://docs.microsoft.com/en-us/graph/api/team-post?view=graph-rest-beta&tabs=http) in the graph api and pass along our new template ID
 
 ![Windows10_With_Teams](https://images.seifbassem.com/images/Posts/Plan-Windows-10-Teams/Windows10-teams-6.png)
 
