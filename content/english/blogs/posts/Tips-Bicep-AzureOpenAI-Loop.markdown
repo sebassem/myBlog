@@ -3,7 +3,7 @@ title: "Tips - Deploying multiple Azure OpenAI models"
 images:
   - "https://images.seifbassem.com/images/Posts/AOAI-Bicep-Multiple-Models/banner.png"
 date: 2024-10-29 17:08:42 +0200
-tags: ["Azure","Troubleshooting","Tips","INFRASTRUCTURE-AS-CODE","Bicep","Azure-OpenAI","AI"]
+tags: ["Azure","Troubleshooting","Tips","INFRASTRUCTURE-AS-CODE","Bicep","Azure-OpenAI"]
 categories: ["posts"]
 draft: false
 ---
