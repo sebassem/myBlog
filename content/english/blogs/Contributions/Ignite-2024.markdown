@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Ignite 2024"
 images:
-  - "https://images.seifbassem.com/images/Contributions/Ignite-2024/banner.png"
+  - "https://images.seifbassem.com/images/Contributions/Ignite-2024/session.png"
 date: 2024-11-06 17:08:42 +0200
 tags: ["Events","Ignite","Adaptive Cloud","Azure Arc Jumpstart"]
 categories: ["Contributions"]
@@ -15,7 +15,7 @@ I had an incredible opportunity to travel to Microsoft Ignite 2024 to deliver on
 
 **Explore next-gen industrial transformation architecture patterns:** Co-presented with my colleagues from the Azure Arc Jumpstart team, we will host a 4 hours workshop where you will experience the latest industry innovations using Azure services across Infrastructure, applications and AI.
 
-  ![Screenshot showing the Ignite session](https://images.seifbassem.com/images/Contributions/Ignite-2024/session.png)
+  ![Screenshot showing the Ignite session](https://images.seifbassem.com/images/Contributions/Ignite-2024/01.jpg)
 
   ![Screenshot showing the Ignite session picture 1](https://images.seifbassem.com/images/Contributions/Ignite-2024/ignite1.jpg)
 
