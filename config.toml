@@ -3,7 +3,7 @@ baseURL = "https://www.seifbassem.com/"
 title = "Seif Bassem's cloud blog"
 theme = "editor"
 # post pagination
-paginate = "12"
+#paginate = "12"
 # post excerpt
 summaryLength = "10"
 # google analytics
