@@ -19,4 +19,6 @@ Join us on this event where we will walk you through a demo-packed session on ho
 
 📈 Create and monitor a baseline for your workloads to stay resilient and performant.
 
-Event registration link: [https://aka.ms/AzureEssentialsEvent](https://aka.ms/AzureEssentialsEvent)
+Event link: [https://aka.ms/AzureEssentialsEvent](https://techcommunity.microsoft.com/event/azureevents/proactively-design-deploy--monitor-resilient-azure-workloads/4368683)
+
+      {{< youtube soWJJ3BySwc >}}
