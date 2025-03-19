@@ -1,11 +1,11 @@
 ---
 title: "Azure Landing Zones - Subscription Vending"
 images:
-  - "https://images.seifbassem.com/images/Posts/custom-tagged-union-data-type/banner.png"
-date: 2024-08-06 17:08:42 +0200
+  - "https://images.seifbassem.com/images/Contributions/ALZ-Sub-Vending/banner.png"
+date: 2025-03-18 17:08:42 +0200
 tags: ["Azure","Bicep","Infrastructure-as-code","Azure-Landing-Zones"]
-categories: ["posts"]
-draft: true
+categories: ["Contributions"]
+draft: false
 ---
 
 <!--more-->
@@ -18,23 +18,6 @@ However, implementing subscription democratization is not without its challenges
 
 ## Why do we need Subscription vending?
 
-Subscription vending streamlines the process by providing an official entry point for application teams to request subscriptions, removing the need for them to navigate the process independently. This accelerates access to application landing zones, enabling quicker workload onboarding. Additionally, it allows the platform team to enforce governance on these zones with minimal effort.
+In this article, I provide an overview on what Subscription Vending modules are, how they can help you and what are the latest features and capabilities have been introduced in the Bicep module.
 
-Ideally the process should look like this:
-
-1. Collect subscription request data (workload information, display name, tags, role assignments, resource providers and features, peering to hub,...etc )
-2. Initiate platform automation ()
-3. Create the subscription by using infrastructure-as-code
-
-![Screenshot showing the Subscription vending process](https://learn.microsoft.com/azure/architecture/landing-zones/images/subscription-vending-components.png)
-
-## Subscription vending implementation
-
-
-## Resources
-
-https://registry.terraform.io/modules/Azure/lz-vending/azurerm/latest/submodules/subscription
-https://github.com/Azure/bicep-registry-modules/tree/main/avm/ptn/lz/sub-vending
-https://learn.microsoft.com/azure/architecture/landing-zones/subscription-vending
-https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/subscription-vending
-https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/subscription-vending-product-lines
+Article: <https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/subscription-vending-now-and-beyond/4391137>
