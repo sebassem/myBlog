@@ -585,6 +585,8 @@ Deploying the Azure OpenAI service or AI services.
 
 >**NOTE:** Note how we securely export the Azure OpenAI service secrets to KeyVault seamlessly within the module using the `secretsExportConfiguration` property.
 
+>**NOTE:** You can also restrict outbound traffic from your Azure OpenAI instance to a list of FQDNs which gives further control on what URLs your service is communicating with via `restrictOutboundNetworkAccess` and `allowedFqdnList` properties. More details on that can be found in this very informative [blog post](https://journeyofthegeek.com/2025/04/30/azure-openai-service-controlling-outbound-access/).
+
 Deploying the Azure AI search service.
 
    ```python
