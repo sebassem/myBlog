@@ -3,7 +3,7 @@ title: "Simplifying private deployment of Azure AI services using AVM"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-AI-Services-Private-Deployment/banner.png"
 date: 2025-05-06 17:08:42 +0200
-tags: ["Azure","AI","IaaC","Bicep","Security"]
+tags: ["Azure","AI","IaaC","Bicep","Security","OpenAI","AI Foundry"]
 categories: ["posts"]
 draft: false
 ---
@@ -841,7 +841,7 @@ Deploying AI Foundry project where developers would do the work. You can notice 
 
 We've seen in the above modules, that we set the role assignments within the module definition but since the RBAC roles needed are a little bit interwinded, there can be some circular dependencies so we won't be able to do all of them within each module. We will have to additionally define some required assignments. Reference to all assignments needed can be found [here](https://learn.microsoft.com/azure/ai-services/openai/how-to/on-your-data-configuration#role-assignments)
 
->**Update:** [New Role assignments](https://learn.microsoft.com/azure/machine-learning/how-to-managed-network?view=azureml-api-2&tabs=new-workspace&pivots=cli#approval-of-private-endpoints) have been added for the machine learning workspace identity to be able to automatically approve private endpoints: 
+>**Update:** [New Role assignments](https://learn.microsoft.com/azure/machine-learning/how-to-managed-network?view=azureml-api-2&tabs=new-workspace&pivots=cli#approval-of-private-endpoints) have been added for the machine learning workspace identity to be able to automatically approve private endpoints:
 
 ```python
 module azureAIfoundrySearchRoleAssignment 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.1' = {
