@@ -15,10 +15,9 @@ draft: false
 Large Language Models (LLMs) like GPT-4, Claude, and Gemini have become the engines powering everything from chatbots to advanced research tools. But as these models grow more capable, one question looms larger than ever: How do we really know they work as intended?
 
 Evaluating LLMs isn’t just about measuring accuracy on benchmark datasets. It’s about understanding how they reason, whether they produce reliable outputs, and how their performance varies across different tasks, user prompts, and languages. Robust evaluation frameworks help us compare models, detect biases, uncover hidden limitations, and build trust in AI systems.
-
 Instead of relying on one-time benchmark tests, teams are increasingly embedding LLM evaluation into their development workflows. By integrating evaluations directly into CI/CD pipelines, especially with tools like GitHub Actions, developers can automatically validate model performance every time new prompts, data, or model configurations are changed. This approach makes it possible to catch regressions, monitor bias, and track quality over time without manual intervention. Continuous evaluation pipelines help ensure that LLM-powered applications stay reliable, up-to-date, and aligned with user expectations as they evolve.
 
-In this post, we’ll setup a very simple pipeline using an open-source evaluation framework from LangChain (OpenEvals) to evaluate our LLM whenever a change is introduced to our our model or system prompt. Whether you’re building AI products or maintaining enterprise-grade workflows, understanding how to automate LLM evaluation will give you a powerful toolkit for deploying models you can trust.
+In this post, we’ll setup a very simple pipeline using an open-source evaluation framework from LangChain (OpenEvals) to evaluate our LLM whenever a change is introduced to our model or system prompt. Whether you’re building AI products or maintaining enterprise-grade workflows, understanding how to automate LLM evaluation will give you a powerful toolkit for deploying models you can trust.
 
    ![Screenshot showing the github action summary with LLM evaluation results](https://images.seifbassem.com/images/Posts/llm-evaluation-openeval/01.png)
 
