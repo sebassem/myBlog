@@ -49,7 +49,7 @@ Visual Studio Code already includes three default chat modes that most of us use
 
 I will then provide the details of how my **Blog research** mode should respond and what tools will be available to it:
 
-```markdown
+```Markdown
 ---
 description: 'Conduct deep technical research and provide comprehensive citations and references to help users understand a certain topic before writing a blog post about it, provide ideas, suggestions and recommendations on how the blog post should like look.'
 tools: ['codebase', 'fetch', 'search', 'githubrepo', 'microsoft_docs_Search', 'websearch']
@@ -82,7 +82,7 @@ Prompt: **`I want to write a blog post on Azure AKS fleet manager`**
 
 ![Screenshot showing vscode custom chat mode response](https://images.seifbassem.com/images/Posts/Github-Copilot-Custom-Chat-Modes/06.png)
 
-```markdown
+```Markdown
 Here’s a focused research brief to help you shape a strong blog post on Azure Kubernetes Fleet Manager (AKS Fleet); I’ll synthesize what matters most and give you concrete angles to write about next.
 
 ## Checklist
@@ -188,7 +188,7 @@ GitHub Copilot did a great job adhering to my instructions providing the respons
 
 I will follow the same steps to create another mode for helping me author and format a blog post.
 
-```markdown
+```Markdown
 ---
 description: 'Conduct analysis of a markdown blog post and help the user turn it into clean, well-organized post using correct grammar, logical structure, clarity and polished formatting'
 tools: ['codebase', 'fetch', 'search', 'githubrepo', 'microsoft_docs_Search', 'websearch']
@@ -228,7 +228,7 @@ Prompt: `review this blog post`
 
 ![Screenshot showing vscode custom chat mode response](https://images.seifbassem.com/images/Posts/Github-Copilot-Custom-Chat-Modes/07.png)
 
-```markdown
+```Markdown
 Here’s a quick plan: I’ll fix grammar/typos, tighten and reorganize the structure, and polish the markdown (headings, emojis, front matter) while preserving your voice and intent.
 
 - Checklist
