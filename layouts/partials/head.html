@@ -19,6 +19,10 @@
 {{ end }}
 {{ end }}
 
+{{ if .Site.Params.customHeadHTML }}
+    {{ .Site.Params.customHeadHTML | safeHTML }}
+{{ end }}
+
 {{ with .Params.image }}
 <meta property="og:image" content="{{ . | absURL }}" />
 {{ end }}

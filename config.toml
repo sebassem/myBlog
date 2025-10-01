@@ -71,7 +71,6 @@ mainSections = ["blogs"]
 # custom script on header
 custom_script= ""
 customHeadHTML= """
-{{ if not .Site.IsServer }}
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
