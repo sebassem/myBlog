@@ -7,9 +7,6 @@ tags: ["AI Infrastructure","Azure","AI","LLMs","Kubernetes"]
 categories: ["posts"]
 draft: false
 ---
-
-Self-Hosting LLMs on Kubernetes Part 1: How LLMs and GPUs Work
-
 <!--more-->
 
 ## Large language models primer
