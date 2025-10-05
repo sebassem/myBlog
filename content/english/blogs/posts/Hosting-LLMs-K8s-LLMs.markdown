@@ -9,7 +9,7 @@ draft: false
 ---
 <!--more-->
 
-## Large language models primer
+## The Basics: How LLMs Store and Use Knowledge
 
 Large Language Models (LLMs) are incredible tools, instantly turning complex queries into human-like text. But how does this magic actually happen on the hardware that powers it, the GPU (Graphics Processing Unit)? Before we get into hosting LLMs on Kubernetes, and how to optimize inference there, let's first understand how actually GPUs work to enable LLMs to do their magic.
 
@@ -26,11 +26,11 @@ Consider an AI model built to flag incoming emails as spam or not spam:
 
 Now that we understand what model weights are, let's explore how LLMs use these weights during inference—and why GPUs are essential to this process.
 
-### The GPU Engine: How LLM Inference Turns Your Prompt into a Reply
+## The GPU Engine: How LLM Inference Turns Your Prompt into a Reply
 
-#### Part 1: LLMs 101 – The Prediction Machine
+### Part 1: LLMs 101 – The Prediction Machine
 
-##### What an LLM Sees when you send your prompt
+#### What an LLM Sees when you send your prompt
 
 When you type a prompt, the LLM doesn't see words. It sees **tokens**. A token is a chunk of text, it could be a whole word, a part of a word, or even just punctuation.
 
@@ -40,7 +40,7 @@ When you type a prompt, the LLM doesn't see words. It sees **tokens**. A token i
 
 Everything the LLM learned from its massive training data (trillions of tokens!) is stored as a colossal collection of numbers, called **weights** or **parameters** as we discussed earlier. In the case of LLM models, think of these weights as a giant, incredibly complex set of rules that governs how likely one token is to follow another.
 
-##### How it Works: The Next Token Game
+#### How it Works: The Next Token Game
 
 When you ask an LLM a question, its only job is to calculate the single most likely token that should come next.
 
@@ -59,7 +59,7 @@ When you ask an LLM a question, its only job is to calculate the single most lik
 ![Screenshot showing the tokenization process](https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-LLMs/3.png)
 
 
-#### Part 2: The GPU Enters the Ring
+### Part 2: The GPU Enters the Ring
 
 If an LLM's job is to do one calculation after another, why do we need a Graphics Processing Unit (GPU) instead of a regular Central Processing Unit (CPU)?
 
@@ -78,15 +78,15 @@ The LLM's matrix calculations are parallel, meaning you can break them into thou
 
 ![Screenshot showing a cpu and gpu](https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-LLMs/01.png)
 
-#### Part 3: The Token Generation Loop – The Iterative Dance
+### Part 3: The Token Generation Loop – The Iterative Dance
 
 This is where the magic happens and where the GPU shows its value. Remember that an LLM only predicts **one** token at a time. This means generating an entire sentence is a continuous, iterative cycle.
 
 Let's see what happens step-by-step when you type a prompt and the LLM and GPU work together.
 
-###### **Input Prompt: "If you are happy and you know it"**
+##### **Input Prompt: "If you are happy and you know it"**
 
-##### Step 1: Prefill (The Initial Kick-off)
+#### Step 1: Prefill (The Initial Kick-off)
 
 The entire input prompt (`[If] [you] [are] [happy] [and] [you] [know] [it]`) is sent to the GPU.
 
@@ -97,7 +97,7 @@ The entire input prompt (`[If] [you] [are] [happy] [and] [you] [know] [it]`) is 
 
 ![Screenshot showing the prefill diagram](https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-LLMs/4.png)
 
-##### What is the KV Cache?
+#### What is the KV Cache?
 
 Before we dive into the next step, let's understand a critical optimization that makes LLM inference fast: the **KV Cache** (Key-Value Cache).
 
@@ -109,7 +109,7 @@ Think of the KV Cache as the GPU's **working memory**:
 
 The KV Cache grows with each new token generated, which is why GPU memory (VRAM) is such a critical resource in LLM inference. We'll see this optimization in action in the next step. Here is a [very simple video to explain the idea](https://www.youtube.com/watch?v=G3Fqq6cqOrc).
 
-##### Step 2: The Loop Begins (Token #1)
+#### Step 2: The Loop Begins (Token #1)
 
 The LLM selects `clap` and adds it to the sequence.
 
@@ -118,7 +118,7 @@ The LLM selects `clap` and adds it to the sequence.
 > ***Optimization Note (KV Cache):*** Crucially, the GPU is smart. It has already **cached** the calculations for "If you are happy and you know it" in its VRAM so it just retrieves it. It only performs the complex, full-sequence math on the *new* token (`your`) and combines it with the saved results. This dramatically speeds up the loop!
 * **Result:** The LLM predicts the next most likely token is **`your`**.
 
-#### Step 3: The Loop Continues (Token #2)
+### Step 3: The Loop Continues (Token #2)
 
 The LLM selects `your` and adds it to the sequence.
 
