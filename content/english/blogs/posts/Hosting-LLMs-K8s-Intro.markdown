@@ -1,9 +1,9 @@
 ---
-title: "AI Infrastructure Deep Dive: Self-Hosting LLMs on Kubernetes - Intro"
+title: "Self-Hosting LLMs on Kubernetes: Intro"
 images:
   - "https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-Intro/banner.png"
 date: 2025-09-28 17:08:42 +0200
-tags: ["Azure","AI","LLMs","Kubernetes"]
+tags: ["AI Infrastructure","Azure","AI","LLMs","Kubernetes"]
 categories: ["posts"]
 draft: false
 ---
@@ -107,7 +107,10 @@ Hosting LLMs on Kubernetes is not as easy as using managed services, it requires
 
 I will try to tackle most of the topics in the above checklist to demonstrate and demo how to host, manage, operate, monitor and scale a large language model on Kubernetes. I will use Azure Kubernetes Service (AKS) as my Kubernetes platform but the concepts should be the same across different platforms or self-hosted Kubernetes.
 
-> **Stay tuned for Part 1**
+## Series map
+
+1. **Introduction**
+2. **How LLMs and GPUs work?**
 
 ## Resources
 
