@@ -132,7 +132,7 @@ This loop, calculate, select, append, calculate again, repeats until the LLM gen
 
 ## Laying the Foundation
 
-Hopefully, this gives a high-level idea on how GPUs enable LLMs to do what they do. As we move into the next posts, we'll understand more what are the different technologies and techniques that we need to consider managing and optimizing the inference on our GPUs.
+Hopefully, this gives a high-level idea on how GPUs enable LLMs to do what they do. As we move into the next posts, we'll understand more what are the different technologies and techniques that we need to consider managing and optimizing the inference process on our GPUs to get the most out of them.
 
 ## Series map
 
