@@ -132,7 +132,11 @@ This loop, calculate, select, append, calculate again, repeats until the LLM gen
 
 ## Laying the Foundation
 
-Hopefully, this gives a high-level idea on how GPUs enable LLMs to do what they do. As we move into the next posts, we'll understand more what are the different technologies and techniques that we need to consider managing and optimizing the inference process on our GPUs to get the most out of them.
+We've covered the essentials: LLMs generate text one token at a time through matrix multiplication, GPUs excel at this with thousands of parallel cores, and the KV Cache is the critical optimization that keeps inference fast by avoiding redundant calculations.
+
+But understanding how it works is just the beginning. The real challenge comes when you're running production workloads: How do you optimize GPU utilization?
+
+In the next post, we'll tackle **GPU optimization techniques** that make LLM inference efficient and cost-effective on Kubernetes.
 
 ## Series map
 
