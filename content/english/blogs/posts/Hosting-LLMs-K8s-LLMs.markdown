@@ -9,6 +9,14 @@ draft: false
 ---
 <!--more-->
 
+
+#### Series map
+
+1. [**Introduction**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-intro/)
+2. **How LLMs and GPUs work?**
+
+------------
+
 ## The Basics: How LLMs Store and Use Knowledge
 
 Large Language Models (LLMs) are incredible tools, instantly turning complex queries into human-like text. But how does this magic actually happen on the hardware that powers it, the GPU (Graphics Processing Unit)? Before we get into hosting LLMs on Kubernetes, and how to optimize inference there, let's first understand how actually GPUs work to enable LLMs to do their magic.
@@ -137,8 +145,3 @@ We've covered the essentials: LLMs generate text one token at a time through mat
 But understanding how it works is just the beginning. The real challenge comes when you're running production workloads: How do you optimize GPU utilization?
 
 In the next post, we'll tackle **GPU optimization techniques** that make LLM inference efficient and cost-effective on Kubernetes.
-
-## Series map
-
-1. [**Introduction**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-intro/)
-2. **How LLMs and GPUs work?**

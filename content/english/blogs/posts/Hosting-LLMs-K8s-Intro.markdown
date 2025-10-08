@@ -10,6 +10,14 @@ draft: false
 
 <!--more-->
 
+#### Series map
+
+1. **Introduction**
+2. [**How LLMs and GPUs work?**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-llms/)
+
+
+------------
+
 The AI infrastructure landscape is evolving rapidly. While managed platforms like Azure AI Foundry, Amazon Bedrock and Google Vertex AI have democratized access to powerful models, a growing number of enterprises are exploring a complementary approach: self-hosting LLMs on Kubernetes. Why? The reasons range from cost optimization at scale to meeting stringent compliance requirements, achieving ultra-low latency, and gaining control over cutting-edge open-source models. In this series, I'll share practical insights from my journey exploring this ecosystem, covering the architecture decisions, technical trade-offs and operational patterns that make Kubernetes-based LLM hosting a viable option for specific use cases.
 
 > This initial post is an introduction to the series, discussing at a high-level the motivation behind hosting LLMs on Kubernetes. Throughout this post there will be some new and unfamiliar terms and technologies, I will go through most of them in more details in the future posts of the series.
@@ -106,11 +114,6 @@ Hosting LLMs on Kubernetes is not as easy as using managed services, it requires
 ## What to expect from the upcoming posts
 
 I will try to tackle most of the topics in the above checklist to demonstrate and demo how to host, manage, operate, monitor and scale a large language model on Kubernetes. I will use Azure Kubernetes Service (AKS) as my Kubernetes platform but the concepts should be the same across different platforms or self-hosted Kubernetes.
-
-## Series map
-
-1. **Introduction**
-2. [**How LLMs and GPUs work?**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-llms/)
 
 ## Resources
 
