@@ -13,7 +13,8 @@ draft: false
 #### Series map
 
 1. [**Introduction**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-intro/)
-2. **How LLMs and GPUs work?**
+2. [**How LLMs and GPUs work?**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-intro/)
+3. **GPU optimization**
 
 ------------
 
