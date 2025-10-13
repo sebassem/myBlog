@@ -78,7 +78,7 @@ resources:
 
 ### Quantization
 
-Quantization reduces the precision of the model's weights, typically from 32-bit floating-point (FP32) to lower precision formats like 16-bit floating-point (FP16), 8-bit integer (INT8), or even 4-bit integer (INT4), this leads to cutting memory footprint and speeding up compute.
+Quantization reduces the precision of the model's weights, typically from 32-bit floating point (FP32) to lower precision formats like 16-bit floating point (FP16), 8-bit integer (INT8), or even 4-bit integer (INT4), this leads to cutting memory footprint and speeding up compute.
 
 #### How it helps:
 
