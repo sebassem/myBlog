@@ -94,7 +94,7 @@ Usually, LLM serving frameworks like vLLM handle quantization transparently.
 
 ###  GPU Time-Slicing (Fractional GPU)
 
-For GPUs that don't support MIG, or when you need more flexible sharing than MIG's static partitioning, GPU time-slicing can be used. This allows multiple pods to share a single GPU by scheduling their execution in a time-sliced manner.
+For GPUs that don't support MIG, or when you need more flexible sharing than MIG's static partitioning, GPU time-slicing can be used. This allows multiple pods to share a single GPU by scheduling their execution in a time-sliced manner. Multiple processes take turns operating on the full GPU through a round-robin context switching mechanism.
 
 In Kubernetes you would usually create a configMap to define how many time-sliced shares each GPU should advertise. In this example it will be 4 shared GPU slices.
 
