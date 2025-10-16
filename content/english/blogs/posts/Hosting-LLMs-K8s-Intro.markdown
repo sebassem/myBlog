@@ -50,6 +50,30 @@ While managed LLM platforms provide excellent value for many use cases, certain 
 
 These considerations have led many enterprises to consider hybrid approaches, using managed services for most workloads while exploring Kubernetes-based hosting for specific use cases that require additional control, cost optimization, or special security, privacy and compliance requirements.
 
+### Why Kubernetes is a good match for hosting LLMs?
+
+#### Achieving scale and portability
+
+LLMs require infrastructure that can scale horizontally to handle millions of queries per second and support parallel processing.
+
+- **Infrastructure Agnostic:** Kubernetes allows LLM services to be reproducible and portable. Once an LLM workload is containerized, it can be deployed seamlessly across any environment, whether it's on-premises bare metal or a major cloud provider like Azure AKs, Amazon EKS or Google GKE, or . This flexibility prevents vendor lock-in and simplifies multi-cloud strategies, which is crucial for managing the cost and scarcity of high-end GPUs.
+- **Dedicated Workloads:** By using taints and tolerations, Kubernetes ensures that expensive GPU-equipped nodes are exclusively reserved for LLM-related workloads. This prevents non-GPU demanding pods from consuming valuable resources, guaranteeing that GPU utilization is high and preventing issues with auto-scaling down nodes.
+
+#### Simplified GPU Resource Management
+
+Running GPU workloads on bare metal is notoriously difficult due to the constant need to manage drivers and shared libraries. Kubernetes, coupled with the NVIDIA GPU Operator, abstracts this complexity.
+
+- **Automated driver and library management:** The NVIDIA GPU Operator automates the management of drivers and shared libraries across all nodes in the cluster, ensuring every node is ready to run GPU containers without manual configuration. This standardization drastically reduces operational overhead.
+- **Centralized configuration, monitoring and telemetry:** Kubernetes allows system administrators to define GPU configurations (like Multi-Instance GPU partitioning) in a centralized manner, which is then mapped to all relevant nodes. Additionally, it provides built-in GPU monitoring and telemetry, offering clear visibility into the usage and health of the critical LLM infrastructure.
+
+#### Maximizing GPU Utilization with Sharing Techniques
+The core strength of Kubernetes for LLMs lies in its ability to facilitate resource sharing and oversubscription, directly combatting high GPU costs and scarcity. Since many LLM inference tasks do not fully saturate a powerful GPU like an NVIDIA A100 or H100, these sharing methods are essential.
+
+- **Multi-Instance GPU (MIG)**
+MIG is a technology available on newer NVIDIA cards that allows for the physical partitioning of a single GPU into multiple, fully isolated instances.
+- **Time Slicing**
+Time slicing is a logical approach that shares a GPU by allowing multiple containers to take turns using the full device in a round-robin context switching manner.
+
 ### What does it take to self-host LLMs on Kubernetes?
 
 Hosting LLMs on Kubernetes is not as easy as using managed services, it requires lots of stitching pieces together, proper architecture, integrating different open-source components and skillful operation. Below is a high-level checklist of what it takes to pull it off:
