@@ -2,7 +2,7 @@
 title: "Self-Hosting LLMs on Kubernetes: Serving LLMs using vLLM"
 images:
   - "https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-vLLM/banner.png"
-date: 2025-11-02 17:08:42 +0200
+date: 2025-11-08 17:08:42 +0200
 tags: ["AI Infrastructure","Azure","AI","LLMs","Kubernetes"]
 categories: ["posts"]
 draft: false
