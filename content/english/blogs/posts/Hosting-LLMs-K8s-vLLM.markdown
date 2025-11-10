@@ -163,6 +163,11 @@ To deploy vLLM with GPUs on Kubernetes (we will use AKS), we need to have the fo
 - **Deploy the vLLM server** to start serving our LLM
 - **Deploy a Kubernetes service** to expose the vLLM server and start sending requests
 
+
+This is how a basic deployment of vLLM on Kubernetes would look like:
+
+![Screenshot showing vLLM deployment sample architecture](https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-vLLM/23.png)
+
 We will deploy an AKS cluster with a GPU node pool having nodes with NVIDIA GPU attached.
 
 ![Screenshot showing the AKS cluster](https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-vLLM/12.png)
