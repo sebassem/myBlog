@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://www.seifbassem.com/"
+baseURL = "https://blog.seifbassem.com/"
 title = "Seif Bassem's cloud blog"
 theme = "editor"
 # post pagination
