@@ -41,42 +41,7 @@ In this post, I will explain how I built it including:
 
 The architecture follows a modern serverless approach with clear separation of concerns between the frontend, backend API, and AI services.
 
-```mermaid
-flowchart LR
-    subgraph Cloudflare["☁️ Cloudflare Edge"]
-        CDN["🌐 CDN + WAF"]
-    end
-
-    subgraph Azure["☁️ Azure"]
-        subgraph CAE["📦 Container Apps Environment"]
-            Astro["🖥️ Astro Frontend (external)"]
-            API["⚡ FastAPI Backend (internal)"]
-        end
-
-        subgraph AI["🤖 AI Services"]
-            Foundry["🧠 Microsoft Foundry"]
-            Search["🔍 AI Search"]
-            Blob["📋 Blob Storage"]
-        end
-
-        subgraph Storage["💾🔐 PaaS services"]
-            KV["🔐 Key Vault"]
-            Tables["📊 Table Storage"]
-        end
-
-        ACR["📦 Container Registry"]
-    end
-
-    CDN -->|HTTPS| Astro
-    Astro -->|Internal| API
-    API -->|LLM Inference| Foundry
-    Foundry -->|RAG Query| Search
-    API -->|Rate Limits| Tables
-    Search -->|Expertise markdown files| Blob
-    API -->|Secrets| KV
-    ACR -.->|Pull Image| Astro
-    ACR -.->|Pull Image| API
-```
+![Screenshot showing the diagram](https://images.seifbassem.com/images/Posts/AI-portfolio-website/diagram.png)
 
 ### Component Overview
 
