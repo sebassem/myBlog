@@ -130,6 +130,7 @@ The Docker image is optimized for production using a few key techniques:
 |------------|---------|
 | **FastAPI** | High-performance async API framework |
 | **LiteLLM**  | Unified LLM interface with caching |
+| **SlowAPI**  | Rate limiting for API endpoints |
 | **Python**  | Runtime with optimization flags |
 | **Azure Python SDKs**  | Identity, Search, Tables integration |
 
@@ -147,7 +148,8 @@ The app authenticates with Azure using `DefaultAzureCredential`, enabling seamle
 - **Microsoft Foundry** for generating embeddings and LLM responses
 - **Azure Table Storage** for persistent rate limiting across container restarts
 - **Azure Key Vault** for storing different keys and secrets
-- **Caching & Rate Limiting** Response caching is handled via LiteLLM's built-in cache (in-memory by default, with an optional disk cache for persistence). Rate limiting protects the API from abuse. Custom fun messages are returned when users exceed their daily quota. I didn't use the Azure file share caching option which would provide better caching as it requires using the Storage Account Shared Access Key which I disabled for security reasons.
+- **Caching** Response caching is handled via LiteLLM's built-in cache (in-memory by default, with an optional disk cache for persistence). I didn't use the Azure file share caching option which would provide better caching as it requires using the Storage Account Shared Access Key which I disabled for security reasons.
+- **Rate Limiting** Rate limiting is implemented using SlowAPI to protect the API from abuse. Custom fun messages are returned when users exceed their daily quota.
 
 ##### Two-Stage AI Pipeline
 The AI assistant uses a cost-efficient two-stage approach:
