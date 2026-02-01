@@ -3,7 +3,7 @@ title: "Level Up your workflows with GitHub Copilot’s custom chat modes"
 images:
   - "https://images.seifbassem.com/images/Posts/Github-Copilot-Custom-Chat-Modes/banner.png"
 date: 2025-08-09 17:08:42 +0200
-tags: ["Azure","AI","IaaC","Bicep","Security","OpenAI","AI Foundry"]
+tags: ["Azure","AI","IaaC","Bicep","Security","OpenAI","Microsoft Foundry"]
 categories: ["posts"]
 draft: false
 ---

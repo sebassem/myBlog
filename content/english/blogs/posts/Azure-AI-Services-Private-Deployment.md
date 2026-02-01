@@ -3,7 +3,7 @@ title: "Simplifying private deployment of Azure AI services using AVM"
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-AI-Services-Private-Deployment/banner.png"
 date: 2025-05-06 17:08:42 +0200
-tags: ["Azure","AI","IaaC","Bicep","Security","OpenAI","AI Foundry"]
+tags: ["Azure","AI","IaaC","Bicep","Security","OpenAI","Microsoft Foundry"]
 categories: ["posts"]
 draft: false
 ---

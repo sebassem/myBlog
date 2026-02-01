@@ -3,7 +3,7 @@ title: "CI/CD evaluation of Large Language Models using OpenEvals"
 images:
   - "https://images.seifbassem.com/images/Posts/llm-evaluation-openeval/banner.png"
 date: 2025-06-29 17:08:42 +0200
-tags: ["Azure","AI","Github","Langchain","OpenAI","AI Foundry"]
+tags: ["Azure","AI","Github","Langchain","OpenAI","Microsoft Foundry"]
 categories: ["posts"]
 draft: false
 ---
