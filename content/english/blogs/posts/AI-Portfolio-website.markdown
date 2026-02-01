@@ -5,7 +5,7 @@ images:
 date: 2026-01-31 17:08:42 +0200
 tags: ["Azure","AI","Microsoft Foundry"]
 categories: ["posts"]
-draft: true
+draft: false
 ---
 
 <!--more-->
