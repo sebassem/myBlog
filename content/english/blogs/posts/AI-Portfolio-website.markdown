@@ -498,6 +498,8 @@ Building a production AI assistant for a portfolio doesn't have to be expensive 
 
 ...you can create a professional, AI-powered experience for under $10/month.
 
+You can view the code on [Github](https://github.com/sebassem/my-portfolio-page) for inspiration.
+
 
 ---
 
