@@ -35,9 +35,9 @@ In this post, I will demonstrate the following:
 
 ---
 
-## Why Use Infrastructure-as-Code (Terraform) for Gemini Enterprise Logging?
+## Why Use Infrastructure-as-Code (Terraform) for Gemini Enterprise deployment and configuration?
 
-When rolling out Gemini Enterprise across an enterprise Google Cloud environment, like any other GCP service, using Infrastructure-as-Code (IaC) approach helps avoid configuration drift, compliance risks, and operational overhead and introduces versioning and tracking for the infrastructure changes.
+When rolling out Gemini Enterprise across an enterprise Google Cloud environment, like any other GCP service, using Infrastructure-as-Code (IaC) approach helps avoid configuration drift, human errors, and operational overhead and introduces versioning and tracking for the infrastructure changes.
 
 > NOTE: Currently not all configurations and capabilities are supported via Terraform or other IaC tools, and some may need to be configured via the Cloud Console. However, Google is continuously adding support for more configurations and capabilities.
 
@@ -48,7 +48,7 @@ In this demo, we have a fictional company called Cymbal who would like to deploy
 ```
 +---------------------+      +---------------------+      +---------------------+      +-----------------------+
 |  Gemini Enterprise  | ---> |  Cloud Log Router   | ---> |  BigQuery Dataset   | ---> |  Insights & Visibility|
-|   +Model Armor      |      |                     |      |                     |      |                       |
+|   + Model Armor      |      |                     |      |                     |      |                       |
 +---------------------+      +---------------------+      +---------------------+      +----------------------+|
           |
           |
@@ -382,13 +382,13 @@ terraform plan
 terraform apply
 ```
 
-Now, let's look at the console and see what got deployed:
+Now, let's look at the console and see what got deployed.
 
 The Gemini enterprise App got deployed successfully
 
   ![Screenshot showing the gemini enterprise deployment](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-ge-success.png)
 
-We can see indeed the video generation is disabled as intended
+We can see the video generation feature is disabled as intended
 
   ![Screenshot showing the gemini enterprise features control](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-feature-management.png)
 
@@ -420,7 +420,7 @@ Let's try a couple of prompts to start generating some telemetry
 
 ## Using BigQuery to analyze the telemetry
 
-In this demo, we will interact with BigQuery using two methods; chatting with gemini inside bigquery or writing SQL queries directly.
+In this demo, we will interact with BigQuery using two methods; chatting with Gemini inside BigQuery and writing SQL queries directly.
 
 ### Scenario 1: Understanding the usage of the currently deployed agents
 
@@ -432,7 +432,7 @@ SELECT COALESCE(jsonPayload.request.userevent.agentspaceinfo.agentspacepagetype,
        COUNT(DISTINCT jsonPayload.useriamprincipal) AS unique_users,
        MIN(timestamp) AS first_interaction,
        MAX(timestamp) AS last_interaction
-FROM `possible-bolt-503515-e1.ge_telemetry_032280a7.discoveryengine_googleapis_com_gemini_enterprise_user_activity_20260803`
+FROM `<project_id>.ge_telemetry_032280a7.discoveryengine_googleapis_com_gemini_enterprise_user_activity_20260803`
 WHERE COALESCE(jsonPayload.request.userevent.agentspaceinfo.agentspacepagetype, '') != 'home'
 GROUP BY 1
 ORDER BY total_interactions DESC;
@@ -444,7 +444,7 @@ We can see that currently we only have a couple of built-in agents and we can se
 
 ### Scenario 2: Understanding the types of queries users are asking
 
-In this example, I have asked Gemini inside BigQuery to classify the queries users are asking and clarify the intent of the query. 
+In this example, I have asked Gemini inside BigQuery to classify the queries users are asking and clarify the intent of the query. I took the query it generated and ran it manually. 
 
   ![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-query-intent.png)
 
