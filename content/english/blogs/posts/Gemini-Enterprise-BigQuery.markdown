@@ -29,7 +29,7 @@ Without robust telemetry, organizations face critical blind spots:
 In this post, I will demonstrate the following:
 
 1. **Deploying Gemini Enterprise app using Terraform, including various configurations and controls**
-2. **Deploying data stores to ground Gemini Enterprise answers against a database and documents**
+2. **Deploying data stores to ground Gemini Enterprise answers against Enterprise data**
 3. **Configuring telemetry import into BigQuery for insights, governance and analytics**
 4. **Configuring Model Armor** to protect against various attacks like jailbreaking, prompt injection and more.
 
