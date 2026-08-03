@@ -1,5 +1,5 @@
 ---
-title: "Is Your deployment paying off? Measuring Gemini Enterprise Usage and Governance with BigQuery"
+title: "Measuring Gemini Enterprise Adoption with BigQuery"
 images:
   - "https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/banner.png"
 date: 2026-08-02 17:08:42 +0200
