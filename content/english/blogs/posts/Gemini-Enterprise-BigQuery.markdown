@@ -39,13 +39,13 @@ In this post, I will demonstrate the following:
 
 When rolling out Gemini Enterprise across an enterprise Google Cloud environment, like any other GCP service, using Infrastructure-as-Code (IaC) approach helps avoid configuration drift, human errors, and operational overhead and introduces versioning and tracking for the infrastructure changes.
 
-> NOTE: Currently not all configurations and capabilities are supported via Terraform or other IaC tools, and some may need to be configured via the Cloud Console. However, Google is continuously adding support for more configurations and capabilities.
+> > **NOTE:** Currently not all configurations and capabilities are supported via Terraform or other IaC tools, and some may need to be configured via the Cloud Console. However, Google is continuously adding support for more configurations and capabilities.
 
 ## Demo Overview
 
-In this demo, we have a fictional company called Cymbal who would like to deploy Gemini Enterprise and ground it against their Cloud SQL database and a Google Storage bucket containing various documents for their HR policies and employee information. They would like to enable Gemini Enterprise for all their employees and control the usage. They would also like to monitor the usage and identify opportunities to build custom AI Agents that maximize organizational productivity. All to be done while maintaining responsible AI principles, user privacy and security against various AI threats and attacks.
+In this demo, we have a fictional company called Cymbal that wants to deploy Gemini Enterprise and ground it against their Cloud SQL database and a Google Storage bucket containing various documents for their HR policies and employee information. They would like to enable Gemini Enterprise for all their employees and control the usage. They would also like to monitor the usage and identify opportunities to build custom AI Agents that maximize organizational productivity. All while maintaining responsible AI principles, user privacy and security against various AI threats and attacks.
 
-```
+```mermaid
 +---------------------+      +---------------------+      +---------------------+      +-----------------------+
 |  Gemini Enterprise  | ---> |  Cloud Log Router   | ---> |  BigQuery Dataset   | ---> |  Insights & Visibility|
 |   + Model Armor      |      |                     |      |                     |      |                       |
@@ -64,7 +64,7 @@ In this demo, we have a fictional company called Cymbal who would like to deploy
 
 First, we have a PostgreSQL database hosted on Cloud SQL with various HR information distributed across 3 tables for skills, peer feedback and performance reviews. Here is a schema of the database:
 
-  ![Screenshot showing the cloud sql database](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/data-postgresql-tables.png)
+![Screenshot showing the cloud sql database](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/data-postgresql-tables.png)
 
 Then, we have a Google Storage bucket with various HR policies and employee information documents, such as employee handbook, the company's policies and earnings information.
 
@@ -109,9 +109,9 @@ required_apis = [
 Create a `google_discovery_engine_search_engine` resource for the app and a `google_discovery_engine_data_store` resource for the main data store.
 Let's first create our data stores.
 
-> NOTE: Gemini Enterprise provides lots of connectors to 3rd party systems like Jira, Salesforce, Sharepoint, and more. However, for this demo, we are using Cloud SQL and Google Storage.
+> > **NOTE:** Gemini Enterprise provides lots of connectors to 3rd party systems like Jira, Salesforce, Sharepoint, and more. However, for this demo, we are using Cloud SQL and Google Storage.
 
-> Note: In an enterprise deployment, you would want to set a scheduled import for your data sources. At the moment, the only way to do that periodic import is using the console. In this demo, we will use the API within Terraform to do a one-time import.
+> > **NOTE:** In an enterprise deployment, you would want to set a scheduled import for your data sources. At the moment, the only way to do that periodic import is using the console. In this demo, we will use the API within Terraform to do a one-time import.
 
 #### Cloud Storage data store
 
@@ -186,7 +186,7 @@ resource "google_discovery_engine_data_store" "gemini_sql_store" {
 
 Next, we need to create an import job for each table we want to import.
 
-> NOTE: For this demo, we are using a `null_resource` to trigger the import using an API call. In a production environment, you would want to use a scheduled import to keep your data in sync.
+> > **NOTE:** For this demo, we are using a `null_resource` to trigger the import using an API call. In a production environment, you would want to use a scheduled import to keep your data in sync.
 
 ```hcl
 resource "null_resource" "import_sql_data" {
@@ -252,7 +252,7 @@ resource "google_discovery_engine_search_engine" "gemini_search_engine" {
 }
 ```
 
-These are the variables that we will provide to this resource. You can see we are configuring the various options in Gemini Enterprise, for example we enabled image generation but disabled video generation (we will see this in the console once deployed).
+These are the variables that we will provide to this resource. You can see we are configuring the various options in Gemini Enterprise, for example, we enabled image generation but disabled video generation (we will see this in the console once deployed).
 
 ```hcl
 ge_app_type          = "APP_TYPE_INTRANET"
@@ -384,39 +384,39 @@ terraform apply
 
 Now, let's look at the console and see what got deployed.
 
-The Gemini enterprise App got deployed successfully
+The Gemini enterprise App was deployed successfully.
 
-  ![Screenshot showing the gemini enterprise deployment](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-ge-success.png)
+![Screenshot showing the gemini enterprise deployment](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-ge-success.png)
 
 We can see the video generation feature is disabled as intended
 
-  ![Screenshot showing the gemini enterprise features control](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-feature-management.png)
+![Screenshot showing the gemini enterprise features control](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-feature-management.png)
 
 The data stores as well have been created
 
-  ![Screenshot showing the gemini enterprise data stores](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-connected-data-sources.png)
+![Screenshot showing the gemini enterprise data stores](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-connected-data-sources.png)
 
 An import job starts immediately for both the bucket and SQL database
 
-  ![Screenshot showing the gemini enterprise import job](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-import-in-progress.png)
+![Screenshot showing the gemini enterprise import job](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-import-in-progress.png)
 
 After a few minutes the import jobs are completed and we can start querying the data.
 
-  ![Screenshot showing the gemini enterprise import job completed](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-import-complete.png)
+![Screenshot showing the gemini enterprise import job completed](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-import-complete.png)
 
 We can also see the BigQuery datasets have been created.
 
-  ![Screenshot showing the bigquery datasets](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-datasets.png)
+![Screenshot showing the bigquery datasets](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-datasets.png)
 
 ## Generating some sample responses
 
 Let's try a couple of prompts to start generating some telemetry
 
-  ![Screenshot showing a query to gemini1](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-query-feedback.png)
+![Screenshot showing a query to gemini1](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-query-feedback.png)
 
-  ![Screenshot showing a query to gemini2](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-earnings-response.png)
+![Screenshot showing a query to gemini2](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-earnings-response.png)
 
-  ![Screenshot showing a query to gemini3](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-feedback-response.png)
+![Screenshot showing a query to gemini3](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-feedback-response.png)
 
 ## Using BigQuery to analyze the telemetry
 
@@ -438,34 +438,33 @@ GROUP BY 1
 ORDER BY total_interactions DESC;
 ```
 
-  ![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bg-query.png)
+![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bg-query.png)
 
 We can see that currently we only have a couple of built-in agents and we can see their current usage based on the sample prompts I ran.
 
-### Scenario 2: Understanding the types of queries users are asking
+### Scenario 2: Classifying User Intents to Find Data Gaps
 
-In this example, I have asked Gemini inside BigQuery to classify the queries users are asking and clarify the intent of the query. I took the query it generated and ran it manually. 
+In this example, I have asked Gemini inside BigQuery to classify the queries users are asking and clarify the intent of the query. I took the query it generated and ran it manually.
 
-  ![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-query-intent.png)
+![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-query-intent.png)
 
 We can see that BigQuery has nicely categorized the prompts into different categories and we can see the most common categories based on the sample prompts I ran. This is very helpful for us to understand what are the gaps we have in our data and how we can make everyone more productive by enriching that data or create agents to automate those tasks.
 
-### Scenario 3: What are the opportunities for new Agents?
+### Scenario 3: Finding Repeat Workflow Automation Candidates for new Agents
 
 After sending lots of prompts and after we have a good understanding of the current usage and the types of queries users are asking, we can start looking for opportunities to create new agents that can automate those tasks. I have asked BigQuery to analyze the current usage and find opportunities where we can create agents based on the asks.
 
-  ![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-agent-opps-1.png)
+![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-agent-opps-1.png)
 
-  ![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-agent-opps-2.png)
-
+![Screenshot showing the bigquery query results](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-agent-opps-2.png)
 
 ### Scenario 4: Security insights using Model Armor
 
 I have enabled Model Armor for Gemini Enterprise which is a Google Cloud service that enhances the security and safety of your AI applications by proactively screening the prompts and responses given by the Gemini Enterprise assistant. This helps protect against various risks and ensures responsible AI practices.
 
-  ![Screenshot showing Model Armor blocking a response](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-model-armor-prompt.png)
+![Screenshot showing Model Armor blocking a response](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-model-armor-prompt.png)
 
-  ![Screenshot showing Model Armor blocking a response](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-chat-interface.png)
+![Screenshot showing Model Armor blocking a response](https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/ge-bq-chat-interface.png)
 
 ## Conclusion
 
