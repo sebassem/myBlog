@@ -48,8 +48,8 @@ In this demo, we have a fictional company called Cymbal that wants to deploy Gem
 ```mermaid
 +---------------------+      +---------------------+      +---------------------+      +-----------------------+
 |  Gemini Enterprise  | ---> |  Cloud Log Router   | ---> |  BigQuery Dataset   | ---> |  Insights & Visibility|
-|   + Model Armor      |      |                     |      |                     |      |                       |
-+---------------------+      +---------------------+      +---------------------+      +----------------------+|
+|   + Model Armor     |      |                     |      |                     |      |                       |
++---------------------+      +---------------------+      +---------------------+      +-----------------------+
           |
           |
           V
