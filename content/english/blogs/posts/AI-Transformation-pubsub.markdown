@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-# Real-Time AI Message Enrichment with Google Cloud Pub/Sub Single Message Transforms (SMT)
+# Real-Time AI Message Enrichment with Pub/Sub Single Message Transforms (SMT)
 
 Modern event-driven architectures rely heavily on streaming messages through message brokers like Google Cloud Pub/Sub. But as soon as you need to enrich, categorize, or sanitize messages as they arrive, you get some architectural challenges:
 
