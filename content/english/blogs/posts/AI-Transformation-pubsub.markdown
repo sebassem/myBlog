@@ -64,6 +64,9 @@ The beauty of this pattern is that subscribers pull fully enriched, categorized 
 
 ![Screenshot showing the high-level architecture](https://images.seifbassem.com/images/Posts/pubsub-ai-transformation/01.gif)
 
+> NOTE 💡 Architectural Note: Topic vs. Subscription SMTs
+Google’s official documentation recommends configuring AI Inference SMTs on subscriptions rather than topics. When using traditional generative LLMs (which take 2 to 5+ seconds), putting the transform on a subscription avoids blocking the producer’s publish call and isolates failure handling. In our scenario, Jev changes the game: with sub-second inference latencies (~40–250 ms), the producer's publish call remains fast and broker-friendly
+
 
 ## What is TypeSafe's Jev, and Why the Hype?
 
