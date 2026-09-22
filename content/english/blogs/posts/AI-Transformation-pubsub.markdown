@@ -1,5 +1,5 @@
 ---
-title: "In-Flight Enrichment in Pub/Sub with Gemini and jev"
+title: "Pub/Sub AI Enrichment with Gemini and Jev"
 images:
   - "https://images.seifbassem.com/images/Posts/pubsub-ai-transformation/banner.png"
 date: 2026-09-21 17:08:42 +0200
