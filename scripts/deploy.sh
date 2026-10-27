@@ -18,8 +18,7 @@ REQUIRED_VARS=(
   "AUTOMATION_ACCOUNT_NAME"
   "KEY_VAULT_NAME"
   "KEY_VAULT_CERT_NAME"
-  "FRONT_DOOR_NAME"
-  "FRONT_DOOR_ENDPOINT_NAME"
+  "CDN_PROFILE_NAME"
   "CERT_DOMAIN"
   "ACME_CONTACT_EMAIL"
   "ACME_SERVER"
@@ -49,7 +48,7 @@ echo "Subscription ID     : ${AZURE_SUBSCRIPTION_ID}"
 echo "Resource Group      : ${AZURE_RESOURCE_GROUP}"
 echo "Automation Account  : ${AUTOMATION_ACCOUNT_NAME} (${AZURE_LOCATION})"
 echo "Key Vault           : ${KEY_VAULT_NAME} (RG: ${KEY_VAULT_RESOURCE_GROUP})"
-echo "Front Door          : ${FRONT_DOOR_NAME} / ${FRONT_DOOR_ENDPOINT_NAME}"
+echo "CDN Profile         : ${CDN_PROFILE_NAME}"
 echo "Domain              : ${CERT_DOMAIN}"
 echo "=================================================================="
 
@@ -94,7 +93,7 @@ az rest --method PUT \
 echo "Posh-ACME module import initiated."
 
 # ------------------------------------------------------------------------------
-# 3. Grant Permissions on Key Vault & Front Door to Managed Identity
+# 3. Grant Permissions on Key Vault & CDN profile to Managed Identity
 # ------------------------------------------------------------------------------
 echo -e "\n[3/7] Configuring permissions for Managed Identity (${PRINCIPAL_ID})..."
 
@@ -118,13 +117,13 @@ else
     --secret-permissions get list set >/dev/null
 fi
 
-FD_ID="/subscriptions/${AZURE_SUBSCRIPTION_ID}/resourceGroups/${AZURE_RESOURCE_GROUP}/providers/Microsoft.Network/frontDoors/${FRONT_DOOR_NAME}"
-echo "  Assigning 'Network Contributor' on Front Door '${FRONT_DOOR_NAME}'..."
+CDN_ID="/subscriptions/${AZURE_SUBSCRIPTION_ID}/resourceGroups/${AZURE_RESOURCE_GROUP}/providers/Microsoft.Cdn/profiles/${CDN_PROFILE_NAME}"
+echo "  Assigning 'CDN Profile Contributor' on CDN profile '${CDN_PROFILE_NAME}'..."
 az role assignment create \
   --assignee-object-id "${PRINCIPAL_ID}" \
   --assignee-principal-type ServicePrincipal \
-  --role "Network Contributor" \
-  --scope "${FD_ID}" >/dev/null
+  --role "CDN Profile Contributor" \
+  --scope "${CDN_ID}" >/dev/null
 
 # ------------------------------------------------------------------------------
 # 4. Create / Update Automation Variables
@@ -159,8 +158,7 @@ set_automation_variable "ResourceGroup"          "${AZURE_RESOURCE_GROUP}"      
 set_automation_variable "KeyVaultName"           "${KEY_VAULT_NAME}"            "false"
 set_automation_variable "KeyVaultResourceGroup"  "${KEY_VAULT_RESOURCE_GROUP}"  "false"
 set_automation_variable "KeyVaultCertName"       "${KEY_VAULT_CERT_NAME}"       "false"
-set_automation_variable "FrontDoorName"          "${FRONT_DOOR_NAME}"           "false"
-set_automation_variable "FrontDoorEndpointName"  "${FRONT_DOOR_ENDPOINT_NAME}"  "false"
+set_automation_variable "CdnProfileName"         "${CDN_PROFILE_NAME}"           "false"
 set_automation_variable "CertDomain"             "${CERT_DOMAIN}"               "false"
 set_automation_variable "AcmeContactEmail"       "${ACME_CONTACT_EMAIL}"        "false"
 set_automation_variable "AcmeServer"             "${ACME_SERVER}"               "false"
@@ -182,7 +180,7 @@ print(json.dumps({
         "runbookType": "PowerShell",
         "logVerbose": True,
         "logProgress": False,
-        "description": "Automated Let'\''s Encrypt certificate renewal via Cloudflare DNS-01, Key Vault, and Front Door"
+        "description": "Automated Let'\''s Encrypt certificate renewal via Cloudflare DNS-01, Key Vault, and Azure CDN"
     }
 }))
 ' "${AZURE_LOCATION}")

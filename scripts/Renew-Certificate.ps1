@@ -2,7 +2,7 @@
 .SYNOPSIS
     Azure Automation Runbook to automatically renew the Let's Encrypt certificate
     for images.seifbassem.com via Cloudflare DNS-01, import it to Azure Key Vault,
-    and update Azure Front Door.
+    and update the Azure CDN (classic) custom domain.
 
 .DESCRIPTION
     Automates all steps from "Certificate renewal.md":
@@ -11,7 +11,7 @@
       3. Requests a new RSA 2048 certificate from Let's Encrypt using Posh-ACME
          and the Cloudflare DNS plugin (zero manual DNS intervention).
       4. Imports the generated PFX into Azure Key Vault.
-      5. Triggers Azure Front Door (enableHttps) to deploy the updated certificate.
+      5. Points the Azure CDN (classic) custom domain HTTPS at the new certificate version.
 
 .PARAMETER ForceRenewal
     If true, forces a certificate renewal even if the existing certificate in Key Vault
@@ -43,8 +43,7 @@ $ResourceGroup          = Get-AutomationVariable -Name "ResourceGroup"
 $KeyVaultName           = Get-AutomationVariable -Name "KeyVaultName"
 $KeyVaultResourceGroup  = Get-AutomationVariable -Name "KeyVaultResourceGroup"
 $KeyVaultCertName       = Get-AutomationVariable -Name "KeyVaultCertName"
-$FrontDoorName          = Get-AutomationVariable -Name "FrontDoorName"
-$FrontDoorEndpointName  = Get-AutomationVariable -Name "FrontDoorEndpointName"
+$CdnProfileName         = Get-AutomationVariable -Name "CdnProfileName"
 $CertDomain             = Get-AutomationVariable -Name "CertDomain"
 $AcmeContactEmail       = Get-AutomationVariable -Name "AcmeContactEmail"
 $AcmeServer             = Get-AutomationVariable -Name "AcmeServer"
@@ -61,8 +60,7 @@ Write-Output "  ACME Server            : $AcmeServer"
 Write-Output "  Resource Group         : $ResourceGroup"
 Write-Output "  Key Vault              : $KeyVaultName (RG: $KeyVaultResourceGroup)"
 Write-Output "  Key Vault Cert Name    : $KeyVaultCertName"
-Write-Output "  Front Door             : $FrontDoorName"
-Write-Output "  Front Door Endpoint    : $FrontDoorEndpointName"
+Write-Output "  CDN Profile            : $CdnProfileName"
 Write-Output "  Renew Within Days      : $RenewWithinDays"
 Write-Output "  Force Renewal          : $ForceRenewal"
 
@@ -150,31 +148,66 @@ try {
     Write-Output "  Expires    : $($importedCert.Expires)"
 
     # --------------------------------------------------------------------------
-    # 6. Update Azure Front Door Frontend Endpoint HTTPS Configuration
+    # 6. Point the Azure CDN (classic) custom domain at the new certificate version
     # --------------------------------------------------------------------------
-    Write-Output "`n[Step 5/5] Updating Azure Front Door '$FrontDoorName' endpoint '$FrontDoorEndpointName'..."
-    $vaultResourceId = "/subscriptions/$SubscriptionId/resourceGroups/$KeyVaultResourceGroup/providers/Microsoft.KeyVault/vaults/$KeyVaultName"
-    $enableHttpsPath = "/subscriptions/$SubscriptionId/resourceGroups/$ResourceGroup/providers/Microsoft.Network/frontDoors/$FrontDoorName/frontendEndpoints/$FrontDoorEndpointName/enableHttps?api-version=2020-05-01"
+    $newVersion = $importedCert.Version
+    Write-Output "`n[Step 5/5] Updating Azure CDN profile '$CdnProfileName' custom domain '$CertDomain' to certificate version '$newVersion'..."
 
-    $enableHttpsBody = @{
-        certificateSource = "AzureKeyVault"
-        protocolType      = "ServerNameIndication"
-        minimumTlsVersion = "1.2"
-        keyVaultCertificateSourceParameters = @{
-            vault = @{
-                id = $vaultResourceId
+    $cdnApiVersion = "2024-02-01"
+    $profilePath   = "/subscriptions/$SubscriptionId/resourceGroups/$ResourceGroup/providers/Microsoft.Cdn/profiles/$CdnProfileName"
+
+    # Discover the endpoint + custom domain whose hostname matches $CertDomain
+    $endpointsResponse = Invoke-AzRestMethod -Path "$profilePath/endpoints?api-version=$cdnApiVersion" -Method GET
+    if ($endpointsResponse.StatusCode -ne 200) {
+        throw "Failed to list CDN endpoints. HTTP $($endpointsResponse.StatusCode): $($endpointsResponse.Content)"
+    }
+
+    $targets = @()
+    foreach ($endpoint in ($endpointsResponse.Content | ConvertFrom-Json).value) {
+        $cdResponse = Invoke-AzRestMethod -Path "$profilePath/endpoints/$($endpoint.name)/customDomains?api-version=$cdnApiVersion" -Method GET
+        if ($cdResponse.StatusCode -ne 200) {
+            throw "Failed to list custom domains for endpoint '$($endpoint.name)'. HTTP $($cdResponse.StatusCode): $($cdResponse.Content)"
+        }
+        foreach ($customDomain in ($cdResponse.Content | ConvertFrom-Json).value) {
+            if ($customDomain.properties.hostName -ieq $CertDomain) {
+                $targets += [pscustomobject]@{ Endpoint = $endpoint.name; CustomDomain = $customDomain.name }
             }
-            secretName = $KeyVaultCertName
+        }
+    }
+
+    if ($targets.Count -eq 0) {
+        throw "No custom domain with hostname '$CertDomain' found in CDN profile '$CdnProfileName'."
+    }
+
+    $httpsBody = @{
+        certificateSource           = "AzureKeyVault"
+        protocolType                = "ServerNameIndication"
+        minimumTlsVersion           = "TLS12"
+        certificateSourceParameters = @{
+            typeName          = "KeyVaultCertificateSourceParameters"
+            subscriptionId    = $SubscriptionId
+            resourceGroupName = $KeyVaultResourceGroup
+            vaultName         = $KeyVaultName
+            secretName        = $KeyVaultCertName
+            secretVersion     = $newVersion
+            updateRule        = "NoAction"
+            deleteRule        = "NoAction"
         }
     } | ConvertTo-Json -Depth 5
 
-    $response = Invoke-AzRestMethod -Path $enableHttpsPath -Method POST -Payload $enableHttpsBody
+    foreach ($target in $targets) {
+        Write-Output "  Enabling custom HTTPS on endpoint '$($target.Endpoint)' / custom domain '$($target.CustomDomain)'..."
+        $response = Invoke-AzRestMethod `
+            -Path "$profilePath/endpoints/$($target.Endpoint)/customDomains/$($target.CustomDomain)/enableCustomHttps?api-version=$cdnApiVersion" `
+            -Method POST `
+            -Payload $httpsBody
 
-    if ($response.StatusCode -notin @(200, 202)) {
-        throw "Failed to update Front Door HTTPS configuration. HTTP $($response.StatusCode): $($response.Content)"
+        if ($response.StatusCode -notin @(200, 202)) {
+            throw "Failed to update CDN custom domain HTTPS. HTTP $($response.StatusCode): $($response.Content)"
+        }
+        Write-Output "  CDN custom HTTPS update accepted (HTTP $($response.StatusCode)). Propagation can take a few minutes."
     }
 
-    Write-Output "Front Door HTTPS update accepted (HTTP $($response.StatusCode))."
     Write-Output "`n=================================================================="
     Write-Output "Certificate renewal completed successfully!"
     Write-Output "=================================================================="

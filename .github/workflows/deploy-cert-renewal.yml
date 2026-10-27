@@ -44,8 +44,7 @@ jobs:
           AUTOMATION_ACCOUNT_NAME: ${{ secrets.AUTOMATION_ACCOUNT_NAME }}
           KEY_VAULT_NAME: ${{ secrets.KEY_VAULT_NAME }}
           KEY_VAULT_CERT_NAME: ${{ secrets.KEY_VAULT_CERT_NAME }}
-          FRONT_DOOR_NAME: ${{ secrets.FRONT_DOOR_NAME }}
-          FRONT_DOOR_ENDPOINT_NAME: ${{ secrets.FRONT_DOOR_ENDPOINT_NAME }}
+          CDN_PROFILE_NAME: ${{ secrets.CDN_PROFILE_NAME }}
           # Certificate / ACME
           CERT_DOMAIN: images.seifbassem.com
           ACME_SERVER: LE_PROD

@@ -1,6 +1,6 @@
-# Automated Let's Encrypt Certificate Renewal for Azure Front Door
+# Automated Let's Encrypt Certificate Renewal for Azure CDN
 
-Zero-touch, fully automated SSL/TLS certificate renewal for `images.seifbassem.com` running natively in **Azure Automation** using **Let's Encrypt**, **Cloudflare DNS-01**, **Azure Key Vault**, and **Azure Front Door**.
+Zero-touch, fully automated SSL/TLS certificate renewal for `images.seifbassem.com` running natively in **Azure Automation** using **Let's Encrypt**, **Cloudflare DNS-01**, **Azure Key Vault**, and **Azure CDN (classic)**.
 
 ---
 
@@ -18,14 +18,14 @@ flowchart TD
     ACME <--> CF["Cloudflare API: Create & Clean Up _acme-challenge TXT Record"]
     ACME <--> LE["Let's Encrypt ACME Server: Verify DNS-01 & Issue PFX"]
     ACME --> ImportKV["4. Import New PFX into Azure Key Vault"]
-    ImportKV --> UpdateFD["5. Trigger Azure Front Door enableHttps API"]
+    ImportKV --> UpdateFD["5. Enable custom HTTPS on CDN custom domain with new cert version"]
 ```
 
 ### Why Check Weekly Instead of Every 75 Days?
 
 Let's Encrypt certificates are valid for **90 days**. By scheduling the runbook to run **weekly** and checking the actual expiration timestamp in Azure Key Vault (`RENEW_WITHIN_DAYS=30`):
-- **Weeks 1–8 (> 30 days left)**: The runbook checks Key Vault, sees more than 30 days remaining, and exits in ~10 seconds without calling Let's Encrypt or modifying Front Door.
-- **Week 9 (<= 30 days left)**: The runbook automatically renews the certificate, imports it to Key Vault, and updates Front Door.
+- **Weeks 1–8 (> 30 days left)**: The runbook checks Key Vault, sees more than 30 days remaining, and exits in ~10 seconds without calling Let's Encrypt or modifying the CDN.
+- **Week 9 (<= 30 days left)**: The runbook automatically renews the certificate, imports it to Key Vault, and updates the CDN.
 - **Automatic Retry**: If a transient network or API outage occurs during a renewal run, it automatically retries the following week while still well ahead of expiration.
 - **Cost**: Azure Automation includes **500 free job minutes per month**, so this runs at **$0/month**.
 
@@ -35,7 +35,7 @@ Let's Encrypt certificates are valid for **90 days**. By scheduling the runbook 
 
 | File | Description |
 | :--- | :--- |
-| `Renew-Certificate.ps1` | PowerShell Runbook executed inside Azure Automation to check expiry, complete the Cloudflare DNS-01 challenge, import the PFX to Key Vault, and update Front Door. |
+| `Renew-Certificate.ps1` | PowerShell Runbook executed inside Azure Automation to check expiry, complete the Cloudflare DNS-01 challenge, import the PFX to Key Vault, and update the CDN custom domain. |
 | `deploy.sh` | One-command provisioning script that creates/updates the Azure Automation Account, Managed Identity, RBAC/Access Policies, `Posh-ACME` module, encrypted variables, runbook, and weekly schedule. Reads all configuration from environment variables. |
 | `../.github/workflows/deploy-cert-renewal.yml` | GitHub Actions workflow that logs in to Azure via OIDC and runs `deploy.sh` with configuration injected from GitHub secrets. |
 | `Certificate renewal.md` | Quick summary of the automated setup alongside the original manual CLI steps for emergency fallback. |
@@ -50,8 +50,8 @@ Let's Encrypt certificates are valid for **90 days**. By scheduling the runbook 
 
 ### 2. Existing Azure Resources
 - **Azure Key Vault** where the certificate (`images-seifbassem-cert`) is stored.
-  > **Note**: Ensure the Azure Front Door service principal already has permission to read secrets/certificates from your Key Vault (already configured if Front Door is currently serving your Key Vault certificate).
-- **Azure Front Door (Classic)** with a custom frontend endpoint (`images.seifbassem.com`).
+  > **Note**: Ensure the Azure CDN service principal (`Microsoft.AzureFrontDoor-Cdn`) already has permission to read secrets/certificates from your Key Vault (already configured if the CDN is currently serving your Key Vault certificate).
+- **Azure CDN Standard from Microsoft (classic)** profile with a custom domain (`images.seifbassem.com`) using a Key Vault certificate (bring your own certificate). The runbook finds the endpoint/custom domain matching `CERT_DOMAIN` automatically.
 
 ### 3. Cloudflare API Token
 Create a scoped API token so Azure Automation can create and delete the `_acme-challenge.images.seifbassem.com` TXT record:
@@ -79,8 +79,7 @@ Sensitive configuration is stored as **GitHub Actions secrets** (Settings → Se
 | `AUTOMATION_ACCOUNT_NAME` | Automation Account name |
 | `KEY_VAULT_NAME` | Key Vault name |
 | `KEY_VAULT_CERT_NAME` | Certificate name in Key Vault |
-| `FRONT_DOOR_NAME` | Front Door (Classic) name |
-| `FRONT_DOOR_ENDPOINT_NAME` | Front Door frontend endpoint name |
+| `CDN_PROFILE_NAME` | Azure CDN (classic) profile name |
 | `ACME_CONTACT_EMAIL` | Let's Encrypt account contact email |
 | `CLOUDFLARE_API_TOKEN` | Scoped Cloudflare token (see above) |
 
@@ -89,7 +88,7 @@ The following non-sensitive values are stored as **GitHub Actions variables** (S
 | Variable | Description |
 | :--- | :--- |
 | `AZURE_SUBSCRIPTION_ID` | Target subscription ID |
-| `AZURE_RESOURCE_GROUP` | Resource Group containing the Automation Account and Front Door |
+| `AZURE_RESOURCE_GROUP` | Resource Group containing the Automation Account and CDN profile |
 | `KEY_VAULT_RESOURCE_GROUP` | Resource Group containing the Key Vault |
 
 `CERT_DOMAIN`, `ACME_SERVER`, and `RENEW_WITHIN_DAYS` are set directly in the workflow file. The Automation Account location defaults to the location of `AZURE_RESOURCE_GROUP` (override by setting `AZURE_LOCATION`).
@@ -107,7 +106,7 @@ To run locally instead, `az login` and `export` the same variables in your shell
 2. **PowerShell Module**: Imports `Posh-ACME` from the PowerShell Gallery into the Automation Account.
 3. **Permissions**:
    - Detects whether your Key Vault uses **Azure RBAC** or **Vault Access Policies** and grants the Managed Identity either the `Key Vault Certificates Officer` role or `get/list/import/update` certificate & secret permissions.
-   - Assigns `Network Contributor` to the Managed Identity on your Front Door resource.
+   - Assigns `CDN Profile Contributor` to the Managed Identity on your CDN profile.
 4. **Automation Variables**: Stores all configuration values in Azure Automation and marks `CloudflareApiToken` as **encrypted** at rest.
 5. **Runbook**: Uploads and publishes `Renew-Certificate.ps1`.
 6. **Schedule**: Creates a weekly recurring schedule (`Weekly-Cert-Renewal-Check`) and links it to the runbook.
@@ -129,7 +128,7 @@ az automation runbook start \
 ```
 
 ### 2. Force an Immediate Certificate Renewal
-To test the full flow (Cloudflare DNS-01 challenge → Key Vault PFX import → Front Door HTTPS update) right away, pass `ForceRenewal=true`:
+To test the full flow (Cloudflare DNS-01 challenge → Key Vault PFX import → CDN custom domain HTTPS update) right away, pass `ForceRenewal=true`:
 
 ```bash
 az automation runbook start \

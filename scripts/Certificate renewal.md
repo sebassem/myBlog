@@ -10,7 +10,7 @@ This repository automates the entire renewal pipeline inside Azure using an **Az
 2. **Expiration Check**: Authenticates via System-Assigned Managed Identity and checks the expiration date of `images-seifbassem-cert` in Azure Key Vault. If more than `RENEW_WITHIN_DAYS` (default `30` days) remain, it exits early.
 3. **Cloudflare DNS-01 Challenge**: Uses `Posh-ACME` with the Cloudflare DNS plugin to automatically create and clean up `_acme-challenge.images.seifbassem.com` TXT records and obtain a new RSA 2048 certificate and `.pfx` bundle.
 4. **Key Vault Import**: Imports the new `.pfx` directly into Azure Key Vault (`Import-AzKeyVaultCertificate`).
-5. **Front Door Update**: Calls the Azure Front Door `enableHttps` endpoint so Front Door pulls and deploys the latest certificate version.
+5. **CDN Update**: Enables custom HTTPS on the Azure CDN (classic) custom domain with the new Key Vault certificate version.
 
 ### One-Time Setup & Deployment
 
@@ -24,7 +24,7 @@ This repository automates the entire renewal pipeline inside Azure using an **Az
    - Add the secrets listed in `README.md` (Azure OIDC identity, resource names, contact email, and `CLOUDFLARE_API_TOKEN`) under repo Settings → Secrets and variables → Actions.
 3. **Deploy to Azure**:
    - Run the **Deploy Certificate Renewal Automation** workflow from the Actions tab (it also runs on pushes to `main` that change the scripts).
-   `deploy.sh` provisions the Automation Account, enables Managed Identity, installs `Posh-ACME`, assigns Key Vault and Front Door permissions, stores encrypted Automation Variables, publishes the runbook, and creates the weekly schedule.
+   `deploy.sh` provisions the Automation Account, enables Managed Identity, installs `Posh-ACME`, assigns Key Vault and CDN permissions, stores encrypted Automation Variables, publishes the runbook, and creates the weekly schedule.
 4. **Trigger an On-Demand Run (Optional)**:
    Wait ~2 minutes after deployment for the `Posh-ACME` module import to finish, then run:
    ```bash
@@ -103,16 +103,20 @@ az keyvault certificate import `
 
 &nbsp;
 
-### Step 5: Update Front Door (if secret version changed)
+### Step 5: Update the CDN custom domain to the new certificate version
 
 ```powershell
-az network front-door frontend-endpoint enable-https `
-  --front-door-name <fd-name> `
+az cdn custom-domain enable-https `
   --resource-group <rg> `
-  --name <frontend-endpoint-name> `
-  --certificate-source AzureKeyVault `
-  --vault-id "/subscriptions/<sub>/resourceGroups/<rg>/providers/Microsoft.KeyVault/vaults/<vault>" `
-  --secret-name images-seifbassem-cert
+  --profile-name <cdn-profile-name> `
+  --endpoint-name <cdn-endpoint-name> `
+  --name <custom-domain-name> `
+  --user-cert-subscription-id <kv-subscription-id> `
+  --user-cert-group-name <kv-resource-group> `
+  --user-cert-vault-name <vault> `
+  --user-cert-secret-name images-seifbassem-cert `
+  --user-cert-secret-version <new-version> `
+  --user-cert-protocol-type sni
 ```
 
 &nbsp;
