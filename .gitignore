@@ -12,3 +12,10 @@ static/images/post/*.jpeg
 static/images/post/*.png
 # OSX
 .DS_Store
+
+# Secrets / certificates (defense in depth)
+.env
+.env.*
+*.pfx
+*.pem
+*.key

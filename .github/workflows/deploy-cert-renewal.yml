@@ -1,0 +1,54 @@
+name: Deploy Certificate Renewal Automation
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/deploy.sh"
+      - "scripts/Renew-Certificate.ps1"
+      - ".github/workflows/deploy-cert-renewal.yml"
+
+permissions:
+  id-token: write # Required for OIDC federated login to Azure
+  contents: read
+
+concurrency:
+  group: deploy-cert-renewal
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy Azure Automation Runbook
+    runs-on: ubuntu-latest
+    # No `environment:` here - the Azure federated credential trusts
+    # the main branch (subject: repo:sebassem/myBlog:ref:refs/heads/main).
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Run deploy.sh
+        run: bash scripts/deploy.sh
+        env:
+          # Azure
+          AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+          AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+          KEY_VAULT_RESOURCE_GROUP: ${{ vars.KEY_VAULT_RESOURCE_GROUP }}
+          AUTOMATION_ACCOUNT_NAME: ${{ secrets.AUTOMATION_ACCOUNT_NAME }}
+          KEY_VAULT_NAME: ${{ secrets.KEY_VAULT_NAME }}
+          KEY_VAULT_CERT_NAME: ${{ secrets.KEY_VAULT_CERT_NAME }}
+          FRONT_DOOR_NAME: ${{ secrets.FRONT_DOOR_NAME }}
+          FRONT_DOOR_ENDPOINT_NAME: ${{ secrets.FRONT_DOOR_ENDPOINT_NAME }}
+          # Certificate / ACME
+          CERT_DOMAIN: images.seifbassem.com
+          ACME_SERVER: LE_PROD
+          RENEW_WITHIN_DAYS: "30"
+          ACME_CONTACT_EMAIL: ${{ secrets.ACME_CONTACT_EMAIL }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
