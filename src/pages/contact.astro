@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config/site';
+---
+
+<BaseLayout title="Say Hello" description="Get in touch with Seif Bassem">
+  <section class="max-w-4xl mx-auto px-4 pt-12">
+    <div class="neo-box p-6 sm:p-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-5 flex flex-col justify-between gap-6">
+          <div>
+            <span class="neo-pill px-3 py-0.5 text-xs bg-[var(--pink)] text-black">
+              Contact
+            </span>
+            <h1 class="text-4xl font-black tracking-tight mt-3">
+              Say <span class="neo-highlight"><span>Hello</span></span>
+            </h1>
+            <p class="mt-4 text-[var(--ink-muted)] leading-relaxed">
+              Have a question about an Azure architecture, AI workload, speaking opportunity, or
+              one of my blog posts? Drop a message and I&apos;ll get back to you.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-4 border-t-2 border-[var(--border-color)]">
+            <div class="text-sm font-bold uppercase opacity-70">Connect Elsewhere</div>
+            <div class="flex flex-wrap gap-2.5">
+              {SITE.socials
+                .filter((s) => s.link.startsWith('http'))
+                .map((social) => (
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="neo-pill px-3 py-1 text-sm bg-[var(--surface-subtle)] text-[var(--ink)] hover:bg-[var(--yellow)] hover:text-black"
+                  >
+                    <i class={social.icon}></i> {social.title}
+                  </a>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <form
+          method="POST"
+          action={SITE.forms.formspreeAction}
+          class="md:col-span-7 space-y-4"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-bold mb-1.5">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+                class="w-full px-4 py-2.5 border-2 border-[var(--border-color)] bg-[var(--main-bg)] text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--yellow)]"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-bold mb-1.5">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                class="w-full px-4 py-2.5 border-2 border-[var(--border-color)] bg-[var(--main-bg)] text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--yellow)]"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-sm font-bold mb-1.5">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              placeholder="What's this about?"
+              class="w-full px-4 py-2.5 border-2 border-[var(--border-color)] bg-[var(--main-bg)] text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--yellow)]"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-bold mb-1.5">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Type your message here..."
+              class="w-full px-4 py-2.5 border-2 border-[var(--border-color)] bg-[var(--main-bg)] text-[var(--ink)] focus:outline-none focus:ring-2 focus:ring-[var(--yellow)]"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="neo-btn px-6 py-3 bg-[var(--yellow)] text-black rounded-full cursor-pointer"
+          >
+            Send Message <i class="ri-send-plane-line"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

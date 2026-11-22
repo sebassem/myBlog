@@ -1,0 +1,257 @@
+---
+import logoStar from '../assets/logo-star.svg';
+import svgPinkStar from '../assets/pink-star.svg';
+import { SITE } from '../config/site';
+
+const { pathname } = Astro.url;
+const isActive = (path: string) =>
+  path === '/' ? pathname === '/' || pathname.startsWith('/page/') : pathname.startsWith(path);
+---
+
+<header class="relative border-b-3 border-[var(--border-color)] px-4 py-6 md:p-7 overflow-x-clip">
+  <img
+    src={svgPinkStar.src}
+    alt=""
+    aria-hidden="true"
+    width="80"
+    class="pointer-events-none select-none absolute -right-9 -top-4 opacity-90"
+  />
+  <img
+    src={svgPinkStar.src}
+    alt=""
+    aria-hidden="true"
+    width="80"
+    class="pointer-events-none select-none absolute -left-8 -bottom-5 hidden md:block opacity-90"
+  />
+
+  <div class="flex border-3 border-[var(--border-color)] bg-[var(--surface)] max-w-4xl mx-auto relative z-20 shadow-[4px_4px_0px_var(--shadow-color)]">
+    <!-- Corner selection handles matching seifbassem.com -->
+    <div class="size-2 bg-[var(--surface)] border-2 border-[var(--border-color)] absolute -top-2 -right-2"></div>
+    <div class="size-2 bg-[var(--surface)] border-2 border-[var(--border-color)] absolute -top-2 -left-2"></div>
+    <div class="size-2 bg-[var(--surface)] border-2 border-[var(--border-color)] absolute -bottom-2 -left-2"></div>
+    <div class="size-2 bg-[var(--surface)] border-2 border-[var(--border-color)] absolute -bottom-2 -right-2"></div>
+
+    <nav class="flex w-full items-center p-2 md:p-0" aria-label="Main navigation">
+      <div class="flex-1 font-bold">
+        <a href="/" class="inline-flex items-center gap-2 pl-2 md:pl-4 text-lg tracking-tight">
+          <img src={logoStar.src} alt="" width="26" height="26" />
+          <span>{SITE.shortTitle}</span>
+        </a>
+      </div>
+
+      <!-- Desktop nav links -->
+      <ul class="hidden md:flex items-stretch">
+        <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
+          <a
+            href="/"
+            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class:list={[isActive('/') ? 'before:w-full font-bold' : 'before:w-0']}
+          >
+            <span class="relative z-10 dark:mix-blend-normal">Home</span>
+          </a>
+        </li>
+
+        <!-- Categories dropdown -->
+        <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center relative group">
+          <a
+            href="/categories/"
+            class="whitespace-nowrap relative flex items-center gap-1 font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class:list={[isActive('/categories/') ? 'before:w-full font-bold' : 'before:w-0']}
+          >
+            <span class="relative z-10">Categories</span>
+            <i class="ri-arrow-down-s-line relative z-10 text-base"></i>
+          </a>
+          <div class="hidden group-hover:block group-focus-within:block absolute left-0 top-full pt-2 z-30 min-w-[200px]">
+            <ul class="bg-[var(--surface)] border-2 border-[var(--border-color)] shadow-[4px_4px_0px_var(--shadow-color)] py-1">
+              {SITE.categories.map((cat) => (
+                <li>
+                  <a
+                    href={`/categories/${cat.slug}/`}
+                    class="block px-4 py-2 text-sm font-semibold hover:bg-[var(--yellow)] hover:text-black transition-colors"
+                  >
+                    {cat.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </li>
+
+        <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
+          <a
+            href="/about/"
+            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class:list={[isActive('/about/') ? 'before:w-full font-bold' : 'before:w-0']}
+          >
+            <span class="relative z-10">About</span>
+          </a>
+        </li>
+
+        <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
+          <a
+            href="/contact/"
+            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class:list={[isActive('/contact/') ? 'before:w-full font-bold' : 'before:w-0']}
+          >
+            <span class="relative z-10">Contact</span>
+          </a>
+        </li>
+
+        <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
+          <a
+            href={SITE.portfolioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="whitespace-nowrap relative flex items-center gap-1 font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:w-0 before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+          >
+            <span class="relative z-10">Portfolio</span>
+            <i class="ri-external-link-line relative z-10 text-sm"></i>
+          </a>
+        </li>
+
+        <!-- Search icon -->
+        <li class="border-l-2 border-[var(--border-color)] flex items-center">
+          <a
+            href="/search/"
+            aria-label="Search articles"
+            title="Search"
+            class="px-3.5 py-3.5 h-full flex items-center justify-center hover:bg-[var(--yellow)] hover:text-black transition-colors"
+            class:list={[isActive('/search/') && 'bg-[var(--yellow)] text-black']}
+          >
+            <i class="ri-search-line text-lg"></i>
+          </a>
+        </li>
+
+        <!-- Dark mode toggle -->
+        <li class="border-l-2 border-[var(--border-color)] flex items-center">
+          <button
+            type="button"
+            data-theme-toggle
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+            class="px-3.5 py-3.5 h-full flex items-center justify-center hover:bg-[var(--blue)] hover:text-black transition-colors cursor-pointer"
+          >
+            <i class="ri-moon-line text-lg dark:hidden"></i>
+            <i class="ri-sun-line text-lg hidden dark:inline"></i>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Mobile controls -->
+      <div class="flex md:hidden items-center gap-1 pr-1">
+        <a
+          href="/search/"
+          aria-label="Search articles"
+          class="p-2 border-2 border-[var(--border-color)] bg-[var(--surface)]"
+        >
+          <i class="ri-search-line text-lg"></i>
+        </a>
+        <button
+          type="button"
+          data-theme-toggle
+          aria-label="Toggle dark mode"
+          class="p-2 border-2 border-[var(--border-color)] bg-[var(--surface)] cursor-pointer"
+        >
+          <i class="ri-moon-line text-lg dark:hidden"></i>
+          <i class="ri-sun-line text-lg hidden dark:inline"></i>
+        </button>
+        <button
+          type="button"
+          id="menu-open"
+          aria-label="Open menu"
+          class="p-2 border-2 border-[var(--border-color)] bg-[var(--yellow)] text-black cursor-pointer"
+        >
+          <i class="ri-menu-2-line text-lg"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div
+  id="menu-content"
+  class="block md:hidden fixed inset-0 bg-[var(--main-bg)] z-50 p-6 transition-transform duration-300 -translate-x-full overflow-y-auto"
+>
+  <div class="flex items-center justify-between border-b-3 border-[var(--border-color)] pb-4 mb-6">
+    <span class="font-black uppercase text-xl flex items-center gap-2">
+      <img src={logoStar.src} alt="" width="24" height="24" />
+      Menu
+    </span>
+    <button
+      type="button"
+      id="menu-close"
+      aria-label="Close menu"
+      class="p-2 border-2 border-[var(--border-color)] bg-[var(--surface)] cursor-pointer"
+    >
+      <i class="ri-close-line text-2xl"></i>
+    </button>
+  </div>
+
+  <ul class="flex flex-col gap-3">
+    <li>
+      <a href="/" class="block p-3 neo-card text-xl font-bold">Home</a>
+    </li>
+    <li class="neo-card p-3">
+      <div class="text-sm uppercase font-bold opacity-70 mb-2">Categories</div>
+      <div class="flex flex-wrap gap-2">
+        {SITE.categories.map((cat) => (
+          <a
+            href={`/categories/${cat.slug}/`}
+            class="neo-pill px-3 py-1 text-sm bg-[var(--blue)] text-black"
+          >
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </li>
+    <li>
+      <a href="/about/" class="block p-3 neo-card text-xl font-bold">About</a>
+    </li>
+    <li>
+      <a href="/contact/" class="block p-3 neo-card text-xl font-bold">Contact</a>
+    </li>
+    <li>
+      <a href="/search/" class="block p-3 neo-card text-xl font-bold">Search</a>
+    </li>
+    <li>
+      <a
+        href={SITE.portfolioUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block p-3 neo-card bg-[var(--yellow)] text-black text-xl font-bold"
+      >
+        Portfolio ↗
+      </a>
+    </li>
+  </ul>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuContent = document.querySelector('#menu-content');
+    const menuOpen = document.querySelector('#menu-open');
+    const menuClose = document.querySelector('#menu-close');
+
+    menuOpen?.addEventListener('click', () => {
+      menuContent?.classList.remove('-translate-x-full');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      menuContent?.classList.add('-translate-x-full');
+    });
+
+    menuContent?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuContent?.classList.add('-translate-x-full');
+      });
+    });
+
+    document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    });
+  });
+</script>

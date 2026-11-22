@@ -1,0 +1,79 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath?: string; // e.g. "" for home (page 1 = "/", page 2 = "/page/2/")
+}
+
+const { currentPage, totalPages, basePath = '' } = Astro.props;
+
+function pageUrl(page: number): string {
+  const prefix = basePath ? `/${basePath.replace(/^\/|\/$/g, '')}` : '';
+  if (page === 1) return `${prefix}/`;
+  return `${prefix}/page/${page}/`;
+}
+
+const pages: (number | 'ellipsis')[] = [];
+if (totalPages <= 7) {
+  for (let i = 1; i <= totalPages; i++) pages.push(i);
+} else {
+  pages.push(1);
+  if (currentPage > 3) pages.push('ellipsis');
+  const start = Math.max(2, currentPage - 1);
+  const end = Math.min(totalPages - 1, currentPage + 1);
+  for (let i = start; i <= end; i++) pages.push(i);
+  if (currentPage < totalPages - 2) pages.push('ellipsis');
+  pages.push(totalPages);
+}
+---
+
+{totalPages > 1 && (
+  <nav aria-label="Pagination" class="flex items-center justify-center gap-2 flex-wrap mt-12">
+    {currentPage > 1 ? (
+      <a
+        href={pageUrl(currentPage - 1)}
+        aria-label="Previous page"
+        class="neo-btn px-3.5 py-2 bg-[var(--surface)] text-[var(--ink)] text-sm"
+      >
+        <i class="ri-arrow-left-s-line text-lg"></i>
+      </a>
+    ) : (
+      <span class="px-3.5 py-2 border-2 border-[var(--border-color)]/30 opacity-40 text-sm">
+        <i class="ri-arrow-left-s-line text-lg"></i>
+      </span>
+    )}
+
+    {pages.map((p) =>
+      p === 'ellipsis' ? (
+        <span class="px-2 py-2 font-bold text-[var(--ink-muted)]">…</span>
+      ) : (
+        <a
+          href={pageUrl(p)}
+          aria-current={p === currentPage ? 'page' : undefined}
+          class="neo-btn min-w-[40px] px-3 py-2 text-sm"
+          class:list={[
+            p === currentPage
+              ? 'bg-[var(--yellow)] text-black'
+              : 'bg-[var(--surface)] text-[var(--ink)]',
+          ]}
+        >
+          {p}
+        </a>
+      )
+    )}
+
+    {currentPage < totalPages ? (
+      <a
+        href={pageUrl(currentPage + 1)}
+        aria-label="Next page"
+        class="neo-btn px-3.5 py-2 bg-[var(--surface)] text-[var(--ink)] text-sm"
+      >
+        <i class="ri-arrow-right-s-line text-lg"></i>
+      </a>
+    ) : (
+      <span class="px-3.5 py-2 border-2 border-[var(--border-color)]/30 opacity-40 text-sm">
+        <i class="ri-arrow-right-s-line text-lg"></i>
+      </span>
+    )}
+  </nav>
+)}

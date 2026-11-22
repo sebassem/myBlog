@@ -1,21 +1,21 @@
-# Hugo default output directory
-/public
+# Dependencies
+node_modules/
 
-## OS Files
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-static/images/post/*.jpg
-static/images/post/*.jpeg
-static/images/post/*.png
-# OSX
-.DS_Store
+# Astro build output & generated types
+dist/
+.astro/
 
-# Secrets / certificates (defense in depth)
+# Environment variables
 .env
 .env.*
-*.pfx
-*.pem
-*.key
+!.env.example
+
+# macOS / OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

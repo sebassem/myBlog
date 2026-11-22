@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryFilter from '../../components/CategoryFilter.astro';
+import PostCard from '../../components/PostCard.astro';
+import NewsletterBox from '../../components/NewsletterBox.astro';
+import {
+  getCategoryDisplayName,
+  getCategorySlug,
+  getPublishedPosts,
+} from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getPublishedPosts();
+  const map = new Map<string, typeof allPosts>();
+
+  for (const post of allPosts) {
+    for (const cat of post.data.categories ?? []) {
+      const slug = getCategorySlug(cat);
+      if (!map.has(slug)) map.set(slug, []);
+      map.get(slug)!.push(post);
+    }
+  }
+
+  return Array.from(map.entries()).map(([slug, posts]) => ({
+    params: { category: slug },
+    props: {
+      slug,
+      name: getCategoryDisplayName(slug),
+      posts,
+    },
+  }));
+}
+
+const { slug, name, posts } = Astro.props;
+---
+
+<BaseLayout title={name} description={`Articles in ${name} by Seif Bassem`}>
+  <section class="max-w-5xl mx-auto px-4 pt-12 pb-6">
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight">
+        <span class="neo-highlight"><span>{name}</span></span>
+      </h1>
+      <p class="mt-2 text-base text-[var(--ink-muted)]">
+        {posts.length} {posts.length === 1 ? 'article' : 'articles'} in this category.
+      </p>
+    </div>
+
+    <CategoryFilter activeSlug={slug} />
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </section>
+
+  <NewsletterBox />
+</BaseLayout>

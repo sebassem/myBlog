@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterBox from '../components/NewsletterBox.astro';
+import { SITE } from '../config/site';
+---
+
+<BaseLayout
+  title="About Me"
+  description="This is my personal blog where I discuss everything about the cloud, especially Microsoft Azure and AI."
+>
+  <section class="max-w-4xl mx-auto px-4 pt-12">
+    <div class="neo-box p-6 sm:p-10">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8 pb-8 border-b-2 border-[var(--border-color)]">
+        <div class="relative shrink-0">
+          <img
+            src={SITE.authorImage}
+            alt={SITE.author}
+            width="180"
+            height="180"
+            class="size-36 sm:size-44 object-cover border-3 border-[var(--border-color)] shadow-[5px_5px_0px_var(--shadow-color)]"
+          />
+        </div>
+        <div>
+          <span class="neo-pill px-3 py-0.5 text-xs bg-[var(--yellow)] text-black mb-3">
+            About Me
+          </span>
+          <h1 class="text-3xl sm:text-4xl font-black tracking-tight mt-2">
+            Hi, I&apos;m <span class="neo-highlight"><span>{SITE.author}</span></span>
+          </h1>
+          <p class="mt-3 text-lg font-medium text-[var(--ink-muted)]">
+            {SITE.authorSummary}
+          </p>
+          <div class="flex flex-wrap gap-3 mt-5">
+            <a
+              href={SITE.portfolioUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="neo-btn px-4 py-2 bg-[var(--blue)] text-black text-sm rounded-full"
+            >
+              Visit Portfolio <i class="ri-external-link-line"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/@seifbassemazure/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="neo-btn px-4 py-2 bg-[var(--pink)] text-black text-sm rounded-full"
+            >
+              <i class="ri-youtube-line text-base"></i> YouTube Channel
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="prose prose-base sm:prose-lg max-w-none">
+        <p>
+          Hi, my name is Seif Bassem, and I&apos;m a Cloud Solution Architect. I specialize in designing
+          and delivering scalable cloud solutions that drive global customer success. In addition to
+          cloud transformation, I help customers architect AI-driven solutions, ensuring they leverage
+          the cloud effectively for innovation, scalability, security, and resiliency. My expertise
+          extends beyond technical implementation as I actively lead and contribute to high-impact
+          initiatives like the Cloud Adoption and Well-Architected Frameworks, Azure Landing Zones,
+          Azure Arc Jumpstart, Azure Verified Modules, and FinOps toolkit. Additionally, I have
+          developed and released multiple public tools/products, some of which have grown into
+          full-fledged first-party products.
+        </p>
+        <p>
+          I am also deeply involved in thought leadership, spearheading internal and external
+          initiatives, publishing field content, accelerators, and articles, and sharing insights
+          through webinars, community events, user groups, and large-scale conferences such as
+          Microsoft Ignite.
+        </p>
+        <p>
+          In this blog, I share articles and thoughts on different Azure solutions and services,
+          interesting use cases of the cloud, AI engineering, and reviews of useful books I&apos;ve
+          been reading.
+        </p>
+        <p>
+          Check out my{' '}
+          <a href="https://www.youtube.com/@seifbassemazure/" target="_blank" rel="noopener noreferrer">
+            YouTube channel
+          </a>{' '}
+          for Azure Tips &amp; Tricks.
+        </p>
+        <blockquote>
+          <strong>Disclaimer:</strong> The blog posts and other publications are my own personal
+          opinions and are by no means associated with my employer.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <NewsletterBox />
+</BaseLayout>
