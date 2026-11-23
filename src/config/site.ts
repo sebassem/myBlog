@@ -24,11 +24,6 @@ export const SITE = {
   },
   socials: [
     {
-      title: 'YouTube',
-      icon: 'ri-youtube-line',
-      link: 'https://www.youtube.com/@seifbassemazure/',
-    },
-    {
       title: 'LinkedIn',
       icon: 'ri-linkedin-line',
       link: 'https://www.linkedin.com/in/seif-bassem/',
