@@ -23,7 +23,7 @@ const { activeSlug = 'all' } = Astro.props;
     </a>
     {SITE.categories.map((cat) => (
       <a
-        href={`/categories/${cat.slug}/`}
+        href={cat.href}
         class="neo-pill px-4 py-1.5 text-sm"
         class:list={[
           activeSlug === cat.slug
