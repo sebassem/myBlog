@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/Azure-Arc-VMware/vmware_banner.png"
 date: 2022-05-24 17:08:42 +0200
 tags: ["Azure Arc","VMware"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

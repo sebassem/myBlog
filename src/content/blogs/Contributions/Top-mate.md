@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/Top-Mate/banner.png"
 date: 2025-02-01 17:08:42 +0200
 tags: ["Mentoring"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/Ignite-2024/session.png"
 date: 2024-11-06 17:08:42 +0200
 tags: ["Events","Ignite","Adaptive Cloud","Azure Arc Jumpstart"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

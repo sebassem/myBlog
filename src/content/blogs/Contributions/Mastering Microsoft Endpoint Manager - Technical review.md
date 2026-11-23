@@ -4,7 +4,7 @@ images:
   - "https://m.media-amazon.com/images/I/614wwVqng-L._AC_UF1000,1000_QL80_.jpg"
 date: 2021-10-10 17:08:42 +0200
 tags: ["Microsoft Endpoint Manager","Book"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

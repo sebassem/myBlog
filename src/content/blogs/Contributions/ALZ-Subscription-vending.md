@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/ALZ-Sub-Vending/banner.png"
 date: 2025-03-18 17:08:42 +0200
 tags: ["Azure","Bicep","Infrastructure-as-code","Azure-Landing-Zones"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 ---
 

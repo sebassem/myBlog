@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/MS-Learn-Workbooks/banner.png"
 date: 2023-01-22 17:08:42 +0200
 tags: ["Azure Monitor"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

@@ -51,7 +51,7 @@ export const SITE = {
   ],
   categories: [
     { name: 'Posts', slug: 'posts', color: 'blue' as const },
-    { name: 'Contributions', slug: 'contributions', color: 'pink' as const },
+    { name: 'Community', slug: 'community', color: 'pink' as const },
     { name: 'Azure Unboxing', slug: 'azure-unboxing', color: 'yellow' as const },
     { name: 'Book Reviews', slug: 'book-reviews', color: 'blue' as const },
   ],

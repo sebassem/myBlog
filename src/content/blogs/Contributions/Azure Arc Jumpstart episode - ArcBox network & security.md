@@ -4,7 +4,7 @@ images:
   - "https://i3.ytimg.com/vi/gCP8BpwRQ5k/maxresdefault.jpg"
 date: 2022-06-01 17:08:42 +0200
 tags: ["Azure Arc"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

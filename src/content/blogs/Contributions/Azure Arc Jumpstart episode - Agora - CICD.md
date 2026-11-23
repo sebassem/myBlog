@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/Jumpstart-Agora-CICD/banner.jpg"
 date: 2023-09-01 17:08:42 +0200
 tags: ["Azure Arc","Azure","CI/CD"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---
