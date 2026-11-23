@@ -82,6 +82,6 @@ You can also simply deploy an [ARM template](https://github.com/Azure/Azure-Sent
 ## Video walkthrough
 
   <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/8Qb8p-WjpXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/8Qb8p-WjpXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 

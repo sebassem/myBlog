@@ -203,6 +203,6 @@ We can see that there multiple capabilities of the web app greyed out which are 
 In a matter of seconds , our app scaled to 10 pods on our cluster which is very cool 🚀
 
 📹Feature announcement in Microsoft Build <figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ItZNZYOczWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ItZNZYOczWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 

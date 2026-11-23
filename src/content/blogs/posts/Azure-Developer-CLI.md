@@ -350,7 +350,7 @@ Using templates can save you a significant amount of time and effort, as you don
 - Intro to _azd_
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/9z3PiHSCcYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/9z3PiHSCcYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 - _Azd_ [documentation](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview)

@@ -11,4 +11,4 @@ draft: false
 
 Watch the new Azure Arc [Jumpstart lighenging episode](https://www.youtube.com/watch?v=I95jqzUck2Q&t=94s), where I joined Lior Kamrat to talk about the new ArcBox flavor for Azure Arc-enabled SQL Managed Instance. For more information see this [blog post](https://techcommunity.microsoft.com/t5/azure-arc-blog/announcing-jumpstart-arcbox-for-dataops/ba-p/3647642) and to deploy the new flavor and explore other Azure Arc scenarios, visit the [Azure Arc Jumpstart project](https://azurearcjumpstart.io/).
 
-<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/I95jqzUck2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/I95jqzUck2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>

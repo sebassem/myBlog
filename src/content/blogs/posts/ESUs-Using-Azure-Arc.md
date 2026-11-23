@@ -17,7 +17,7 @@ As of October 10th, Windows Server 2012 will no longer be supported by Microsoft
 Azure Arc offers more than just extended security updates for Windows Server 2012. It brings a range of powerful capabilities to the table. With Azure Arc, organizations can easily manage, secure and monitor their hybrid infrastructure, including on-premises servers, multi-cloud environments, and edge devices, all from a single control plane with capabilities like _Azure Monitor_, _Defender for Cloud_ , _Change Tracking and Inventory_ , _Azure Update Manager_ , and much more.
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://youtube.com/embed/c2gm907H8SQ?si=F69yBZajYgTNvm7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://youtube.com/embed/c2gm907H8SQ?si=F69yBZajYgTNvm7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 In this post, we will explore everything you need to know to start deploying ESUs using Azure Arc to your 2012 machines.

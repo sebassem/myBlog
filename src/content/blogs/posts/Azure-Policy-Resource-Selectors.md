@@ -18,7 +18,7 @@ This has now changed with Azure Policy resource selectors which is a new capabil
 
 ## Video demonstration
 
-<iframe width="547" height="547" src="https://www.youtube.com/embed/OUCIPP-z8os" title="Azure Policy resource selectors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="547" height="547" src="https://www.youtube.com/embed/OUCIPP-z8os" title="Azure Policy resource selectors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
 ## Demo
 

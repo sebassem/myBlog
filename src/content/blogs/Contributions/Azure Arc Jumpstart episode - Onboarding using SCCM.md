@@ -12,7 +12,7 @@ draft: false
 Watch the new Azure Arc [Jumpstart Lightning episode](https://www.youtube.com/playlist?list=PLZuSmETs0xIagjkwrufUkBbex7RPJV4n5), where I joined Lior Kamrat to talk about at scale Azure Arc-enabled servers onboarding using Configuration Manager. Lots of cool demos included 🕹️🕹️
 
   <figure class="video_container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/bj7_phzzMS0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/bj7_phzzMS0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
   </figure>
 
 ## Reference
