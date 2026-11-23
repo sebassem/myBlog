@@ -1,0 +1,53 @@
+---
+import logoStar from '../assets/logo-star.svg';
+import { SITE } from '../config/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t-4 border-[var(--border-color)] px-5 py-10 mt-20 bg-[var(--surface)]">
+  <div class="max-w-5xl mx-auto flex flex-col gap-6 md:grid md:grid-cols-3 items-center">
+    <div class="font-bold">
+      <a href="/" class="inline-flex items-center gap-2.5 text-xl">
+        <img src={logoStar.src} alt="" width="28" height="28" />
+        <span>{SITE.shortTitle}</span>
+      </a>
+    </div>
+
+    <div class="text-center text-sm text-[var(--ink-muted)]">
+      <p>© {year} {SITE.author}. All rights reserved.</p>
+      <p class="mt-1">
+        <a
+          href={SITE.portfolioUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="underline decoration-2 decoration-[var(--yellow)] font-semibold hover:bg-[var(--yellow)] hover:text-black px-1"
+        >
+          seifbassem.com
+        </a>
+        ·
+        <a
+          href="/tags/"
+          class="underline decoration-2 decoration-[var(--yellow)] font-semibold hover:bg-[var(--yellow)] hover:text-black px-1"
+        >
+          All Tags
+        </a>
+      </p>
+    </div>
+
+    <div class="flex md:justify-end gap-4">
+      {SITE.socials.map((social) => (
+        <a
+          href={social.link}
+          target={social.link.startsWith('http') ? '_blank' : undefined}
+          rel={social.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+          aria-label={social.title}
+          title={social.title}
+          class="size-10 flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--main-bg)] shadow-[2px_2px_0px_var(--shadow-color)] hover:bg-[var(--yellow)] hover:text-black hover:-translate-y-0.5 transition-all"
+        >
+          <i class={`${social.icon} text-xl`}></i>
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

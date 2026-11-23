@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryFilter from '../../components/CategoryFilter.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import { SITE } from '../../config/site';
+import { getPublishedPosts } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getPublishedPosts();
+  const totalPages = Math.ceil(allPosts.length / SITE.postsPerPage);
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, idx) => {
+    const pageNum = idx + 2;
+    const start = (pageNum - 1) * SITE.postsPerPage;
+    return {
+      params: { page: String(pageNum) },
+      props: {
+        posts: allPosts.slice(start, start + SITE.postsPerPage),
+        currentPage: pageNum,
+        totalPages,
+      },
+    };
+  });
+}
+
+const { posts, currentPage, totalPages } = Astro.props;
+---
+
+<BaseLayout title={`Page ${currentPage} — ${SITE.title}`}>
+  <section class="max-w-5xl mx-auto px-4 pt-12 pb-6">
+    <div class="mb-8 flex items-end justify-between flex-wrap gap-4">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-black tracking-tight">
+          Cloud &amp; AI Engineering <span class="neo-highlight"><span>Blog</span></span>
+        </h1>
+        <p class="mt-2 text-sm font-semibold text-[var(--ink-muted)]">
+          Page {currentPage} of {totalPages}
+        </p>
+      </div>
+    </div>
+
+    <CategoryFilter activeSlug="all" />
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+
+    <Pagination currentPage={currentPage} totalPages={totalPages} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPublishedPosts, getTagSlug } from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getPublishedPosts();
+  const map = new Map<string, { label: string; posts: typeof allPosts }>();
+
+  for (const post of allPosts) {
+    for (const tag of post.data.tags ?? []) {
+      const slug = getTagSlug(tag);
+      if (!slug) continue;
+      if (!map.has(slug)) map.set(slug, { label: tag, posts: [] });
+      const entry = map.get(slug)!;
+      if (!entry.posts.some((p) => p.id === post.id)) {
+        entry.posts.push(post);
+      }
+    }
+  }
+
+  return Array.from(map.entries()).map(([slug, { label, posts }]) => ({
+    params: { tag: slug },
+    props: { slug, label, posts },
+  }));
+}
+
+const { label, posts } = Astro.props;
+---
+
+<BaseLayout title={`#${label}`} description={`Articles tagged ${label} by Seif Bassem`}>
+  <section class="max-w-5xl mx-auto px-4 pt-12 pb-6">
+    <div class="mb-6">
+      <a
+        href="/tags/"
+        class="inline-flex items-center gap-1 text-sm font-bold hover:underline decoration-2 decoration-[var(--yellow)] mb-3"
+      >
+        <i class="ri-arrow-left-line"></i> All tags
+      </a>
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight">
+        <span class="neo-highlight"><span>#{label}</span></span>
+      </h1>
+      <p class="mt-2 text-base text-[var(--ink-muted)]">
+        {posts.length} {posts.length === 1 ? 'article' : 'articles'} tagged with #{label}.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

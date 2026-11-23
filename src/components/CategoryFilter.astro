@@ -1,0 +1,46 @@
+---
+import { SITE } from '../config/site';
+
+interface Props {
+  activeSlug?: string;
+}
+
+const { activeSlug = 'all' } = Astro.props;
+---
+
+<div class="flex flex-wrap items-center justify-between gap-4">
+  <div class="flex flex-wrap items-center gap-2.5">
+    <a
+      href="/"
+      class="neo-pill px-4 py-1.5 text-sm"
+      class:list={[
+        activeSlug === 'all'
+          ? 'bg-[var(--yellow)] text-black shadow-[3px_3px_0px_var(--shadow-color)]'
+          : 'bg-[var(--surface)] text-[var(--ink)]',
+      ]}
+    >
+      All
+    </a>
+    {SITE.categories.map((cat) => (
+      <a
+        href={`/categories/${cat.slug}/`}
+        class="neo-pill px-4 py-1.5 text-sm"
+        class:list={[
+          activeSlug === cat.slug
+            ? 'bg-[var(--yellow)] text-black shadow-[3px_3px_0px_var(--shadow-color)]'
+            : 'bg-[var(--surface)] text-[var(--ink)]',
+        ]}
+      >
+        {cat.name}
+      </a>
+    ))}
+  </div>
+
+  <a
+    href="/search/"
+    class="inline-flex items-center gap-2 px-4 py-1.5 border-2 border-[var(--border-color)] bg-[var(--surface)] text-sm text-[var(--ink-muted)] hover:border-[var(--border-color)] hover:shadow-[3px_3px_0px_var(--shadow-color)] transition-all min-w-[200px]"
+  >
+    <i class="ri-search-line text-base"></i>
+    <span>Search articles…</span>
+  </a>
+</div>

@@ -1,0 +1,61 @@
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const prose = document.querySelector('.prose');
+    if (!prose) return;
+
+    // 1. Convert ```mermaid code blocks into Mermaid diagram containers and lazy-load Mermaid v11
+    const mermaidPres = Array.from(
+      prose.querySelectorAll<HTMLPreElement>('pre[data-language="mermaid"], pre:has(code.language-mermaid)')
+    );
+
+    if (mermaidPres.length > 0) {
+      mermaidPres.forEach((pre) => {
+        const lines = pre.querySelectorAll('.line');
+        const code =
+          lines.length > 0
+            ? Array.from(lines)
+                .map((l) => l.textContent ?? '')
+                .join('\n')
+            : (pre.querySelector('code')?.textContent ?? pre.textContent ?? '');
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-container';
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = code.trim();
+        wrapper.appendChild(div);
+        pre.replaceWith(wrapper);
+      });
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+      script.onload = () => {
+        const m = (window as unknown as { mermaid?: { initialize: (o: object) => void; run: () => void } }).mermaid;
+        if (m) {
+          m.initialize({ startOnLoad: true, theme: 'default' });
+          m.run();
+        }
+      };
+      document.head.appendChild(script);
+    }
+
+    // 2. Add Copy button to remaining code blocks
+    prose.querySelectorAll<HTMLPreElement>('pre').forEach((pre) => {
+      if (pre.querySelector('.code-copy-btn')) return;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'code-copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', async () => {
+        const text = pre.querySelector('code')?.textContent ?? pre.textContent ?? '';
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.textContent = 'Copied!';
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+          }, 1600);
+        } catch {}
+      });
+      pre.appendChild(btn);
+    });
+  });
+</script>

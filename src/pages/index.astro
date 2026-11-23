@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryFilter from '../components/CategoryFilter.astro';
+import PostCard from '../components/PostCard.astro';
+import Pagination from '../components/Pagination.astro';
+import { SITE } from '../config/site';
+import { getPublishedPosts } from '../utils/posts';
+
+const allPosts = await getPublishedPosts();
+const totalPages = Math.ceil(allPosts.length / SITE.postsPerPage);
+const posts = allPosts.slice(0, SITE.postsPerPage);
+---
+
+<BaseLayout>
+  <section class="max-w-5xl mx-auto px-4 pt-12 pb-6">
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight">
+        Cloud &amp; AI Engineering <span class="neo-highlight"><span>Blog</span></span>
+      </h1>
+      <p class="mt-3 text-base md:text-lg text-[var(--ink-muted)] max-w-2xl">
+        {SITE.description}
+      </p>
+    </div>
+
+    <CategoryFilter activeSlug="all" />
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map((post) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+
+    <Pagination currentPage={1} totalPages={totalPages} />
+  </section>
+</BaseLayout>

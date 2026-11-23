@@ -1,0 +1,145 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import ArticleEnhancements from '../../components/ArticleEnhancements.astro';
+import { SITE } from '../../config/site';
+import {
+  formatDate,
+  getCategoryColor,
+  getCategoryDisplayName,
+  getCategorySlug,
+  getPostCoverImage,
+  getPostExcerpt,
+  getPostSlug,
+  getPostUrl,
+  getPublishedPosts,
+  getReadingTimeMinutes,
+  getRelatedPosts,
+  getTagSlug,
+} from '../../utils/posts';
+
+export async function getStaticPaths() {
+  const allPosts = await getPublishedPosts();
+  return allPosts.map((post) => ({
+    params: { slug: getPostSlug(post) },
+    props: {
+      post,
+      relatedPosts: getRelatedPosts(post, allPosts, 3),
+    },
+  }));
+}
+
+const { post, relatedPosts } = Astro.props;
+const { Content } = await render(post);
+
+const cover = getPostCoverImage(post);
+const readingTime = getReadingTimeMinutes(post.body);
+const excerpt = getPostExcerpt(post, 160);
+const canonicalUrl = new URL(getPostUrl(post), SITE.url).toString();
+const primaryCategory = post.data.categories?.[0] ?? 'posts';
+const primaryCatSlug = getCategorySlug(primaryCategory);
+const primaryCatName = getCategoryDisplayName(primaryCatSlug);
+const catColor = getCategoryColor(primaryCategory);
+
+const badgeBg =
+  catColor === 'pink'
+    ? 'bg-[var(--pink)]'
+    : catColor === 'yellow'
+      ? 'bg-[var(--yellow)]'
+      : 'bg-[var(--blue)]';
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={excerpt}
+  image={cover ?? SITE.ogImage}
+  type="article"
+  publishedTime={post.data.date}
+>
+  <article class="max-w-6xl mx-auto px-4 pt-10" data-pagefind-body>
+    <div class="neo-box p-5 sm:p-8 md:p-12">
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="text-xs font-semibold text-[var(--ink-muted)] mb-4 flex items-center gap-1.5 flex-wrap" data-pagefind-ignore>
+        <a href="/" class="hover:underline">Home</a>
+        <span>/</span>
+        <a href={`/categories/${primaryCatSlug}/`} class="hover:underline">{primaryCatName}</a>
+        <span>/</span>
+        <span class="truncate max-w-[260px] sm:max-w-lg">{post.data.title}</span>
+      </nav>
+
+      <!-- Category & Tags -->
+      <div class="flex flex-wrap items-center gap-2 mb-4" data-pagefind-ignore>
+        <a
+          href={`/categories/${primaryCatSlug}/`}
+          class={`neo-pill px-3 py-0.5 text-xs text-black ${badgeBg}`}
+        >
+          {primaryCatName}
+        </a>
+        {post.data.tags?.map((tag) => (
+          <a
+            href={`/tags/${getTagSlug(tag)}/`}
+            class="neo-pill px-2.5 py-0.5 text-xs bg-[var(--surface-subtle)] text-[var(--ink)]"
+          >
+            #{tag}
+          </a>
+        ))}
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-3xl sm:text-4xl md:text-[2.6rem] font-black tracking-tight leading-tight mb-6">
+        {post.data.title}
+      </h1>
+
+      <!-- Author / Meta / Share bar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-4 border-y-2 border-[var(--border-color)] mb-8" data-pagefind-ignore>
+        <div class="flex items-center gap-3">
+          <img
+            src={SITE.authorImage}
+            alt={SITE.author}
+            width="44"
+            height="44"
+            class="size-11 rounded-full object-cover border-2 border-[var(--border-color)]"
+          />
+          <div>
+            <a href="/about/" class="font-bold text-sm hover:underline decoration-2 decoration-[var(--yellow)]">
+              {SITE.author}
+            </a>
+            <div class="text-xs text-[var(--ink-muted)] font-medium">
+              <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+              <span> · {readingTime} min read</span>
+            </div>
+          </div>
+        </div>
+
+        <ShareButtons title={post.data.title} url={canonicalUrl} />
+      </div>
+
+      <!-- Cover Image(s) -->
+      {cover && (
+        <div class="mb-8 border-2 border-[var(--border-color)] overflow-hidden bg-[var(--surface-subtle)]">
+          <img
+            src={cover}
+            alt={post.data.title}
+            class="w-full max-h-[540px] object-contain mx-auto"
+          />
+        </div>
+      )}
+
+      <!-- Article Content -->
+      <div class="prose prose-base sm:prose-lg max-w-none">
+        <Content />
+      </div>
+
+      <!-- Bottom Share Bar -->
+      <div class="mt-10 pt-6 border-t-2 border-[var(--border-color)] flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-pagefind-ignore>
+        <span class="font-bold text-sm">Enjoyed this article? Share it:</span>
+        <ShareButtons title={post.data.title} url={canonicalUrl} />
+      </div>
+    </div>
+  </article>
+
+  <RelatedPosts posts={relatedPosts} />
+  <ArticleEnhancements />
+</BaseLayout>

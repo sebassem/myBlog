@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+---
+
+<div class="flex items-center gap-2 flex-wrap" aria-label="Share this article">
+  <a
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Share on LinkedIn"
+    aria-label="Share on LinkedIn"
+    class="size-9 inline-flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--surface)] hover:bg-[var(--blue)] hover:text-black transition-colors"
+  >
+    <i class="ri-linkedin-line text-lg"></i>
+  </a>
+  <a
+    href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Share on X / Twitter"
+    aria-label="Share on X / Twitter"
+    class="size-9 inline-flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--surface)] hover:bg-[var(--yellow)] hover:text-black transition-colors"
+  >
+    <i class="ri-twitter-x-line text-lg"></i>
+  </a>
+  <a
+    href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Share on Facebook"
+    aria-label="Share on Facebook"
+    class="size-9 inline-flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--surface)] hover:bg-[var(--pink)] hover:text-black transition-colors"
+  >
+    <i class="ri-facebook-line text-lg"></i>
+  </a>
+  <a
+    href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
+    title="Share via Email"
+    aria-label="Share via Email"
+    class="size-9 inline-flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--surface)] hover:bg-[var(--yellow)] hover:text-black transition-colors"
+  >
+    <i class="ri-mail-line text-lg"></i>
+  </a>
+  <button
+    type="button"
+    data-copy-link={url}
+    title="Copy link"
+    aria-label="Copy link"
+    class="size-9 inline-flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--surface)] hover:bg-[var(--yellow)] hover:text-black transition-colors cursor-pointer"
+  >
+    <i class="ri-link text-lg"></i>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-copy-link]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const link = btn.dataset.copyLink;
+      if (!link) return;
+      try {
+        await navigator.clipboard.writeText(link);
+        const icon = btn.querySelector('i');
+        if (icon) {
+          icon.className = 'ri-check-line text-lg';
+          setTimeout(() => {
+            icon.className = 'ri-link text-lg';
+          }, 1800);
+        }
+      } catch {}
+    });
+  });
+</script>

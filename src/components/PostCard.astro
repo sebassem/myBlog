@@ -1,0 +1,85 @@
+---
+import {
+  type BlogPost,
+  formatDate,
+  getCategoryColor,
+  getCategoryDisplayName,
+  getCategorySlug,
+  getPostCoverImage,
+  getPostExcerpt,
+  getPostUrl,
+  getReadingTimeMinutes,
+} from '../utils/posts';
+
+interface Props {
+  post: BlogPost;
+  compact?: boolean;
+}
+
+const { post, compact = false } = Astro.props;
+const url = getPostUrl(post);
+const cover = getPostCoverImage(post);
+const primaryCategory = post.data.categories?.[0] ?? 'posts';
+const catSlug = getCategorySlug(primaryCategory);
+const catName = getCategoryDisplayName(catSlug);
+const catColor = getCategoryColor(primaryCategory);
+const readingTime = getReadingTimeMinutes(post.body);
+const excerpt = getPostExcerpt(post, compact ? 105 : 140);
+
+const badgeBg =
+  catColor === 'pink'
+    ? 'bg-[var(--pink)]'
+    : catColor === 'yellow'
+      ? 'bg-[var(--yellow)]'
+      : 'bg-[var(--blue)]';
+---
+
+<article class="neo-card neo-card-hover flex flex-col h-full overflow-hidden">
+  {cover && (
+    <a href={url} class="block aspect-[16/9] overflow-hidden border-b-2 border-[var(--border-color)] bg-[var(--surface-subtle)]">
+      <img
+        src={cover}
+        alt={post.data.title}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+      />
+    </a>
+  )}
+
+  <div class="p-4 sm:p-5 flex flex-col flex-1 gap-3">
+    <div class="flex items-center justify-between gap-2 flex-wrap">
+      <a
+        href={`/categories/${catSlug}/`}
+        class={`neo-pill px-2.5 py-0.5 text-xs text-black ${badgeBg}`}
+      >
+        {catName}
+      </a>
+      <span class="text-xs font-medium text-[var(--ink-muted)]">
+        {formatDate(post.data.date)} · {readingTime} min
+      </span>
+    </div>
+
+    <h2 class={compact ? 'text-lg font-bold leading-snug line-clamp-2' : 'text-xl font-bold leading-snug line-clamp-2'}>
+      <a href={url} class="hover:underline decoration-2 decoration-[var(--yellow)] underline-offset-4">
+        {post.data.title}
+      </a>
+    </h2>
+
+    {!compact && (
+      <p class="text-sm text-[var(--ink-muted)] line-clamp-3 flex-1">
+        {excerpt}
+      </p>
+    )}
+
+    {!compact && post.data.tags && post.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5 pt-2 border-t border-[var(--border-color)]/20">
+        {post.data.tags.slice(0, 3).map((tag) => (
+          <span class="text-xs font-semibold px-2 py-0.5 border border-[var(--border-color)] bg-[var(--surface-subtle)]">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</article>
