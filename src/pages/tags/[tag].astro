@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
-import NewsletterBox from '../../components/NewsletterBox.astro';
 import { getPublishedPosts, getTagSlug } from '../../utils/posts';
 
 export async function getStaticPaths() {
@@ -52,6 +51,4 @@ const { label, posts } = Astro.props;
       ))}
     </div>
   </section>
-
-  <NewsletterBox />
 </BaseLayout>

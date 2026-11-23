@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryFilter from '../../components/CategoryFilter.astro';
 import PostCard from '../../components/PostCard.astro';
-import NewsletterBox from '../../components/NewsletterBox.astro';
 import { getPublishedPosts } from '../../utils/posts';
 
 const allPosts = await getPublishedPosts();
@@ -29,6 +28,4 @@ const allPosts = await getPublishedPosts();
       ))}
     </div>
   </section>
-
-  <NewsletterBox />
 </BaseLayout>

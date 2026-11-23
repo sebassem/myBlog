@@ -89,16 +89,6 @@ const isActive = (path: string) =>
 
         <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
           <a
-            href="/contact/"
-            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
-            class:list={[isActive('/contact/') ? 'before:w-full font-bold' : 'before:w-0']}
-          >
-            <span class="relative z-10">Contact</span>
-          </a>
-        </li>
-
-        <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
-          <a
             href={SITE.portfolioUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -207,9 +197,6 @@ const isActive = (path: string) =>
     </li>
     <li>
       <a href="/about/" class="block p-3 neo-card text-xl font-bold">About</a>
-    </li>
-    <li>
-      <a href="/contact/" class="block p-3 neo-card text-xl font-bold">Contact</a>
     </li>
     <li>
       <a href="/search/" class="block p-3 neo-card text-xl font-bold">Search</a>

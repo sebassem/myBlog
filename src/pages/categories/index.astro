@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import NewsletterBox from '../../components/NewsletterBox.astro';
 import {
   getCategoryColor,
   getCategoryDisplayName,
@@ -56,6 +55,4 @@ const categories = Array.from(counts.entries()).sort((a, b) => b[1] - a[1]);
       })}
     </div>
   </section>
-
-  <NewsletterBox />
 </BaseLayout>

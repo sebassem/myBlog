@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CategoryFilter from '../../components/CategoryFilter.astro';
 import PostCard from '../../components/PostCard.astro';
-import NewsletterBox from '../../components/NewsletterBox.astro';
 import {
   getCategoryDisplayName,
   getCategorySlug,
@@ -55,6 +54,4 @@ const { slug, name, posts } = Astro.props;
       ))}
     </div>
   </section>
-
-  <NewsletterBox />
 </BaseLayout>

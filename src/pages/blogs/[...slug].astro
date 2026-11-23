@@ -3,7 +3,6 @@ import { render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
-import NewsletterBox from '../../components/NewsletterBox.astro';
 import ArticleEnhancements from '../../components/ArticleEnhancements.astro';
 import { SITE } from '../../config/site';
 import {
@@ -142,6 +141,5 @@ const badgeBg =
   </article>
 
   <RelatedPosts posts={relatedPosts} />
-  <NewsletterBox />
   <ArticleEnhancements />
 </BaseLayout>
