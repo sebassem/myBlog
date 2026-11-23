@@ -54,11 +54,10 @@ const ogImageUrl = image.startsWith('http') ? image : new URL(image, SITE.url).t
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
 
-    <!-- Prevent dark-mode flash before paint -->
+    <!-- Default to light mode; only apply dark when explicitly selected -->
     <script is:inline>
       (function () {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (localStorage.getItem('theme') === 'dark') {
           document.documentElement.classList.add('dark');
         }
       })();
