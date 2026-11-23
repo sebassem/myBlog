@@ -48,6 +48,5 @@ export const SITE = {
     { name: 'Posts', slug: 'posts', href: '/categories/posts/', color: 'blue' as const },
     { name: 'AI', slug: 'ai', href: '/tags/ai/', color: 'yellow' as const },
     { name: 'Community', slug: 'community', href: '/categories/community/', color: 'pink' as const },
-    { name: 'Book Reviews', slug: 'book-reviews', href: '/categories/book-reviews/', color: 'blue' as const },
   ],
 } as const;
