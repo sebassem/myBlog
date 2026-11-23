@@ -1,15 +1,67 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config/site';
+
+const expertiseAreas = [
+  {
+    title: 'Cloud & Platform Architecture',
+    badge: 'Multi-Cloud',
+    color: 'bg-[var(--blue)]',
+    skills: [
+      'Enterprise Landing Zones',
+      'Hybrid & Multi-Cloud',
+      'Google Cloud & Microsoft Azure',
+      'Cloud Adoption & Well-Architected',
+      'Resiliency & Disaster Recovery',
+    ],
+  },
+  {
+    title: 'Enterprise AI & Agentic Systems',
+    badge: 'AI Platforms',
+    color: 'bg-[var(--yellow)]',
+    skills: [
+      'Agentic AI Architectures',
+      'Enterprise AI Platforms',
+      'RAG & Hybrid Search',
+      'LLM Hosting on Kubernetes',
+      'AI Governance & Safety',
+    ],
+  },
+  {
+    title: 'Infrastructure as Code & DevOps',
+    badge: 'Engineering',
+    color: 'bg-[var(--pink)]',
+    skills: [
+      'Terraform & Bicep',
+      'Kubernetes & Containers',
+      'GitOps (Flux / ArgoCD)',
+      'GitHub Actions & CI/CD',
+      'Python & Automation',
+    ],
+  },
+  {
+    title: 'Security, Governance & FinOps',
+    badge: 'Scale & Trust',
+    color: 'bg-[var(--blue)]',
+    skills: [
+      'Zero Trust Architecture',
+      'Policy-as-Code & Compliance',
+      'Cloud Cost Optimization & FinOps',
+      'Observability & Monitoring',
+      'Enterprise Scale Governance',
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title="About Me"
-  description="This is my personal blog where I discuss everything about the cloud, especially Microsoft Azure and AI."
+  description="Seif Bassem — Cloud & AI Enterprise Architect specializing in scalable multi-cloud platforms, agentic AI systems, Infrastructure as Code, and cloud governance."
 >
-  <section class="max-w-4xl mx-auto px-4 pt-12">
-    <div class="neo-box p-6 sm:p-10">
-      <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-8 pb-8 border-b-2 border-[var(--border-color)]">
+  <section class="max-w-5xl mx-auto px-4 pt-12">
+    <div class="neo-box p-6 sm:p-10 md:p-12">
+      <!-- Intro Header -->
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-10 pb-8 border-b-2 border-[var(--border-color)]">
         <div class="relative shrink-0">
           <img
             src={SITE.authorImage}
@@ -21,13 +73,15 @@ import { SITE } from '../config/site';
         </div>
         <div>
           <span class="neo-pill px-3 py-0.5 text-xs bg-[var(--yellow)] text-black mb-3">
-            About Me
+            {SITE.authorRole}
           </span>
           <h1 class="text-3xl sm:text-4xl font-black tracking-tight mt-2">
             Hi, I&apos;m <span class="neo-highlight"><span>{SITE.author}</span></span>
           </h1>
-          <p class="mt-3 text-lg font-medium text-[var(--ink-muted)]">
-            {SITE.authorSummary}
+          <p class="mt-3 text-base sm:text-lg font-medium text-[var(--ink-muted)] leading-relaxed">
+            Helping organizations design secure, scalable multi-cloud foundations and production AI
+            platforms — while learning in public through code, architecture deep-dives, and community
+            talks.
           </p>
           <div class="flex flex-wrap gap-3 mt-5">
             <a
@@ -50,39 +104,79 @@ import { SITE } from '../config/site';
         </div>
       </div>
 
+      <!-- Bio & Impact -->
       <div class="prose prose-base sm:prose-lg max-w-none">
         <p>
-          Hi, my name is Seif Bassem, and I&apos;m a Cloud Solution Architect. I specialize in designing
-          and delivering scalable cloud solutions that drive global customer success. In addition to
-          cloud transformation, I help customers architect AI-driven solutions, ensuring they leverage
-          the cloud effectively for innovation, scalability, security, and resiliency. My expertise
-          extends beyond technical implementation as I actively lead and contribute to high-impact
-          initiatives like the Cloud Adoption and Well-Architected Frameworks, Azure Landing Zones,
-          Azure Arc Jumpstart, Azure Verified Modules, and FinOps toolkit. Additionally, I have
-          developed and released multiple public tools/products, some of which have grown into
-          full-fledged first-party products.
+          I&apos;m a <strong>Cloud &amp; AI Enterprise Architect</strong> focused on helping
+          organizations design, modernize, and scale mission-critical cloud platforms and AI
+          systems. Across hyperscale cloud ecosystems — spanning <strong>Google Cloud</strong> and
+          <strong>Microsoft Azure</strong> — I partner with engineering teams and technical leaders
+          to turn complex business goals into secure, resilient, and cost-efficient architectures.
         </p>
+
         <p>
-          I am also deeply involved in thought leadership, spearheading internal and external
-          initiatives, publishing field content, accelerators, and articles, and sharing insights
-          through webinars, community events, user groups, and large-scale conferences such as
-          Microsoft Ignite.
+          My work sits at the intersection of <strong>enterprise cloud foundations</strong> and
+          <strong>applied AI engineering</strong>: from multi-cloud landing zones, Kubernetes
+          platforms, and Zero Trust governance to agentic AI systems, RAG pipelines, and enterprise
+          model safety and observability.
         </p>
+
         <p>
-          In this blog, I share articles and thoughts on different Azure solutions and services,
-          interesting use cases of the cloud, AI engineering, and reviews of useful books I&apos;ve
-          been reading.
+          Beyond advisory and architecture design, I enjoy building reusable engineering assets that
+          scale globally. Over the years, I&apos;ve authored open-source accelerators, Infrastructure
+          as Code modules, FinOps toolkits, and reference architectures — several of which started
+          as field initiatives and grew into widely adopted programs and first-party products,
+          significantly reducing delivery effort and accelerating cloud adoption for customers
+          worldwide.
         </p>
+
         <p>
-          Check out my{' '}
-          <a href="https://www.youtube.com/@seifbassemazure/" target="_blank" rel="noopener noreferrer">
+          I&apos;m also a strong believer in <strong>learning in public</strong>. I regularly share
+          hands-on guides, architecture patterns, and lessons learned through this blog, my{' '}
+          <a
+            href="https://www.youtube.com/@seifbassemazure/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             YouTube channel
-          </a>{' '}
-          for Azure Tips &amp; Tricks.
+          </a>
+          , podcasts, hands-on workshops, and international technical conferences — alongside the
+          occasional book review.
         </p>
+      </div>
+
+      <!-- Expertise & Skills Grid -->
+      <div class="mt-12 pt-8 border-t-2 border-[var(--border-color)]">
+        <h2 class="text-2xl sm:text-3xl font-black tracking-tight mb-6">
+          Core <span class="neo-highlight"><span>Expertise &amp; Skills</span></span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {expertiseAreas.map((area) => (
+            <div class="neo-card p-5 flex flex-col gap-3">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-lg font-black leading-snug">{area.title}</h3>
+                <span class={`neo-pill px-2.5 py-0.5 text-xs text-black shrink-0 ${area.color}`}>
+                  {area.badge}
+                </span>
+              </div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                {area.skills.map((skill) => (
+                  <span class="text-xs font-semibold px-2.5 py-1 border border-[var(--border-color)] bg-[var(--surface-subtle)]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="prose prose-base max-w-none mt-10">
         <blockquote>
-          <strong>Disclaimer:</strong> The blog posts and other publications are my own personal
-          opinions and are by no means associated with my employer.
+          <strong>Disclaimer:</strong> All blog posts, opinions, and publications on this site are
+          entirely my own personal views and do not represent those of my employer.
         </blockquote>
       </div>
     </div>
