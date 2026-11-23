@@ -46,18 +46,11 @@ When rolling out Gemini Enterprise across an enterprise Google Cloud environment
 In this demo, we have a fictional company called Cymbal that wants to deploy Gemini Enterprise and ground it against their Cloud SQL database and a Google Storage bucket containing various documents for their HR policies and employee information. They would like to enable Gemini Enterprise for all their employees and control the usage. They would also like to monitor the usage and identify opportunities to build custom AI Agents that maximize organizational productivity. All while maintaining responsible AI principles, user privacy and security against various AI threats and attacks.
 
 ```mermaid
-+---------------------+      +---------------------+      +---------------------+      +-----------------------+
-|  Gemini Enterprise  | ---> |  Cloud Log Router   | ---> |  BigQuery Dataset   | ---> |  Insights & Visibility|
-|   + Model Armor     |      |                     |      |                     |      |                       |
-+---------------------+      +---------------------+      +---------------------+      +-----------------------+
-          |
-          |
-          V
-+-----------------+
-|  Data Stores    |
-|  - Cloud SQL DB |
-|  - GCS Bucket   |
-+-----------------+
+flowchart LR
+    GE["Gemini Enterprise<br/>+ Model Armor"] --> CLR["Cloud Log Router"]
+    CLR --> BQ["BigQuery Dataset"]
+    BQ --> IV["Insights & Visibility"]
+    GE --> DS["Data Stores<br/>• Cloud SQL DB<br/>• GCS Bucket"]
 ```
 
 ### Data sources

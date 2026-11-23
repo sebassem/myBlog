@@ -10,7 +10,13 @@
 
     if (mermaidPres.length > 0) {
       mermaidPres.forEach((pre) => {
-        const code = pre.querySelector('code')?.textContent ?? pre.textContent ?? '';
+        const lines = pre.querySelectorAll('.line');
+        const code =
+          lines.length > 0
+            ? Array.from(lines)
+                .map((l) => l.textContent ?? '')
+                .join('\n')
+            : (pre.querySelector('code')?.textContent ?? pre.textContent ?? '');
         const wrapper = document.createElement('div');
         wrapper.className = 'mermaid-container';
         const div = document.createElement('div');
