@@ -13,4 +13,4 @@ We have recently launched [Jumpstart Agora 🏛️](https://azurearcjumpstart.io
 
 Check out the Jumpstart Agora announcement blog [📢here](https://lnkd.in/gjcUTg8W)
 
-<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/PtBzOS0PSP8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/PtBzOS0PSP8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>

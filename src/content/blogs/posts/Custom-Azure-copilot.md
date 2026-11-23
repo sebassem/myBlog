@@ -612,13 +612,13 @@ Also this method is intended to create a very specific AI assistant, if you want
 - Introduction to Azure Copilot
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/-qZZnwgb2ss?si=qClbV4Bv30I53lVZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/-qZZnwgb2ss?si=qClbV4Bv30I53lVZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 - Open AI function calling tutorial
 
 <figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aqdWSYWC_LI?si=S90gejsia81Gl1Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aqdWSYWC_LI?si=S90gejsia81Gl1Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 - [Azure Copilot docs](https://learn.microsoft.com/azure/copilot/)

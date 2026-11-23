@@ -169,11 +169,11 @@ The introduction of the Azure Monitor agent to replace other agents is a welcome
 
 📹ITOpsTalk: Azure Monitor Agent
 <figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/f8bIrFU8tCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/f8bIrFU8tCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 📹Microsoft Azure Monitor Agent and Data Collection Rule Overview
 <figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1zDlXCwI9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1zDlXCwI9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 

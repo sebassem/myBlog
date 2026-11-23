@@ -96,11 +96,11 @@ Although Bicep is still experimental and you should not use it in production, it
 - [Project Bicep playground](https://bicepdemo.z22.web.core.windows.net/)
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/ykHA5QTYlDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/ykHA5QTYlDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/wkQIyenVfxc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/wkQIyenVfxc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 

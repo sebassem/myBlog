@@ -17,7 +17,7 @@ Over the past few months, the way we work has changed significantly. We need to 
 Last year Microsoft announced [Productivity Score](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-productivity-score-insights-that-transform-how-work/ba-p/969722) which is a service that gives you insights that transform how work gets done. It will provide you visibility into how your users work, and how they use technology to be more productive, collaborate more and work from anywhere. You get a productivity score for your organization where you can compare it with other organizations to understand where you want to improve and where you are doing better than others. You can see a quick overview of this service in the video below
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/dIEeHiJluk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/dIEeHiJluk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 # Microsoft Endpoint Analytics

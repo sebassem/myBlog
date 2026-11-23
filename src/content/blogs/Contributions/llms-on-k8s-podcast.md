@@ -19,4 +19,4 @@ There is a growing demand in enterprises to deploy AI models and agents on their
 
 I had a great conversation with Nicholas Chang on the **Microsoft Community Insights Podcast** on that topic showcasing a demo deploying AI models on AKS with the Kubernetes AI Toolchain Operator (KAITO).
 
-<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/Q7B6SPJJQIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/Q7B6SPJJQIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>

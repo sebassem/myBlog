@@ -35,7 +35,7 @@ So what i needed now is to find one of those tools , pick a theme and start gene
 **A very helpful playlist that helped me get started with Hugo**
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 After spending maybe one day on Hugo, i was able to get the site configured , some posts written and local testing done , now i was ready to go to the next step of actually looking at Azure static web apps to host my blog.
@@ -94,7 +94,7 @@ Azure Static Web Apps went into GA just last month but it's incredibly useful to
 - [Azure Static Web Apps documentation](https://docs.microsoft.com/en-us/azure/static-web-apps/)
   
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/Ta2QjwcO2p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/Ta2QjwcO2p8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 - Another very useful resource if you are exploring other managed services to host your blog is [Digital.com](https://Digital.com) where they compare the features and capabilities of the top hosting providers so you don't have to. More information can be found in the below links

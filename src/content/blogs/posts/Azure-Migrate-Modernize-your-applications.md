@@ -117,6 +117,6 @@ Or even add Azure AD as the identity platform for our application to leverage Co
 Azure Migrate is growing to be the one-stop shop to safely and efficiently migrate your workloads and applications to Azure with more additional capabilities being added like the App Containerization tool to help you think about modernizing your applications as well to gain the most benefit of moving to Azure.
 
 <figure class="video_container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9MJ-FvzJiHI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9MJ-FvzJiHI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 

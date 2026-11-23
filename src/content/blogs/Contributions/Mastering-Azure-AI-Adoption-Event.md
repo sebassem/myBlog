@@ -21,4 +21,4 @@ Join us on this event where we will walk you through a demo-packed session on ho
 
 Event link: [https://aka.ms/AzureEssentialsEvent](https://techcommunity.microsoft.com/event/azureevents/proactively-design-deploy--monitor-resilient-azure-workloads/4368683)
 
-      <div class="youtube-embed"><iframe src="https://www.youtube.com/embed/soWJJ3BySwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/soWJJ3BySwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>

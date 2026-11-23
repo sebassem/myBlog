@@ -13,7 +13,7 @@ draft: false
 You can now manage Defender for servers plans on the resource level (on Azure VMs or Arc-enabled machines) which gives the flexibility of either enabling the plan on a couple of servers or excluding some servers from the subscription level plan.
 
 <figure class="video_container">
- <iframe width="560" height="315" src="https://www.youtube.com/embed/Az4-KjogI10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/Az4-KjogI10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </figure>
 
 ## Overview
