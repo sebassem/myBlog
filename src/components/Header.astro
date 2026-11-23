@@ -66,7 +66,7 @@ const isActive = (path: string) =>
               {SITE.categories.map((cat) => (
                 <li>
                   <a
-                    href={`/categories/${cat.slug}/`}
+                    href={cat.href}
                     class="block px-4 py-2 text-sm font-semibold hover:bg-[var(--yellow)] hover:text-black transition-colors"
                   >
                     {cat.name}
@@ -187,7 +187,7 @@ const isActive = (path: string) =>
       <div class="flex flex-wrap gap-2">
         {SITE.categories.map((cat) => (
           <a
-            href={`/categories/${cat.slug}/`}
+            href={cat.href}
             class="neo-pill px-3 py-1 text-sm bg-[var(--blue)] text-black"
           >
             {cat.name}

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CategoryFilter from '../../components/CategoryFilter.astro';
 import PostCard from '../../components/PostCard.astro';
 import { getPublishedPosts, getTagSlug } from '../../utils/posts';
 
@@ -25,25 +26,33 @@ export async function getStaticPaths() {
   }));
 }
 
-const { label, posts } = Astro.props;
+const { slug, label, posts } = Astro.props;
+const isAiTab = slug === 'ai';
 ---
 
-<BaseLayout title={`#${label}`} description={`Articles tagged ${label} by Seif Bassem`}>
+<BaseLayout
+  title={isAiTab ? 'AI' : `#${label}`}
+  description={`Articles tagged ${label} by Seif Bassem`}
+>
   <section class="max-w-5xl mx-auto px-4 pt-12 pb-6">
-    <div class="mb-6">
-      <a
-        href="/tags/"
-        class="inline-flex items-center gap-1 text-sm font-bold hover:underline decoration-2 decoration-[var(--yellow)] mb-3"
-      >
-        <i class="ri-arrow-left-line"></i> All tags
-      </a>
+    <div class="mb-8">
+      {!isAiTab && (
+        <a
+          href="/tags/"
+          class="inline-flex items-center gap-1 text-sm font-bold hover:underline decoration-2 decoration-[var(--yellow)] mb-3"
+        >
+          <i class="ri-arrow-left-line"></i> All tags
+        </a>
+      )}
       <h1 class="text-4xl md:text-5xl font-black tracking-tight">
-        <span class="neo-highlight"><span>#{label}</span></span>
+        <span class="neo-highlight"><span>{isAiTab ? 'AI' : `#${label}`}</span></span>
       </h1>
       <p class="mt-2 text-base text-[var(--ink-muted)]">
         {posts.length} {posts.length === 1 ? 'article' : 'articles'} tagged with #{label}.
       </p>
     </div>
+
+    {isAiTab && <CategoryFilter activeSlug="ai" />}
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
       {posts.map((post) => (
