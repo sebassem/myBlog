@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/AzGovViz-Accelerator/banner.png"
 date: 2023-07-20 17:08:42 +0200
 tags: ["Azure","Governance","Cloud adoption framework"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

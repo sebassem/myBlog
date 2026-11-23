@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/Master-Azure-AI-Adoption/Seif-Bassem_16x9.png"
 date: 2025-02-02 17:08:42 +0200
 tags: ["Events","AI","Resiliency"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

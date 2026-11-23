@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/PSConfEU-2024/banner.png"
 date: 2024-07-27 17:08:42 +0200
 tags: ["Events"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

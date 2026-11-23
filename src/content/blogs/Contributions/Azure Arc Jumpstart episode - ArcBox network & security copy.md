@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Posts/ArcBox-for-DataOps-Announcement/banner.jpg"
 date: 2022-10-16 17:08:42 +0200
 tags: ["Azure Arc"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

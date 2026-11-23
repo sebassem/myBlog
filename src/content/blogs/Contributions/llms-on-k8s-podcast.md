@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/llms-on-k8s-podcast/banner.png"
 date: 2025-12-14 17:08:42 +0200
 tags: ["AI","Podcast","Azure","AKS"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---

@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/AzGovViz-Policy-Assignment/01.png"
 date: 2025-05-25 17:08:42 +0200
 tags: ["Azure","Bicep","Infrastructure-as-code","Azure-Landing-Zones"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 ---
 

@@ -121,7 +121,7 @@ export function getRelatedPosts(current: BlogPost, allPosts: BlogPost[], count =
 
 export function getCategoryColor(category: string): 'blue' | 'pink' | 'yellow' {
   const slug = getCategorySlug(category);
-  if (slug === 'contributions') return 'pink';
+  if (slug === 'community' || slug === 'contributions') return 'pink';
   if (slug === 'azure-unboxing') return 'yellow';
   return 'blue';
 }
@@ -129,7 +129,7 @@ export function getCategoryColor(category: string): 'blue' | 'pink' | 'yellow' {
 export function getCategoryDisplayName(slug: string): string {
   const map: Record<string, string> = {
     posts: 'Posts',
-    contributions: 'Contributions',
+    community: 'Community',
     'azure-unboxing': 'Azure Unboxing',
     'book-reviews': 'Book Reviews',
   };

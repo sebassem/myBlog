@@ -4,7 +4,7 @@ images:
   - "https://images.seifbassem.com/images/Contributions/Azure-Arc-Jumpstart/banner.png"
 date: 2024-08-31 17:08:42 +0200
 tags: ["Azure","Azure Arc"]
-categories: ["Contributions"]
+categories: ["Community"]
 draft: false
 
 ---
