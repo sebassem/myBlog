@@ -4,11 +4,6 @@
       "route": "/categories/contributions",
       "redirect": "/categories/community/",
       "statusCode": 301
-    },
-    {
-      "route": "/categories/contributions/",
-      "redirect": "/categories/community/",
-      "statusCode": 301
     }
   ]
 }
