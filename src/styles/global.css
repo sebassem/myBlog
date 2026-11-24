@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500&family=Google+Sans+Flex:opsz,wdth,wght@6..144,75..100,300..800&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css');
 
 @import "tailwindcss";
@@ -39,7 +39,7 @@ body {
   min-height: 100%;
   background-color: var(--main-bg);
   color: var(--ink);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Google Sans Flex", sans-serif;
   scroll-behavior: smooth;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -127,8 +127,8 @@ body {
 
 /* Prose / Article typography overrides */
 .prose {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.78;
+  font-family: "Google Sans Flex", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
   --tw-prose-body: var(--ink);
   --tw-prose-headings: var(--ink);
   --tw-prose-lead: var(--ink-muted);
@@ -151,13 +151,13 @@ body {
 .prose h4,
 .prose h5,
 .prose h6 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Google Sans Flex", sans-serif;
   letter-spacing: -0.02em;
 }
 
 .prose pre,
 .prose code {
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family: "Google Sans Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 .prose pre code {
@@ -288,7 +288,7 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 2px solid #000000;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Google Sans Flex", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.2rem 0.55rem;
@@ -312,5 +312,5 @@ body {
   --pagefind-ui-tag: var(--blue);
   --pagefind-ui-border-width: 2px;
   --pagefind-ui-border-radius: 6px;
-  --pagefind-ui-font: "Space Grotesk", sans-serif;
+  --pagefind-ui-font: "Google Sans Flex", sans-serif;
 }
