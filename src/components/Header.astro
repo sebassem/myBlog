@@ -34,7 +34,7 @@ const isActive = (path: string) =>
     <nav class="flex w-full items-center p-2 md:p-0" aria-label="Main navigation">
       <div class="flex-1 font-bold">
         <a href="/" class="inline-flex items-center gap-2 pl-2 md:pl-4 text-lg tracking-tight">
-          <img src={logoStar.src} alt="" width="26" height="26" />
+          <img src={logoStar.src} alt="" width="26" height="26" class="dark:invert" />
           <span>{SITE.shortTitle}</span>
         </a>
       </div>
@@ -44,10 +44,10 @@ const isActive = (path: string) =>
         <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
           <a
             href="/"
-            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] dark:before:h-[3px] dark:before:bottom-0 before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
             class:list={[isActive('/') ? 'before:w-full font-bold' : 'before:w-0']}
           >
-            <span class="relative z-10 dark:mix-blend-normal">Home</span>
+            <span class="relative z-10">Home</span>
           </a>
         </li>
 
@@ -55,7 +55,7 @@ const isActive = (path: string) =>
         <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center relative group">
           <a
             href="/categories/"
-            class="whitespace-nowrap relative flex items-center gap-1 font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class="whitespace-nowrap relative flex items-center gap-1 font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] dark:before:h-[3px] dark:before:bottom-0 before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
             class:list={[isActive('/categories/') ? 'before:w-full font-bold' : 'before:w-0']}
           >
             <span class="relative z-10">Categories</span>
@@ -80,7 +80,7 @@ const isActive = (path: string) =>
         <li class="border-l-2 border-[var(--border-color)] px-3.5 py-3.5 flex items-center">
           <a
             href="/about/"
-            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class="whitespace-nowrap relative flex items-center font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] dark:before:h-[3px] dark:before:bottom-0 before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
             class:list={[isActive('/about/') ? 'before:w-full font-bold' : 'before:w-0']}
           >
             <span class="relative z-10">About</span>
@@ -92,7 +92,7 @@ const isActive = (path: string) =>
             href={SITE.portfolioUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="whitespace-nowrap relative flex items-center gap-1 font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] before:w-0 before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
+            class="whitespace-nowrap relative flex items-center gap-1 font-medium before:absolute before:left-0 before:bottom-0.5 before:h-[8px] dark:before:h-[3px] dark:before:bottom-0 before:w-0 before:bg-[var(--yellow)] before:transition-all before:duration-200 hover:before:w-full"
           >
             <span class="relative z-10">Portfolio</span>
             <i class="ri-external-link-line relative z-10 text-sm"></i>
@@ -165,7 +165,7 @@ const isActive = (path: string) =>
 >
   <div class="flex items-center justify-between border-b-3 border-[var(--border-color)] pb-4 mb-6">
     <span class="font-black uppercase text-xl flex items-center gap-2">
-      <img src={logoStar.src} alt="" width="24" height="24" />
+      <img src={logoStar.src} alt="" width="24" height="24" class="dark:invert" />
       Menu
     </span>
     <button
