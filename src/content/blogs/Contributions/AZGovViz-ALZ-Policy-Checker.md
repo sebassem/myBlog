@@ -1,5 +1,6 @@
 ---
 title: "Azure Landing Zones - Policy assignments checker"
+description: "Track and audit Azure Landing Zones policy assignments across management groups using the AzGovViz ALZ Policy Checker."
 images:
   - "https://images.seifbassem.com/images/Contributions/AzGovViz-Policy-Assignment/01.png"
 date: 2025-05-25 17:08:42 +0200

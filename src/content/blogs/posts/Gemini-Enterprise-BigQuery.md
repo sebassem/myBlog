@@ -1,5 +1,6 @@
 ---
 title: "Measuring Gemini Enterprise Adoption with BigQuery"
+description: "Measure Gemini Enterprise adoption, usage, and governance using Cloud Log Router, BigQuery datasets, and Terraform on Google Cloud."
 images:
   - "https://images.seifbassem.com/images/Posts/gemini-enterprise-bq/banner.png"
 date: 2026-08-02 17:08:42 +0200

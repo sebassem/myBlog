@@ -1,5 +1,6 @@
 ---
 title: "Tips - Get availability zones for an Azure region"
+description: "Quick tip on programmatically checking Azure region availability zone support for resilient Bicep and IaC deployments."
 images:
   - "https://images.seifbassem.com/images/Posts/Get-zones-for-region/banner.png"
 date: 2024-03-19 17:08:42 +0200

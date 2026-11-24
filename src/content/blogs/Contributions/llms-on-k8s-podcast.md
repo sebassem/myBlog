@@ -1,5 +1,6 @@
 ---
 title: "Deploying LLMs on Kubernetes"
+description: "Podcast discussion and live demo on deploying and serving open-source LLMs on AKS using Kubernetes and the AI Toolchain Operator (KAITO)."
 images:
   - "https://images.seifbassem.com/images/Contributions/llms-on-k8s-podcast/banner.png"
 date: 2025-12-14 17:08:42 +0200

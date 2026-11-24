@@ -1,5 +1,6 @@
 ---
 title: "Starting my mentoring page on Topmate!"
+description: "Announcing 1:1 cloud architecture and career mentoring sessions on Topmate to share lessons learned and help engineers grow."
 images:
   - "https://images.seifbassem.com/images/Contributions/Top-Mate/banner.png"
 date: 2025-02-01 17:08:42 +0200

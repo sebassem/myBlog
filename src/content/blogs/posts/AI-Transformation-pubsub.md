@@ -1,5 +1,6 @@
 ---
 title: "Pub/Sub AI Enrichment with Gemini and Jev"
+description: "Learn how to enrich Google Cloud Pub/Sub messages in real time using Single Message Transforms (SMTs), Gemini, and Jev without extra middleware."
 images:
   - "https://images.seifbassem.com/images/Posts/pubsub-ai-transformation/banner.png"
 date: 2026-09-21 17:08:42 +0200

@@ -1,5 +1,6 @@
 ---
 title: "Azure Verified Module - CICD self-hosted agents"
+description: "Deploy scalable self-hosted GitHub Actions runners and Azure DevOps agents on Azure Container Apps using Azure Verified Modules."
 images:
   - "https://images.seifbassem.com/images/Contributions/cicd-runners-and-agents/banner.png"
 date: 2024-09-10 17:08:42 +0200

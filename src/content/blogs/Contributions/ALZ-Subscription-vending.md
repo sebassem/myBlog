@@ -1,5 +1,6 @@
 ---
 title: "Azure Landing Zones - Subscription Vending"
+description: "Automate scalable subscription provisioning and democratization in Azure Landing Zones using the Bicep Subscription Vending module."
 images:
   - "https://images.seifbassem.com/images/Contributions/ALZ-Sub-Vending/banner.png"
 date: 2025-03-18 17:08:42 +0200

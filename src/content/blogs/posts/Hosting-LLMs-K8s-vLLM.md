@@ -1,5 +1,6 @@
 ---
 title: "Self-Hosting LLMs on Kubernetes: Serving LLMs using vLLM"
+description: "Part 4 of Self-Hosting LLMs on Kubernetes: deploy and serve open-source language models at scale using vLLM and PagedAttention."
 images:
   - "https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-vLLM/banner.png"
 date: 2025-11-08 17:08:42 +0200

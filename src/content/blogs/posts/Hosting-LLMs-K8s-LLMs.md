@@ -1,5 +1,6 @@
 ---
 title: "Self-Hosting LLMs on Kubernetes: How LLMs and GPUs Work?"
+description: "Part 2 of Self-Hosting LLMs on Kubernetes: understand how LLM inference, KV caches, VRAM, and GPUs work under the hood."
 images:
   - "https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-LLMs/banner.png"
 date: 2025-10-03 17:08:42 +0200

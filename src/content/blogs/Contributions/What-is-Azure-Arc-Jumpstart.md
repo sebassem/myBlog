@@ -1,5 +1,6 @@
 ---
 title: "The Azure Arc Jumpstart project"
+description: "Overview of the Azure Arc Jumpstart project, its automated scenarios, reference architectures, and sandbox environments for hybrid cloud."
 images:
   - "https://images.seifbassem.com/images/Contributions/Azure-Arc-Jumpstart/banner.png"
 date: 2024-08-31 17:08:42 +0200

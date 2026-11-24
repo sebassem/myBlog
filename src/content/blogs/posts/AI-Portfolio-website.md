@@ -1,5 +1,6 @@
 ---
 title: "Building a portfolio website with an AI assistant"
+description: "Architecture, trade-offs, and cost optimization behind building an Astro portfolio with a streaming RAG AI assistant for under $10/month."
 images:
   - "https://images.seifbassem.com/images/Posts/AI-portfolio-website/banner.png"
 date: 2026-01-31 17:08:42 +0200

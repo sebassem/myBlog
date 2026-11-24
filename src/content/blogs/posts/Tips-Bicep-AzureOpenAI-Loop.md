@@ -1,5 +1,6 @@
 ---
 title: "Tips - Deploying multiple Azure OpenAI models using Bicep"
+description: "Fix concurrent parent-resource deployment errors when deploying multiple Azure OpenAI models in a Bicep loop using @batchSize(1)."
 images:
   - "https://images.seifbassem.com/images/Posts/AOAI-Bicep-Multiple-Models/banner.png"
 date: 2024-10-29 17:08:42 +0200

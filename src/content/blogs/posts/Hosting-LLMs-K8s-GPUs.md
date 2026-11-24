@@ -1,5 +1,6 @@
 ---
 title: "Self-Hosting LLMs on Kubernetes: GPU optimization"
+description: "Part 3 of Self-Hosting LLMs on Kubernetes: optimize GPU utilization on Kubernetes with MIG, time-slicing, and dynamic resource allocation."
 images:
   - "https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-GPUs/banner.png"
 date: 2025-10-11 17:08:42 +0200
