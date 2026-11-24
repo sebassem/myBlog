@@ -18,7 +18,7 @@ Azure Arc has recently introduced a new [capability](https://docs.microsoft.com/
 
 A lot of organizations are adopting Kubernetes in very rapid way to deliver faster value to their customers and if you are one of them and want to provide your developers with a strong and capable PaaS platform to deploy cloud-native applications inside your datacenter  without changing their development and deployment processes or tools.  , this new capability is worth checking out.
 
-💡 If this is the first time you've heard about Azure Arc , check out my [previous introduction](https://www.seifbassem.com/blogs/unboxing/introducing-azure-arc/) of the service.
+💡 If this is the first time you've heard about Azure Arc , check out my [previous introduction](https://blog.seifbassem.com/blogs/unboxing/introducing-azure-arc/) of the service.
 
 ## How does it work?
 To be able to do that , you would need to have the following : 

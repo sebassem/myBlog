@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-In a [previous post](https://www.seifbassem.com/blogs/unboxing/introducing-Azure-Monitor-Workbooks/), i talked about Azure Monitor Workbooks and how useful they are to visualize and monitor your environment interactively by querying multiple sources and displaying the results in different visualizations.
+In a [previous post](https://blog.seifbassem.com/blogs/unboxing/introducing-azure-workbooks/), i talked about Azure Monitor Workbooks and how useful they are to visualize and monitor your environment interactively by querying multiple sources and displaying the results in different visualizations.
 
 The sky is the limit to what you can build with Workbooks and in this post i will demonstrate one of the cool capabilities that allows to deploy an ARM template right from within the Workbook using [Link actions](https://docs.microsoft.com/azure/azure-monitor/visualize/workbooks-link-actions).
 
