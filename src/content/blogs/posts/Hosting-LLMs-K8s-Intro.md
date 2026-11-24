@@ -1,5 +1,6 @@
 ---
 title: "Self-Hosting LLMs on Kubernetes: Intro"
+description: "Part 1 of Self-Hosting LLMs on Kubernetes: why enterprises self-host models on K8s for data sovereignty, GPU control, and predictable cost."
 images:
   - "https://images.seifbassem.com/images/Posts/Hosting-LLMs-K8s-Intro/banner.png"
 date: 2025-09-28 17:08:42 +0200

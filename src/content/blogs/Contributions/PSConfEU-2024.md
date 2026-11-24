@@ -1,5 +1,6 @@
 ---
 title: "PowerShell Conference Europe (PSConfEU) 2024"
+description: "Recap and recordings from PowerShell Conference Europe (PSConfEU) 2024 covering Azure Arc Jumpstart and Azure Verified Modules."
 images:
   - "https://images.seifbassem.com/images/Contributions/PSConfEU-2024/banner.png"
 date: 2024-07-27 17:08:42 +0200

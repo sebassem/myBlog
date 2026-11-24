@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Ignite 2024"
+description: "Highlights from Microsoft Ignite 2024 delivering a pre-day hands-on workshop and sessions on hybrid cloud and Azure Adaptive Cloud."
 images:
   - "https://images.seifbassem.com/images/Contributions/Ignite-2024/session.png"
 date: 2024-11-06 17:08:42 +0200

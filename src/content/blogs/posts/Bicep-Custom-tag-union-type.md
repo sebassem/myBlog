@@ -1,5 +1,6 @@
 ---
 title: "Bicep - Custom-tagged union data type"
+description: "Use custom-tagged union types in Bicep to build strongly typed, flexible template parameters that adapt to different deployment configurations."
 images:
   - "https://images.seifbassem.com/images/Posts/custom-tagged-union-data-type/banner.png"
 date: 2024-08-06 17:08:42 +0200

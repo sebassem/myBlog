@@ -1,5 +1,6 @@
 ---
 title: "Testing the latest Bicep Toys - Fail, Deployer and Graph"
+description: "Hands-on look at new Bicep capabilities including the fail() function, deployer() metadata, and Microsoft Graph Bicep extensions."
 images:
   - "https://images.seifbassem.com/images/Posts/bicep-fail-deployer-graph/banner.png"
 date: 2025-03-16 16:08:42 +0200

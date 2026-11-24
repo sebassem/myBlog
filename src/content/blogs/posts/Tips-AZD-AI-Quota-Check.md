@@ -1,5 +1,6 @@
 ---
 title: "Tips - Pre-check your AI models quotas using AZD"
+description: "Quick tip on pre-checking Azure OpenAI model availability and regional quota capacity automatically before deployment using Azure Developer CLI (azd)."
 images:
   - "https://images.seifbassem.com/images/Posts/azd-ai-quota-check/banner.png"
 date: 2025-07-20 17:08:42 +0200

@@ -1,5 +1,6 @@
 ---
 title: "Azure Governance Visualizer on AZ-Security channel"
+description: "Conversation on the AZ-Security channel covering how Azure Governance Visualizer (AzGovViz) improves cloud visibility, security, and governance."
 images:
   - "https://images.seifbassem.com/images/Contributions/az-security-azgovviz/banner.jpg"
 date: 2025-08-24 17:08:42 +0200

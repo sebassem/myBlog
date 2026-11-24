@@ -1,5 +1,6 @@
 ---
 title: "CI/CD evaluation of Large Language Models using OpenEvals"
+description: "Build automated CI/CD evaluation pipelines for Large Language Models using OpenEvals and LangChain to catch regressions before production."
 images:
   - "https://images.seifbassem.com/images/Posts/llm-evaluation-openeval/banner.png"
 date: 2025-06-29 17:08:42 +0200

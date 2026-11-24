@@ -150,6 +150,7 @@ body {
 .prose h6 {
   font-family: "Google Sans Flex", sans-serif;
   letter-spacing: -0.02em;
+  scroll-margin-top: 2rem;
 }
 
 .prose pre,

@@ -1,5 +1,6 @@
 ---
 title: "Simplifying private deployment of Azure AI services using AVM"
+description: "Simplify secure, private-endpoint deployments of Azure AI Foundry, Azure OpenAI, and AI Search using Azure Verified Modules (AVM)."
 images:
   - "https://images.seifbassem.com/images/Posts/Azure-AI-Services-Private-Deployment/banner.png"
 date: 2025-05-06 17:08:42 +0200

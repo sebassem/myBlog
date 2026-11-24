@@ -1,5 +1,6 @@
 ---
 title: "Mastering Azure AI Adoption event"
+description: "Demo-packed community session on accelerating Azure AI adoption with Landing Zones, Verified Modules, Proactive Resiliency, and Monitor Baseline Alerts."
 images:
   - "https://images.seifbassem.com/images/Contributions/Master-Azure-AI-Adoption/Seif-Bassem_16x9.png"
 date: 2025-02-02 17:08:42 +0200
