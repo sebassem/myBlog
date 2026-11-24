@@ -3,7 +3,7 @@ title: "Tips - Pre-check your AI models quotas using AZD"
 images:
   - "https://images.seifbassem.com/images/Posts/azd-ai-quota-check/banner.png"
 date: 2025-07-20 17:08:42 +0200
-tags: ["Azure","AI","OpenAI","Foundry","Bicep","AZD"]
+tags: ["Azure","AI","OpenAI","Microsoft Foundry","Bicep","AZD"]
 categories: ["posts"]
 draft: false
 ---

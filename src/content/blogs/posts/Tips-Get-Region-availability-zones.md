@@ -3,7 +3,7 @@ title: "Tips - Get availability zones for an Azure region"
 images:
   - "https://images.seifbassem.com/images/Posts/Get-zones-for-region/banner.png"
 date: 2024-03-19 17:08:42 +0200
-tags: ["Azure","Reliability","Tips","INFRASTRUCTURE-AS-CODE","Bicep"]
+tags: ["Azure","Reliability","Tips","Infrastructure-as-code","Bicep"]
 categories: ["posts"]
 draft: false
 ---

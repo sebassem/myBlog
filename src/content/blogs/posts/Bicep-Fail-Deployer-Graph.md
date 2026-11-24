@@ -3,7 +3,7 @@ title: "Testing the latest Bicep Toys - Fail, Deployer and Graph"
 images:
   - "https://images.seifbassem.com/images/Posts/bicep-fail-deployer-graph/banner.png"
 date: 2025-03-16 16:08:42 +0200
-tags: ["Azure","Bicep","frastructure-as-code"]
+tags: ["Azure","Bicep","Infrastructure-as-code"]
 categories: ["posts"]
 draft: false
 ---

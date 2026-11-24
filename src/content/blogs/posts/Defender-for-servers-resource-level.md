@@ -3,7 +3,7 @@ title: "Manage Defender for servers plans on a machine level!!"
 images:
   - "https://images.seifbassem.com/images/Posts/Defender-for-servers-resource-level/banner.png"
 date: 2024-01-09 17:08:42 +0200
-tags: ["Azure","Defender for cloud","Security"]
+tags: ["Azure","Microsoft Defender for Cloud","Security"]
 categories: ["posts"]
 draft: false
 ---
