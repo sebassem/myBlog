@@ -6,7 +6,14 @@ export default defineConfig({
   site: 'https://blog.seifbassem.com',
   trailingSlash: 'always',
   output: 'static',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.endsWith('/search/') &&
+        !page.endsWith('/contact/') &&
+        !page.endsWith('/404/'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

@@ -3,7 +3,7 @@ title: "Tips - Bicep conditional modules"
 images:
   - "https://images.seifbassem.com/images/Posts/Bicep-conditional-modules/banner.png"
 date: 2023-09-18 17:08:42 +0200
-tags: ["Azure","Troubleshooting","Tips","INFRASTRUCTURE-AS-CODE","Bicep"]
+tags: ["Azure","Troubleshooting","Tips","Infrastructure-as-code","Bicep"]
 categories: ["posts"]
 draft: false
 ---
