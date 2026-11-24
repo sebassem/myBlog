@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-Azure Arc-enabled servers allows you to project your hybrid servers (on-premises or any cloud provider) to the Azure control plane where you can start managing them as any other Azure server. You can start using native Azure capabilities like Microsoft Defender for Cloud, tagging, automation, policy, monitoring and more. For a quick recap on what Azure Arc provides, you can explore my [previous article](https://www.seifbassem.com/blogs/unboxing/introducing-azure-arc/).
+Azure Arc-enabled servers allows you to project your hybrid servers (on-premises or any cloud provider) to the Azure control plane where you can start managing them as any other Azure server. You can start using native Azure capabilities like Microsoft Defender for Cloud, tagging, automation, policy, monitoring and more. For a quick recap on what Azure Arc provides, you can explore my [previous article](https://blog.seifbassem.com/blogs/unboxing/introducing-azure-arc/).
 
 ## Azure Arc Onboarding using Microsoft Endpoint Configuration Manager
 Most organizations rely on Microsoft Endpoint Configuration Manager to manage their Windows servers; to deploy applications, updates and do various tasks. In this post, I will go through a couple of methods you can use Configuration Manager to onboard your servers to Azure Arc.

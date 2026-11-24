@@ -10,7 +10,7 @@ draft: false
 
 <!--more-->
 
-Azure Arc-enabled servers allows you to project your hybrid servers (on-premises or any cloud provider) to the Azure control plane where you can start managing them as any other Azure server. You can start using native Azure capabilities like Security Center, tagging, automation, policy, monitoring and more. For a quick recap on what Azure Arc provides, you can explore my [previous article](https://www.seifbassem.com/blogs/unboxing/introducing-azure-arc/).
+Azure Arc-enabled servers allows you to project your hybrid servers (on-premises or any cloud provider) to the Azure control plane where you can start managing them as any other Azure server. You can start using native Azure capabilities like Security Center, tagging, automation, policy, monitoring and more. For a quick recap on what Azure Arc provides, you can explore my [previous article](https://blog.seifbassem.com/blogs/unboxing/introducing-azure-arc/).
 
 ## Hybrid Worker Extension for Arc-enabled servers
 It was recently [announced](https://azure.microsoft.com/en-us/updates/automation-user-hybrid-extension-support/) that native integration of user hybrid workers which is based on VM extensions is in public preview for Azure Arc-enabled servers which opens up more automation capabilities for hybrid servers.

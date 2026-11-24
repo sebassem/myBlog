@@ -13,9 +13,9 @@ draft: false
 
 #### Series map
 
-1. [**Introduction**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-intro/)
-2. [**How LLMs and GPUs work?**](https://www.seifbassem.com/blogs/posts/hosting-LLMs-K8s-vLLM/)
-3. [**GPU optimization**](https://www.seifbassem.com/blogs/posts/hosting-llms-k8s-gpus/)
+1. [**Introduction**](https://blog.seifbassem.com/blogs/posts/hosting-llms-k8s-intro/)
+2. [**How LLMs and GPUs work?**](https://blog.seifbassem.com/blogs/posts/hosting-llms-k8s-llms/)
+3. [**GPU optimization**](https://blog.seifbassem.com/blogs/posts/hosting-llms-k8s-gpus/)
 4. **Serving LLMs using vLLM**
 
 ------------

@@ -122,4 +122,4 @@ param roleAssignmentCondition roleAssignmentCondtionType
 ## References
 
 - [Custom tagged union data type documentation](https://learn.microsoft.com/azure/azure-resource-manager/bicep/data-types#custom-tagged-union-data-type)
-- [A quick intro into user-defined types in Bicep](https://www.seifbassem.com/blogs/posts/bicep-user-defined-types/)
+- [A quick intro into user-defined types in Bicep](https://blog.seifbassem.com/blogs/posts/bicep-user-defined-types/)

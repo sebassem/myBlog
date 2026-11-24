@@ -18,7 +18,7 @@ The Azure Developer CLI (azd) is an open-source tool that helps developers accel
 
 You can also create your own templates or find ones to build upon. Once you’ve installed Azure Developer CLI, you can get your app running on Azure in just a few steps: select an Azure Developer CLI template, initialize the project with the template by running azd init, package, provision and deploy the app by running azd up, and continue iterating on your application code and deploying changes as needed by running azd deploy. Azure Developer CLI is a useful tool for developers who want to streamline their workflow and deploy their applications to Azure more efficiently.
 
-> NOTE: Check out [this previous post](https://www.seifbassem.com/blogs/posts/azure-developer-cli/) for more context on how useful it is to use azd with bicep.
+> NOTE: Check out [this previous post](https://blog.seifbassem.com/blogs/posts/azure-developer-cli/) for more context on how useful it is to use azd with bicep.
 
 ## Setup
 
