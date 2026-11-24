@@ -21,16 +21,16 @@
 }
 
 .dark {
-  --main-bg: #141413;
-  --surface: #1E1E1C;
-  --surface-subtle: #282825;
-  --ink: #F7F7EE;
-  --ink-muted: #C7C7BA;
-  --border-color: #F7F7EE;
-  --shadow-color: #FFDC58;
-  --blue: #7CCEFF;
-  --yellow: #FFDC58;
-  --pink: #FF9EB0;
+  --main-bg: #16171A;
+  --surface: #1E2024;
+  --surface-subtle: #282B30;
+  --ink: #E8E8E3;
+  --ink-muted: #A6A8B1;
+  --border-color: #3D414A;
+  --shadow-color: #0B0C0E;
+  --blue: #93D5FF;
+  --yellow: #F2CC59;
+  --pink: #F5A3B5;
 }
 
 html,
