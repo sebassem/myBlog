@@ -142,7 +142,7 @@ resource "google_storage_insights_dataset_config" "catalog_insights" {
 ### Uploading Assets & Monitoring Progress
 
 After provisioning the infrastructure, we need to start uploading our assets for the magic to happen. 
-When uploading objects, always ensure accurate `Content-Type` headers (`image/jpeg`, `application/pdf`) and keep files ≤ 20 MiB—otherwise Object Enrichments silently skips them.
+When uploading objects, always ensure accurate `Content-Type` headers (`image/jpeg`, `application/pdf`) and keep files ≤ 20 MiB, otherwise Object Enrichments silently skips them.
 
 ```bash
 gcloud storage cp --content-type="image/jpeg" \
@@ -253,7 +253,7 @@ curl -s -H "Authorization: Bearer $TOKEN" \
 }
 ```
 
-As soon as the image lands in Cloud Storage, `label-detector-v1` tags it in-place with "Apparel and fashion accessory" (0.815), "Woolen" (0.794), "Wool" (0.770), "Knit cap" (0.683), and "Beanie" (0.609)—with zero Electronics labels.
+As soon as the image lands in Cloud Storage, `label-detector-v1` tags it in-place with "Apparel and fashion accessory" (0.815), "Woolen" (0.794), "Wool" (0.770), "Knit cap" (0.683), and "Beanie" (0.609), with zero Electronics labels.
 
 
 ### Catalog Triage in BigQuery
@@ -376,12 +376,6 @@ AI.GENERATE(
 Using `gemini-3.8-flash` Standard list pricing, here are the BigQuery results:
 
 ![Screenshot showing BigQuery A/B Token and Cost Comparison](https://images.seifbassem.com/images/Posts/gcs-ai-enrichment/4.png)
-
-| Approach | Files Sent to Gemini | Input Tokens | Output Tokens | Total Tokens | Est. Gemini Cost (12 files) | Projected Gemini Cost (1M files) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **1. Without GCS Object Enrichments** (All 12 files → `gemini-3.8-flash`) | 12 | 12,762 | 1,654 | 14,691 | $0.031548 | ~$2,629 |
-| **2. With GCS Object Enrichments** (SQL filtered → 4 Hero Packshots → `gemini-3.8-flash`) | 4 | 4,603 | 660 | 5,263 | $0.011855 | ~$988 |
-| **Measured Savings** | **-66.7% calls** | **-63.9%** | **-60.1%** | **-64.2% tokens** | **-62.4% LLM cost** | **~$1,641 saved / 1M files** |
 
 ### Trade-offs: When Not to Use Object Enrichments
 
