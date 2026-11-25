@@ -3,7 +3,7 @@ title: "AI Enrichment with Google Cloud Storage"
 images:
   - "https://images.seifbassem.com/images/Posts/gcs-ai-enrichment/banner.png"
 date: 2026-11-24 17:08:42 +0200
-tags: ["GCP","AI","Gemini platform"]
+tags: ["GCP","AI","Gemini_platform"]
 categories: ["posts"]
 draft: false
 ---
