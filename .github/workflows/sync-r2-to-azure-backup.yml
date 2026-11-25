@@ -1,0 +1,111 @@
+name: Backup Cloudflare R2 Images to Azure Blob Storage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/content/blogs/**"
+      - ".github/workflows/sync-r2-to-azure-backup.yml"
+  workflow_dispatch:
+    inputs:
+      sync_deletes:
+        description: "Delete blobs in Azure that no longer exist in R2 (rclone sync instead of rclone copy)"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  id-token: write # Required for OIDC federated login to Azure
+  contents: read
+
+concurrency:
+  group: sync-r2-to-azure-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    name: Sync R2 Bucket to Azure Blob
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Install rclone
+        run: |
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+          rclone version
+
+      - name: Generate short-lived Azure User Delegation SAS
+        id: sas
+        env:
+          STORAGE_ACCOUNT: ${{ vars.AZURE_BACKUP_STORAGE_ACCOUNT }}
+          CONTAINER_NAME: ${{ vars.AZURE_BACKUP_CONTAINER }}
+          SYNC_DELETES: ${{ github.event.inputs.sync_deletes == 'true' }}
+        run: |
+          EXPIRY=$(date -u -d "+20 minutes" '+%Y-%m-%dT%H:%MZ')
+          PERMS="rwl"
+          if [ "$SYNC_DELETES" = "true" ]; then
+            PERMS="rwld"
+          fi
+
+          SAS_TOKEN=$(az storage container generate-sas \
+            --account-name "$STORAGE_ACCOUNT" \
+            --name "$CONTAINER_NAME" \
+            --auth-mode login \
+            --as-user \
+            --permissions "$PERMS" \
+            --expiry "$EXPIRY" \
+            --output tsv)
+
+          echo "::add-mask::$SAS_TOKEN"
+          SAS_URL="https://${STORAGE_ACCOUNT}.blob.core.windows.net/${CONTAINER_NAME}?${SAS_TOKEN}"
+          echo "::add-mask::$SAS_URL"
+          echo "sas_url=$SAS_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Backup Cloudflare R2 to Azure Blob Storage
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          AZURE_CONTAINER: ${{ vars.AZURE_BACKUP_CONTAINER }}
+          AZURE_SAS_URL: ${{ steps.sas.outputs.sas_url }}
+          SYNC_DELETES: ${{ github.event.inputs.sync_deletes == 'true' }}
+        run: |
+          CONFIG_FILE="${RUNNER_TEMP}/rclone.conf"
+          cat > "$CONFIG_FILE" <<EOF
+          [r2]
+          type = s3
+          provider = Cloudflare
+          access_key_id = ${R2_ACCESS_KEY_ID}
+          secret_access_key = ${R2_SECRET_ACCESS_KEY}
+          endpoint = https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com
+          acl = private
+
+          [azurebackup]
+          type = azureblob
+          sas_url = ${AZURE_SAS_URL}
+          EOF
+          chmod 600 "$CONFIG_FILE"
+
+          MODE="copy"
+          if [ "$SYNC_DELETES" = "true" ]; then
+            MODE="sync"
+          fi
+
+          echo "Running incremental rclone ${MODE} from R2 (${R2_BUCKET_NAME}) -> Azure Blob (${AZURE_CONTAINER})..."
+          rclone "$MODE" "r2:${R2_BUCKET_NAME}" "azurebackup:${AZURE_CONTAINER}" \
+            --config "$CONFIG_FILE" \
+            --fast-list \
+            --transfers 16 \
+            --checkers 16 \
+            --stats-one-line \
+            --stats 10s \
+            -v
+
+          rm -f "$CONFIG_FILE"
