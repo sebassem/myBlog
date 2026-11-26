@@ -12,7 +12,7 @@ draft: false
 
 ## What is Cloud Storage Object Enrichments?
 
-The Google Cloud Storage team has released a very cool feature that lets you attach a declarative configuration to your buckets. Cloud Storage then automatically runs Google's pre-trained ML models asynchronously against eligible images and PDFs, writing the resulting structured JSON metadata directly onto each object as custom context.
+The Google Cloud Storage team has released a very cool feature that lets you attach a declarative configuration to your buckets to enable automatic classification of objects. Cloud Storage then automatically runs Google's pre-trained ML models asynchronously against eligible images and PDFs, writing the resulting structured JSON metadata directly onto each object as custom context.
 
 >NOTE: No Pub/Sub triggers. No Cloud Run workers. No sidecar metadata store to keep in sync.
 
