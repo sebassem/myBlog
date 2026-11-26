@@ -2,7 +2,7 @@ export const SITE = {
   title: "Seif Bassem's Cloud Blog",
   shortTitle: 'Seif Bassem',
   description:
-    'Notes on cloud architecture, Kubernetes, enterprise AI, and platform engineering by Seif Bassem.',
+    'I post on cloud architecture, enterprise AI, and platform engineering.',
   author: 'Seif Bassem',
   authorRole: 'Cloud & AI Enterprise Architect',
   authorSummary:
