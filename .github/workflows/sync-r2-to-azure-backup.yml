@@ -1,0 +1,73 @@
+name: Backup Cloudflare R2 Images to Azure Blob Storage
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/content/blogs/**"
+      - ".github/workflows/sync-r2-to-azure-backup.yml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write # Required for OIDC federated login to Azure
+  contents: read
+
+concurrency:
+  group: sync-r2-to-azure-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    name: Backup R2 Bucket to Azure Blob
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Install rclone
+        run: |
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+          rclone version
+
+      - name: Backup Cloudflare R2 to Azure Blob Storage
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ vars.R2_BUCKET_NAME }}
+          AZURE_STORAGE_ACCOUNT: ${{ vars.AZURE_BACKUP_STORAGE_ACCOUNT }}
+          AZURE_CONTAINER: ${{ vars.AZURE_BACKUP_CONTAINER }}
+        run: |
+          CONFIG_FILE="${RUNNER_TEMP}/rclone.conf"
+          cat > "$CONFIG_FILE" <<EOF
+          [r2]
+          type = s3
+          provider = Cloudflare
+          access_key_id = ${R2_ACCESS_KEY_ID}
+          secret_access_key = ${R2_SECRET_ACCESS_KEY}
+          endpoint = https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com
+          acl = private
+
+          [azurebackup]
+          type = azureblob
+          account = ${AZURE_STORAGE_ACCOUNT}
+          env_auth = true
+          EOF
+          chmod 600 "$CONFIG_FILE"
+
+          echo "Running incremental rclone copy from R2 (${R2_BUCKET_NAME}) -> Azure Blob (${AZURE_STORAGE_ACCOUNT}/${AZURE_CONTAINER})..."
+          rclone copy "r2:${R2_BUCKET_NAME}" "azurebackup:${AZURE_CONTAINER}" \
+            --config "$CONFIG_FILE" \
+            --fast-list \
+            --transfers 16 \
+            --checkers 16 \
+            --stats-one-line \
+            --stats 10s \
+            -v
+
+          rm -f "$CONFIG_FILE"
